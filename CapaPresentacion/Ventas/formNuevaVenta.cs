@@ -84,7 +84,7 @@ namespace CapaPresentacion.Ventas
 
             this.dataListadoServicios.Columns["id_servicio"].Visible = false;   // Oculto "IdProducto"
 
-            this.lblUsuario.Text = usuario;
+            //this.lblUsuario.Text = usuario;
             this.IdUsuario = IdUsuario;
 
             this.lblCliente.Text = this.Apellidos + this.Nombres;

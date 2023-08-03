@@ -79,7 +79,7 @@ namespace CapaDatos
         //Métodos
         //Insertar
         public string InsertarEmpleado(string Nombre, string Apellidos, string DNI,
-                            string Direccion, string Telefono, string fechaNac, string Password,
+                            string Direccion, string Telefono, string fechaNac,
                             string Email)
         {
             string rpta = "";
@@ -140,13 +140,7 @@ namespace CapaDatos
                 pTelefono.Size = 15;
                 pTelefono.Value = Telefono;
                 comando.Parameters.Add(pTelefono);
-
-                MySqlParameter pPassword = new MySqlParameter();
-                pPassword.ParameterName = "@pPassword";
-                pPassword.MySqlDbType = MySqlDbType.VarChar;
-                pPassword.Size = 60;
-                pPassword.Value = Password;
-                comando.Parameters.Add(pPassword);                       
+                   
 
                 // Console.WriteLine("rpta es : " + rpta);
 

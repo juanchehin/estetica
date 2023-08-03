@@ -9,6 +9,7 @@ namespace CapaPresentacion
         CN_Empleados objetoCN = new CN_Empleados();
 
         private int IdEmpleado;
+        private int desde = 0;
 #pragma warning disable CS0414 // El campo 'formUsuarios.IsNuevo' está asignado pero su valor nunca se usa
         private bool IsNuevo = false;
 #pragma warning restore CS0414 // El campo 'formUsuarios.IsNuevo' está asignado pero su valor nunca se usa
@@ -26,7 +27,7 @@ namespace CapaPresentacion
         }
         private void MostrarEmpleados()
         {
-            dataListadoEmpleados.DataSource = objetoCN.MostrarEmp();
+            dataListadoEmpleados.DataSource = objetoCN.ListarEmpleados(this.desde);
             // Oculto el IdEmpleado. Lo puedo seguir usando como parametro de eliminacion
             dataListadoEmpleados.Columns[0].Visible = false;
             lblTotalEmpleados.Text = "Total de Registros: " + Convert.ToString(dataListadoEmpleados.Rows.Count);

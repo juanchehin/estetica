@@ -56,8 +56,6 @@
             this.cbTiposPago = new System.Windows.Forms.ComboBox();
             this.lblTipoPago = new System.Windows.Forms.Label();
             this.lblPrecioUnitario = new System.Windows.Forms.Label();
-            this.lblUsuario = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dataListadoClientes = new System.Windows.Forms.DataGridView();
@@ -393,26 +391,6 @@
             this.lblPrecioUnitario.Size = new System.Drawing.Size(0, 17);
             this.lblPrecioUnitario.TabIndex = 48;
             // 
-            // lblUsuario
-            // 
-            this.lblUsuario.AutoSize = true;
-            this.lblUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsuario.Location = new System.Drawing.Point(167, 12);
-            this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(79, 20);
-            this.lblUsuario.TabIndex = 49;
-            this.lblUsuario.Text = "lblUsuario";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(89, 12);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(72, 20);
-            this.label13.TabIndex = 48;
-            this.label13.Text = "Usuario :";
-            // 
             // pictureBox2
             // 
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
@@ -733,8 +711,6 @@
             this.Controls.Add(this.btnAgregarServicio);
             this.Controls.Add(this.panelEmpleados);
             this.Controls.Add(this.panelClientes);
-            this.Controls.Add(this.lblUsuario);
-            this.Controls.Add(this.label13);
             this.Controls.Add(this.btnRegistrar);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.btnCancelar);
@@ -797,8 +773,6 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label lblPrecioUnitario;
         private System.Windows.Forms.Label lblNombreProd;
-        private System.Windows.Forms.Label lblUsuario;
-        private System.Windows.Forms.Label label13;
         private System.Windows.Forms.ComboBox cbTiposPago;
         private System.Windows.Forms.Label lblTipoPago;
         private System.Windows.Forms.DataGridView dataListadoClientes;

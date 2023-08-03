@@ -16,7 +16,7 @@ namespace CapaPresentacion.Caja
         {
             InitializeComponent();
             this.IdUsuario = IdUsuario;
-            lblUser.Text = usuario;
+            //lblUser.Text = usuario;
             //this.panelMontoInicial.Visible = false;
             dameEstadoCaja();
             listarTransacciones();

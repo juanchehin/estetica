@@ -97,8 +97,7 @@ namespace CapaPresentacion
                         var fechaNac = año + "-" + mes + "-" + dia;
 
                         rpta = CN_Empleados.InsertarEmpleado(this.txtNombre.Text.Trim(), this.txtApellidos.Text.Trim(), this.txtDNI.Text.Trim(),
-                            this.txtDireccion.Text.Trim(),this.txtTelefono.Text.Trim(), fechaNac,txtPassword.Text.Trim()
-                            ,txtEmail.Text.Trim());
+                            this.txtDireccion.Text.Trim(),this.txtTelefono.Text.Trim(), fechaNac,txtEmail.Text.Trim());
                     }
                     else
                     {
