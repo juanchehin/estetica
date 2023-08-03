@@ -31,7 +31,7 @@ namespace CapaPresentacion
         private string Email;
         private string Direccion;
         private string FechaNac;
-        private string Ciudad;
+        private string Observaciones;
         private string FechaAlta;
         private string FechaModificacion;
 
@@ -51,16 +51,12 @@ namespace CapaPresentacion
                 // this.MostrarProducto(this.IdProducto);
                 this.IsNuevo = true;
                 this.IsEditar = false;
-                this.lblFechaAlta.Visible = false;
-                this.lblFechaModificacion.Visible = false;
             }
             else
             {
                 lblEditarNuevo.Text = "Editar";
                 this.IsNuevo = false;
                 this.IsEditar = true;
-                this.lblFechaAlta.Visible = true;
-                this.lblFechaModificacion.Visible = true;
                 this.MostrarCliente(this.IdCliente);
             }
         }
@@ -80,66 +76,76 @@ namespace CapaPresentacion
                 Email = Convert.ToString(row["Email"]);
                 Direccion = Convert.ToString(row["Direccion"]);
                 FechaNac = Convert.ToString(row["FechaNac"]);
-                Ciudad = Convert.ToString(row["Ciudad"]);
-                FechaAlta = Convert.ToString(row["FechaAlta"]);
-                FechaModificacion = Convert.ToString(row["FechaModificacion"]);
+                Observaciones = Convert.ToString(row["Observaciones"]);
 
                 txtApellidos.Text = Apellidos;
                 txtNombres.Text = Nombres;
                 txtTelefono.Text = Telefono;
                 txtDNI.Text = DNI;
-                txtCorreo.Text = Email;
+                txtEmail.Text = Email;
                 txtDireccion.Text = Direccion;
                 dtpFechaNac.Text = FechaNac;
-                txtCiudad.Text = Ciudad;
-                lblFechaAlta1.Text = FechaAlta;
-                lblFechaModificacion1.Text = FechaModificacion;
+                txtObservaciones.Text = Observaciones;
             }
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            try
-            {
-                string rpta = "";
-                if (this.txtNombres.Text == string.Empty || this.txtApellidos.Text == string.Empty)
+                try
                 {
-                    MensajeError("Falta ingresar algunos datos");
-                }
-                else
-                {
-                    if (this.IsNuevo)
+                    string rpta = "";
+                    if (this.txtNombres.Text == string.Empty || this.txtApellidos.Text == string.Empty)
                     {
-                        rpta = CN_Clientes.Insertar(this.txtApellidos.Text.Trim(),this.txtNombres.Text.Trim(), this.txtCorreo.Text.Trim());
+                        MensajeError("Falta ingresar algunos datos");
                     }
                     else
-                    {
-                        rpta = CN_Clientes.Editar(this.IdCliente, this.txtApellidos.Text.Trim(), this.txtNombres.Text.Trim(), this.txtCorreo.Text.Trim());
-                    }
-
-                    if (rpta.Equals("Ok"))
                     {
                         if (this.IsNuevo)
                         {
-                            this.MensajeOk("Se Insertó de forma correcta el registro");
+                            var año = this.dtpFechaNac.Value.Year;
+                            var mes = this.dtpFechaNac.Value.Month;
+                            var dia = this.dtpFechaNac.Value.Day;
+                            var fechaNac = año + "-" + mes + "-" + dia;
+
+                            rpta = CN_Clientes.Insertar(this.txtNombres.Text.Trim(), this.txtApellidos.Text.Trim(), this.txtDNI.Text.Trim(),
+                                this.txtDireccion.Text.Trim(), this.txtTelefono.Text.Trim(), fechaNac, txtEmail.Text.Trim(), txtObservaciones.Text.Trim());
                         }
                         else
                         {
-                            this.MensajeOk("Se Actualizó de forma correcta el registro");
+                            var año = this.dtpFechaNac.Value.Year;
+                            var mes = this.dtpFechaNac.Value.Month;
+                            var dia = this.dtpFechaNac.Value.Day;
+                            var fecha = año + "-" + mes + "-" + dia;
+
+                            rpta = CN_Clientes.Editar(this.IdCliente, this.txtNombres.Text.Trim(), this.txtApellidos.Text.Trim(),
+                                this.txtDNI.Text.Trim(), this.txtDireccion.Text.Trim(), this.txtTelefono.Text.Trim(), fecha);
+                        }
+
+                        if (rpta.Equals("Ok"))
+                        {
+                            if (this.IsNuevo)
+                            {
+                                this.MensajeOk("Se Insertó de forma correcta el registro");
+                            }
+                            else
+                            {
+                                this.MensajeOk("Se Actualizó de forma correcta el registro");
+                            }
+                            this.Close();
+                        }
+
+                        else
+                        {
+                            this.MensajeError(rpta);
                         }
                     }
-                    else
-                    {
-                        this.MensajeError(rpta);
-                    }
-
                 }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message + ex.StackTrace);
-            }
-            this.Close();
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message + ex.StackTrace);
+                }
+
+            
         }
         //Mostrar Mensaje de Error
         private void MensajeError(string mensaje)

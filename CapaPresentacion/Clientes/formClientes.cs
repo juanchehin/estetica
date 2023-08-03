@@ -10,6 +10,7 @@ namespace CapaPresentacion
         CN_Clientes objetoCN = new CN_Clientes();
 
         private int IdCliente;
+        private int desde = 0;
 
         public formClientes()
         {
@@ -24,7 +25,7 @@ namespace CapaPresentacion
         }
         public void MostrarClientes()
         {
-            dataListadoClientes.DataSource = objetoCN.MostrarClientes();
+            dataListadoClientes.DataSource = objetoCN.MostrarClientes(this.desde);
             dataListadoClientes.Columns[0].Visible = false;
             lblTotalClientes.Text = "Total de Registros: " + Convert.ToString(dataListadoClientes.Rows.Count);
         }

@@ -113,7 +113,7 @@
             this.pbImagenEmpresa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pbImagenEmpresa.ErrorImage = null;
             this.pbImagenEmpresa.Image = ((System.Drawing.Image)(resources.GetObject("pbImagenEmpresa.Image")));
-            this.pbImagenEmpresa.Location = new System.Drawing.Point(12, 39);
+            this.pbImagenEmpresa.Location = new System.Drawing.Point(21, 39);
             this.pbImagenEmpresa.Name = "pbImagenEmpresa";
             this.pbImagenEmpresa.Size = new System.Drawing.Size(202, 143);
             this.pbImagenEmpresa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;

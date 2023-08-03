@@ -15,23 +15,22 @@ namespace CapaNegocio
 
         //Método Insertar que llama al método Insertar de la clase DArticulo
         //de la CapaDatos
-        public static string Insertar(string Titular, string Transporte, string Telefono)
+        public static string Insertar(string Nombre, string Apellidos, string DNI,
+                             string Direccion, string Telefono, string fechaNac,
+                             string Email,string Observaciones)
         {
-            // Console.WriteLine("En insertar , nombre es " + nombre);
-
             CD_Clientes Obj = new CD_Clientes();
-            Obj.Titular = Titular;
-            Obj.Transporte = Transporte;
-            Obj.Telefono = Telefono;
 
-            return Obj.Insertar(Obj);
+            return Obj.Insertar(Nombre, Apellidos, DNI,
+                            Direccion, Telefono, fechaNac,
+                            Email,Observaciones);
         }
 
-        public DataTable MostrarClientes()
+        public DataTable MostrarClientes(int pDesde)
         {
 
             DataTable tabla = new DataTable();
-            tabla = objetoCD.Mostrar();
+            tabla = objetoCD.Mostrar(pDesde);
             return tabla;
         }
         public static string Eliminar(int IdCliente)
@@ -47,23 +46,25 @@ namespace CapaNegocio
 
             DataTable tabla = new DataTable();
             tabla = objetoCD.MostrarCliente(IdCliente);
-            Console.WriteLine("tabla TableName en capa negocio es : " + tabla.TableName);
-            Console.WriteLine("tabla Rows en capa negocio es : " + tabla.Rows);
             return tabla;
         }
 
-        public static string Editar(int IdCliente, string Transporte, string Titular, string Telefono)
+        public static string Editar(int IdCliente, string Nombre, string Apellidos, string DNI, string Direccion, string Telefono, string FechaNac)
         {
-            
             CD_Clientes Obj = new CD_Clientes();
             Obj.IdCliente = IdCliente;
 
-            Obj.Transporte = Transporte;
-            Obj.Titular = Titular;
+            Obj.Nombres = Nombre;
+            Obj.Apellidos = Apellidos;
+            Obj.DNI = DNI;
+            Obj.Direccion = Direccion;
             Obj.Telefono = Telefono;
+            // Obj.FechaNac = FechaNac;
+
 
             return Obj.Editar(Obj);
         }
+
 
         public DataTable BuscarCliente(string textobuscar)
         {

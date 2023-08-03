@@ -61,6 +61,7 @@ namespace CapaPresentacion.Ventas
 #pragma warning restore CS0169 // El campo 'formNuevaVenta.Cantidad' nunca se usa
 
         private decimal precioTotal = 0;
+        private int desde = 0;
 
         DataTable dtRespuesta = new DataTable();
 
@@ -250,7 +251,7 @@ namespace CapaPresentacion.Ventas
         }
         public void MostrarClientes()
         {
-            dataListadoClientes.DataSource = objetoCN_clientes.MostrarClientes();
+            dataListadoClientes.DataSource = objetoCN_clientes.MostrarClientes(this.desde);
             dataListadoClientes.Columns[0].Visible = false;
         }
 

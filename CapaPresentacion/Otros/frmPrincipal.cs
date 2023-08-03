@@ -23,10 +23,10 @@ namespace CapaPresentacion
         {
             InitializeComponent();
             this.Usuario = usuario;
-            lblUsuario.Text = usuario;
+            //lblUsuario.Text = usuario;
             this.IdRol = IdRol;
             this.IdUsuario = IdUsuario;
-            cargarDatosEmpresa();
+            //cargarDatosEmpresa();
             // Chequear permisos y ocultar botones
             if (this.IdRol != 1) // ¿Es admin?
             {

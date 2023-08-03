@@ -18,28 +18,6 @@ namespace CapaNegocio
             return Obj.Eliminar(Obj);
         }
 
-
-        public static string Editar(int IdCliente, string Transporte, string Titular, string Telefono)
-        {
-
-            CD_Clientes Obj = new CD_Clientes();
-            Obj.IdCliente = IdCliente;
-
-            Obj.Transporte = Transporte;
-            Obj.Titular = Titular;
-            Obj.Telefono = Telefono;
-
-            return Obj.Editar(Obj);
-        }
-
-        public DataTable BuscarCliente(string textobuscar)
-        {
-            Console.WriteLine("textobuscar en capa negocio es : " + textobuscar);
-            CD_Clientes Obj = new CD_Clientes();
-            Obj.TextoBuscar = textobuscar;
-            return Obj.BuscarCliente(Obj);
-        }
-
         public DataSet listarTransacciones(int pDesde,string pFechaInicio, string pFechaFin)
         {
             DataSet tabla = new DataSet();
