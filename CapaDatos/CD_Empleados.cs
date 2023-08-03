@@ -346,7 +346,30 @@ namespace CapaDatos
 
         }
 
+        public DataTable ListarEmpleados(int desde)
+        {
+            comando.Connection = conexion.AbrirConexion();
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.CommandText = "bsp_listar_empleados";
 
+            MySqlParameter pDesde = new MySqlParameter();
+            pDesde.ParameterName = "@pDesde";
+            pDesde.MySqlDbType = MySqlDbType.Int32;
+            pDesde.Size = 30;
+            pDesde.Value = desde;
+            comando.Parameters.Add(pDesde);
+
+            MySqlDataAdapter da = new MySqlDataAdapter(comando);
+            DataTable ds = new DataTable();
+            da.Fill(ds);
+
+            comando.Parameters.Clear();
+
+            conexion.CerrarConexion();
+
+            return ds;
+
+        }
 
     }
 }

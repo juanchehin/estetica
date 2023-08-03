@@ -67,6 +67,12 @@ namespace CapaNegocio
             return Obj.BuscarEmpleado(Obj);
         }
 
+        public DataTable ListarEmpleados(int pDesde)
+        {
+            DataTable tabla = new DataTable();
+            tabla = objetoCD.ListarEmpleados(pDesde);
+            return tabla;
+        }
 
     }
 }

@@ -176,6 +176,30 @@ namespace CapaDatos
 
         }
 
+        public string dame_precio_servicio(string servicio)
+        {
+            string rpta = "";
+            comando.Parameters.Clear();
+
+            comando.Connection = conexion.AbrirConexion();
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.CommandText = "bsp_dame_precio_servicio";
+
+            MySqlParameter pServicio = new MySqlParameter();
+            pServicio.ParameterName = "@pServicio";
+            pServicio.MySqlDbType = MySqlDbType.VarChar;
+            pServicio.Size = 60;
+            pServicio.Value = servicio;
+            comando.Parameters.Add(pServicio);
+
+
+            rpta = (string)comando.ExecuteScalar();
+
+            // rpta = "OK";
+            return rpta;
+
+        }
+
         public string Editar(CD_Servicios Servicio)
         {
             string rpta = "";

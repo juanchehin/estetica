@@ -26,13 +26,22 @@ namespace CapaNegocio
             tabla = objetoCD.ListarServicios(pDesde);
             return tabla;
         }
-        // Devuelve solo un producto
+        // Devuelve 
         public DataTable MostrarServicio(int IdServicio)
         {
 
             DataTable tabla = new DataTable();
             tabla = objetoCD.MostrarServicio(IdServicio);
             return tabla;
+        }
+
+        // Devuelve 
+        public string dame_precio_servicio(string servicio)
+        {
+
+            // string tabla = new DataTable();
+            string rpta = objetoCD.dame_precio_servicio(servicio);
+            return rpta;
         }
         public static string Eliminar(int IdServicio)
         {
