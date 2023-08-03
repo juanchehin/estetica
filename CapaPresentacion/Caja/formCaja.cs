@@ -17,7 +17,7 @@ namespace CapaPresentacion.Caja
             InitializeComponent();
             this.IdUsuario = IdUsuario;
             lblUser.Text = usuario;
-            this.panelMontoInicial.Visible = false;
+            //this.panelMontoInicial.Visible = false;
             dameEstadoCaja();
             listarTransacciones();
         }
@@ -38,7 +38,7 @@ namespace CapaPresentacion.Caja
             transacciones = objeto_Caja.listarTransacciones(this.desde, fechaInicio, fechaFin);
 
             dataListadoCaja.DataSource = transacciones.Tables[0];
-            dataListadoCaja.Columns["IdTransaccion"].Visible = false;
+            dataListadoCaja.Columns["id_transaccion"].Visible = false;
         }
 
         private string dameEstadoCaja()
@@ -47,22 +47,22 @@ namespace CapaPresentacion.Caja
             if(objeto_Caja.dameEstadoCaja() == "C")
             {
                 rpta = "Cerrada";
-                btnAbrirCaja.Enabled = true;
-                btnCierreCaja.Enabled = false;
+                //btnAbrirCaja.Enabled = true;
+                //btnCierreCaja.Enabled = false;
             }
             if (objeto_Caja.dameEstadoCaja() == "A")
             {
                 rpta = "Abierta";
-                btnAbrirCaja.Enabled = false;
-                btnCierreCaja.Enabled = true;
+                //btnAbrirCaja.Enabled = false;
+                //btnCierreCaja.Enabled = true;
             }
-            lblEstado.Text = rpta;
+            //lblEstado.Text = rpta;
             return rpta;
         }
 
         private void btnAbrirCaja_Click(object sender, EventArgs e)
         {
-            this.panelMontoInicial.Visible = true;
+            //this.panelMontoInicial.Visible = true;
         }
 
 
@@ -72,9 +72,9 @@ namespace CapaPresentacion.Caja
             if (objeto_Caja.cerrarCaja(this.IdUsuario) == "Ok")
             {
                 MensajeOk("Caja cerrada");
-                btnAbrirCaja.Enabled = true;
-                btnCierreCaja.Enabled = false;
-                this.lblEstado.Text = "Cerrada";
+                //btnAbrirCaja.Enabled = true;
+                //btnCierreCaja.Enabled = false;
+                //this.lblEstado.Text = "Cerrada";
             }
             else
             {
@@ -85,7 +85,7 @@ namespace CapaPresentacion.Caja
 
         private void btnCancelarPanel_Click(object sender, EventArgs e)
         {
-            this.panelMontoInicial.Visible = false;
+            //this.panelMontoInicial.Visible = false;
         }
 
         private void btnOmitir_Click(object sender, EventArgs e)
@@ -93,10 +93,10 @@ namespace CapaPresentacion.Caja
             if (objeto_Caja.abrirCaja(this.IdUsuario, 0) == "Ok")
             {
                 MensajeOk("Caja aperturada");
-                btnAbrirCaja.Enabled = false;
+                /*btnAbrirCaja.Enabled = false;
                 btnCierreCaja.Enabled = true;
                 this.panelMontoInicial.Visible = false;
-                this.lblEstado.Text = "Abierta";
+                this.lblEstado.Text = "Abierta";*/
             }
             else
             {
@@ -106,6 +106,7 @@ namespace CapaPresentacion.Caja
 
         private void btnAceptarPanel_Click(object sender, EventArgs e)
         {
+            /*
             if(objeto_Caja.abrirCaja(this.IdUsuario,Convert.ToDecimal(txtMontoInicial.Text)) == "Ok")
             {
                 MensajeOk("Caja aperturada");
@@ -120,7 +121,7 @@ namespace CapaPresentacion.Caja
             {
                 MensajeError("Ocurrio un problema al abrir la caja");
             }
-
+            */
         }
 
         private void MensajeOk(string mensaje)

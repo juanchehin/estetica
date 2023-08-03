@@ -31,8 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrincipal));
             this.ttAyuda = new System.Windows.Forms.ToolTip(this.components);
-            this.label10 = new System.Windows.Forms.Label();
-            this.lblUsuario = new System.Windows.Forms.Label();
             this.btnConfiguracion = new System.Windows.Forms.Button();
             this.btnAyuda = new System.Windows.Forms.Button();
             this.btnCaja = new System.Windows.Forms.Button();
@@ -44,26 +42,6 @@
             this.btnEmpleados = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbImagenEmpresa)).BeginInit();
             this.SuspendLayout();
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft YaHei", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(12, 9);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(102, 27);
-            this.label10.TabIndex = 24;
-            this.label10.Text = "Usuario : ";
-            // 
-            // lblUsuario
-            // 
-            this.lblUsuario.AutoSize = true;
-            this.lblUsuario.Font = new System.Drawing.Font("Microsoft YaHei", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsuario.Location = new System.Drawing.Point(120, 9);
-            this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(108, 27);
-            this.lblUsuario.TabIndex = 25;
-            this.lblUsuario.Text = "lblUsuario";
             // 
             // btnConfiguracion
             // 
@@ -188,8 +166,6 @@
             this.Controls.Add(this.btnEmpleados);
             this.Controls.Add(this.btnServicios);
             this.Controls.Add(this.btnCalculadora);
-            this.Controls.Add(this.lblUsuario);
-            this.Controls.Add(this.label10);
             this.Controls.Add(this.btnConfiguracion);
             this.Controls.Add(this.btnAyuda);
             this.Controls.Add(this.btnCaja);
@@ -205,7 +181,6 @@
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmPrincipal_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.pbImagenEmpresa)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -218,8 +193,6 @@
         private System.Windows.Forms.Button btnAyuda;
         private System.Windows.Forms.ToolTip ttAyuda;
         private System.Windows.Forms.Button btnConfiguracion;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label lblUsuario;
         private System.Windows.Forms.Button btnCalculadora;
         private System.Windows.Forms.Button btnServicios;
         private System.Windows.Forms.Button btnEmpleados;

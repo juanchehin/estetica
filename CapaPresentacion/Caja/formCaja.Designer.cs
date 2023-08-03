@@ -38,21 +38,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.lblEstado = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.btnAbrirCaja = new System.Windows.Forms.Button();
-            this.btnCierreCaja = new System.Windows.Forms.Button();
-            this.panelMontoInicial = new System.Windows.Forms.Panel();
-            this.btnOmitir = new System.Windows.Forms.Button();
-            this.txtMontoInicial = new System.Windows.Forms.TextBox();
-            this.btnCancelarPanel = new System.Windows.Forms.Button();
-            this.btnAceptarPanel = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
             this.lblUser = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataListadoCaja)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.panelMontoInicial.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -145,105 +134,6 @@
             this.label10.TabIndex = 50;
             this.label10.Text = "Usuario : ";
             // 
-            // lblEstado
-            // 
-            this.lblEstado.AutoSize = true;
-            this.lblEstado.Font = new System.Drawing.Font("Microsoft YaHei", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEstado.Location = new System.Drawing.Point(561, 12);
-            this.lblEstado.Name = "lblEstado";
-            this.lblEstado.Size = new System.Drawing.Size(69, 27);
-            this.lblEstado.TabIndex = 53;
-            this.lblEstado.Text = "label3";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft YaHei", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(462, 12);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(93, 27);
-            this.label4.TabIndex = 52;
-            this.label4.Text = "Estado : ";
-            // 
-            // btnAbrirCaja
-            // 
-            this.btnAbrirCaja.Location = new System.Drawing.Point(11, 470);
-            this.btnAbrirCaja.Name = "btnAbrirCaja";
-            this.btnAbrirCaja.Size = new System.Drawing.Size(75, 50);
-            this.btnAbrirCaja.TabIndex = 54;
-            this.btnAbrirCaja.Text = "Abrir caja";
-            this.btnAbrirCaja.UseVisualStyleBackColor = true;
-            this.btnAbrirCaja.Click += new System.EventHandler(this.btnAbrirCaja_Click);
-            // 
-            // btnCierreCaja
-            // 
-            this.btnCierreCaja.Location = new System.Drawing.Point(92, 470);
-            this.btnCierreCaja.Name = "btnCierreCaja";
-            this.btnCierreCaja.Size = new System.Drawing.Size(75, 50);
-            this.btnCierreCaja.TabIndex = 55;
-            this.btnCierreCaja.Text = "Cierre caja";
-            this.btnCierreCaja.UseVisualStyleBackColor = true;
-            this.btnCierreCaja.Click += new System.EventHandler(this.btnCierreCaja_Click);
-            // 
-            // panelMontoInicial
-            // 
-            this.panelMontoInicial.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelMontoInicial.Controls.Add(this.btnOmitir);
-            this.panelMontoInicial.Controls.Add(this.txtMontoInicial);
-            this.panelMontoInicial.Controls.Add(this.btnCancelarPanel);
-            this.panelMontoInicial.Controls.Add(this.btnAceptarPanel);
-            this.panelMontoInicial.Controls.Add(this.label3);
-            this.panelMontoInicial.Location = new System.Drawing.Point(233, 126);
-            this.panelMontoInicial.Name = "panelMontoInicial";
-            this.panelMontoInicial.Size = new System.Drawing.Size(348, 175);
-            this.panelMontoInicial.TabIndex = 56;
-            // 
-            // btnOmitir
-            // 
-            this.btnOmitir.Location = new System.Drawing.Point(261, 63);
-            this.btnOmitir.Name = "btnOmitir";
-            this.btnOmitir.Size = new System.Drawing.Size(75, 23);
-            this.btnOmitir.TabIndex = 4;
-            this.btnOmitir.Text = "Omitir";
-            this.btnOmitir.UseVisualStyleBackColor = true;
-            this.btnOmitir.Click += new System.EventHandler(this.btnOmitir_Click);
-            // 
-            // txtMontoInicial
-            // 
-            this.txtMontoInicial.Location = new System.Drawing.Point(144, 65);
-            this.txtMontoInicial.Name = "txtMontoInicial";
-            this.txtMontoInicial.Size = new System.Drawing.Size(100, 20);
-            this.txtMontoInicial.TabIndex = 3;
-            // 
-            // btnCancelarPanel
-            // 
-            this.btnCancelarPanel.Location = new System.Drawing.Point(261, 134);
-            this.btnCancelarPanel.Name = "btnCancelarPanel";
-            this.btnCancelarPanel.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelarPanel.TabIndex = 2;
-            this.btnCancelarPanel.Text = "Cancelar";
-            this.btnCancelarPanel.UseVisualStyleBackColor = true;
-            this.btnCancelarPanel.Click += new System.EventHandler(this.btnCancelarPanel_Click);
-            // 
-            // btnAceptarPanel
-            // 
-            this.btnAceptarPanel.Location = new System.Drawing.Point(14, 134);
-            this.btnAceptarPanel.Name = "btnAceptarPanel";
-            this.btnAceptarPanel.Size = new System.Drawing.Size(75, 23);
-            this.btnAceptarPanel.TabIndex = 1;
-            this.btnAceptarPanel.Text = "Aceptar";
-            this.btnAceptarPanel.UseVisualStyleBackColor = true;
-            this.btnAceptarPanel.Click += new System.EventHandler(this.btnAceptarPanel_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(14, 65);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(123, 13);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Ingrese el monto inicial : ";
-            // 
             // lblUser
             // 
             this.lblUser.AutoSize = true;
@@ -258,13 +148,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(736, 526);
+            this.ClientSize = new System.Drawing.Size(736, 491);
             this.Controls.Add(this.lblUser);
-            this.Controls.Add(this.panelMontoInicial);
-            this.Controls.Add(this.btnCierreCaja);
-            this.Controls.Add(this.btnAbrirCaja);
-            this.Controls.Add(this.lblEstado);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -280,8 +165,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataListadoCaja)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.panelMontoInicial.ResumeLayout(false);
-            this.panelMontoInicial.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -297,16 +180,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label lblEstado;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button btnAbrirCaja;
-        private System.Windows.Forms.Button btnCierreCaja;
-        private System.Windows.Forms.Panel panelMontoInicial;
-        private System.Windows.Forms.TextBox txtMontoInicial;
-        private System.Windows.Forms.Button btnCancelarPanel;
-        private System.Windows.Forms.Button btnAceptarPanel;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button btnOmitir;
         private System.Windows.Forms.Label lblUser;
     }
 }
