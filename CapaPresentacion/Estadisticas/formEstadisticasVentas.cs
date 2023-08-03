@@ -30,7 +30,7 @@ namespace CapaPresentacion
         //Mostrar Mensaje de Confirmación generico
         private void MensajeOk(string mensaje)
         {
-            MessageBox.Show(mensaje, "SGF", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show(mensaje, "Estetica", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         }
 
@@ -46,7 +46,7 @@ namespace CapaPresentacion
             try
             {
                 DialogResult Opcion;
-                Opcion = MessageBox.Show("Realmente Desea Eliminar la venta", "SGF", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                Opcion = MessageBox.Show("Realmente Desea Eliminar la venta", "Estetica", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 
                 if (Opcion == DialogResult.OK)
                 {

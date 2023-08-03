@@ -56,7 +56,7 @@ namespace CapaPresentacion.Configuraciones
             }
             else
             {
-                MessageBox.Show("Selecciona una ruta donde se encuentra la copia de seguridad", "SGF", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Selecciona una ruta donde se encuentra la copia de seguridad", "Estetica", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtRuta.Focus();
                 txtRuta.BackColor = Color.FromArgb(255, 255, 192);
             }
@@ -83,13 +83,13 @@ namespace CapaPresentacion.Configuraciones
 
         private void MensajeOk(string mensaje)
         {
-            MessageBox.Show(mensaje, "SGF", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show(mensaje, "Estetica", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         }
         //Mostrar Mensaje de Error
         private void MensajeError(string mensaje)
         {
-            MessageBox.Show(mensaje, "SGF", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            MessageBox.Show(mensaje, "Estetica", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
     }
 }

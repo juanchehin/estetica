@@ -118,9 +118,8 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.BackgroundImage = global::CapaPresentacion.Properties.Resources.login;
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pictureBox2.Image = global::CapaPresentacion.Properties.Resources.login1;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(518, 55);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(68, 73);
@@ -130,7 +129,7 @@
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pictureBox1.Image = global::CapaPresentacion.Properties.Resources.logo;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(12, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(219, 210);
@@ -162,7 +161,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "formLogin";
             this.Text = "                                                                                 " +
-    "                 ..:: Login - SGF ::..";
+    "                 ..:: Login - Estetica ::..";
             this.Load += new System.EventHandler(this.formLogin_Load);
             this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.formLogin_KeyPress);
             this.groupBox1.ResumeLayout(false);

@@ -66,11 +66,11 @@ namespace CapaPresentacion.Configuraciones.Empresa
 
         private void MensajeError(string mensaje)
         {
-            MessageBox.Show(mensaje, "SGF", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            MessageBox.Show(mensaje, "Estetica", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
         private void MensajeOk(string mensaje)
         {
-            MessageBox.Show(mensaje, "SGF", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show(mensaje, "Estetica", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         }
 

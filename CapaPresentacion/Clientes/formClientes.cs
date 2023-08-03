@@ -37,7 +37,7 @@ namespace CapaPresentacion
         //Mostrar Mensaje de Confirmación
         private void MensajeOk(string mensaje)
         {
-            MessageBox.Show(mensaje, "sgf", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show(mensaje, "Estetica", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         }
 
@@ -45,7 +45,7 @@ namespace CapaPresentacion
         //Mostrar Mensaje de Error
         private void MensajeError(string mensaje)
         {
-            MessageBox.Show(mensaje, "sgf", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            MessageBox.Show(mensaje, "Estetica", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -53,7 +53,7 @@ namespace CapaPresentacion
             try
             {
                 DialogResult Opcion;
-                Opcion = MessageBox.Show("Realmente Desea Eliminar el cliente", "sgf", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                Opcion = MessageBox.Show("Realmente Desea Eliminar el cliente", "Estetica", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 
                 if (Opcion == DialogResult.OK)
                 {
@@ -117,7 +117,7 @@ namespace CapaPresentacion
             try
             {
                 DialogResult Opcion;
-                Opcion = MessageBox.Show("Realmente Desea Eliminar el cliente", "sgf", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                Opcion = MessageBox.Show("Realmente Desea Eliminar el cliente", "Estetica", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 
                 if (Opcion == DialogResult.OK)
                 {

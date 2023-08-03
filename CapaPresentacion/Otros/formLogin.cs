@@ -29,7 +29,7 @@ namespace CapaPresentacion
             //Evaluar si existe el Usuario
             if (this.datos.Rows[0][0].ToString() != "Ok")
             {
-                MessageBox.Show("Error de login", "SGF", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error de login", "Estetica", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
@@ -66,17 +66,17 @@ namespace CapaPresentacion
                 // ejecutar scripts
                 if (CapaNegocio.CN_Configuraciones.ejecutarScript() == "Ok")
                 {
-                    MessageBox.Show("Instalacion correcta, vuelva a abrir el programa", "SGF", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Instalacion correcta, vuelva a abrir el programa", "Estetica", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Close();
                 }
                 else
                 {
-                    MessageBox.Show("Ocurrio un error, contactese con el administrador", "SGF", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Ocurrio un error, contactese con el administrador", "Estetica", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch(Exception e)
             {
-                MessageBox.Show("Ocurrio un error, contactese con el administrador", "SGF", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Ocurrio un error, contactese con el administrador", "Estetica", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 #pragma warning restore CS0168 // La variable está declarada pero nunca se usa
 

@@ -6,7 +6,7 @@ namespace CapaDatos
 {
     public class CD_Conexion
     {
-        public static string cadenaConexion = "datasource =localhost;username = sgf;password = 'iHJsnaKzHKGd';database=sgf";
+        public static string cadenaConexion = "datasource =localhost;username = sgf;password = 'iHJsnaKzHKGd';database=estetica";
         MySqlConnection Con = new MySqlConnection(cadenaConexion);
 
         public CD_Conexion()

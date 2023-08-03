@@ -46,7 +46,7 @@ namespace CapaPresentacion
         //Mostrar Mensaje de Confirmación
         private void MensajeOk(string mensaje)
         {
-            MessageBox.Show(mensaje, "SGF", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show(mensaje, "Estetica", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         }
 
@@ -54,7 +54,7 @@ namespace CapaPresentacion
         //Mostrar Mensaje de Error
         private void MensajeError(string mensaje)
         {
-            MessageBox.Show(mensaje, "SGF", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            MessageBox.Show(mensaje, "Estetica", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void dataListadoEmpleados_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -100,7 +100,7 @@ namespace CapaPresentacion
             try
             {
                 DialogResult Opcion;
-                Opcion = MessageBox.Show("Realmente Desea Eliminar el empleado", "SGF", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                Opcion = MessageBox.Show("Realmente Desea Eliminar el empleado", "Estetica", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 
                 if (Opcion == DialogResult.OK)
                 {
