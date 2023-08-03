@@ -104,7 +104,6 @@ namespace CapaPresentacion
 
                 if (Opcion == DialogResult.OK)
                 {
-                    Console.WriteLine("El IdEmpleado en eliminar es " + this.IdEmpleado);
                     CN_Empleados.Eliminar(this.IdEmpleado);
                     this.MostrarEmpleados();
                     this.MensajeOk("Se elimino de forma correcta el registro");

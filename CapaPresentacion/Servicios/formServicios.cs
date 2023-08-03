@@ -153,6 +153,16 @@ namespace CapaPresentacion
         {
             MostrarServicios();
         }
+
+        private void dataListadoServicios_SelectionChanged_1(object sender, EventArgs e)
+        {
+            if (dataListadoServicios.SelectedCells.Count > 0)
+            {
+                int selectedrowindex = dataListadoServicios.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = dataListadoServicios.Rows[selectedrowindex];
+                this.IdServicio = Convert.ToInt32(selectedRow.Cells["id_servicio"].Value);
+            }
+        }
     }
 
 }

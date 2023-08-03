@@ -129,7 +129,7 @@ namespace CapaDatos
             {
                 comando.Connection = conexion.AbrirConexion();
                 comando.CommandType = CommandType.StoredProcedure;
-                comando.CommandText = "bsp_eliminar_servicio";
+                comando.CommandText = "bsp_baja_servicio";
 
                 MySqlParameter pIdServicio = new MySqlParameter();
                 pIdServicio.ParameterName = "@pIdServicio";

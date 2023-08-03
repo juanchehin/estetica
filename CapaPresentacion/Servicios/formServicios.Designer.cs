@@ -77,6 +77,7 @@
             this.dataListadoServicios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataListadoServicios.Size = new System.Drawing.Size(765, 291);
             this.dataListadoServicios.TabIndex = 19;
+            this.dataListadoServicios.SelectionChanged += new System.EventHandler(this.dataListadoServicios_SelectionChanged_1);
             // 
             // btnBuscar
             // 

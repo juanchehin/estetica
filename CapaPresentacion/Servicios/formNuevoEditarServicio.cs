@@ -78,7 +78,7 @@ namespace CapaPresentacion
                         rpta = CN_Servicios.Editar(this.id_servicio, this.txtServicio.Text.Trim(), this.txtPrecio.Text.Trim(), this.rtbDescripcion.Text.Trim());
                     }
 
-                    if (rpta.Equals("Ok"))
+                    if (rpta.Equals("OK"))
                     {
                         if (this.IsNuevo)
                         {
