@@ -1,7 +1,5 @@
 ﻿using CapaNegocio;
 using CapaPresentacion.Caja;
-using CapaPresentacion.Compras;
-using CapaPresentacion.Estadisticas;
 using CapaPresentacion.Otros;
 using CapaPresentacion.Ventas;
 using System;
@@ -32,9 +30,8 @@ namespace CapaPresentacion
             // Chequear permisos y ocultar botones
             if (this.IdRol != 1) // ¿Es admin?
             {
-                this.btnUsuarios.Visible = false;
+                //this.btnUsuarios.Visible = false;
                 //this.lblUsuarios.Visible = false;
-                this.btnEstadisticas.Visible = false;
                 //this.lblEstadisticas.Visible = false;
             }
         }
@@ -62,16 +59,9 @@ namespace CapaPresentacion
             frm.Show();
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-            formProductos frm = new formProductos();
-            frm.MdiParent = this.MdiParent;
-            frm.Show();
-        }
-
         private void btnEmpleados_Click(object sender, EventArgs e)
         {
-            formUsuarios frm = new formUsuarios();
+            formEmpleados frm = new formEmpleados();
             frm.MdiParent = this.MdiParent;
             frm.Show();
         }
@@ -81,19 +71,6 @@ namespace CapaPresentacion
             Application.Exit();
         }
 
-        private void btnProveedores_Click(object sender, EventArgs e)
-        {
-            formProveedores frm = new formProveedores();
-            frm.MdiParent = this.MdiParent;
-            frm.Show();
-        }
-
-        private void btnCompras_Click(object sender, EventArgs e)
-        {
-            formNuevaCompra frm = new formNuevaCompra(this.IdUsuario, this.Usuario);
-            frm.MdiParent = this.MdiParent;
-            frm.Show();
-        }
 
         private void btnVentas_Click(object sender, EventArgs e)
         {
@@ -137,60 +114,39 @@ namespace CapaPresentacion
             frm.Show();
         }
 
-        private void btnEstadisticas_Click(object sender, EventArgs e)
-        {
-            formEstadisticas frm = new formEstadisticas();
-            frm.Show();
-        }
-
         private void frmPrincipal_KeyDown(object sender, KeyEventArgs e)
         {
             switch (e.KeyCode)
             {
                 case Keys.F1:
-                    formProductos frm = new formProductos();
+                    formClientes frm = new formClientes();
                     frm.MdiParent = this.MdiParent;
                     frm.Show();
                     break;
                 case Keys.F2:
-                    formProveedores frm1 = new formProveedores();
-                    frm1.MdiParent = this.MdiParent;
-                    frm1.Show();
-                    break;
-                case Keys.F3:
-                    formUsuarios frm2 = new formUsuarios();
+                    formNuevaVenta frm2 = new formNuevaVenta(this.IdUsuario, this.Usuario);
                     frm2.MdiParent = this.MdiParent;
                     frm2.Show();
                     break;
-                case Keys.F4:
-                    formEstadisticas frm3 = new formEstadisticas();
+                case Keys.F3:
+                    formServicios frm3 = new formServicios();
                     frm3.MdiParent = this.MdiParent;
                     frm3.Show();
                     break;
-                case Keys.F5:
-                    formConfiguraciones frm4 = new formConfiguraciones();
+                case Keys.F4:
+                    formCaja frm4 = new formCaja(this.IdUsuario, this.Usuario);
                     frm4.MdiParent = this.MdiParent;
                     frm4.Show();
                     break;
-                case Keys.F6:
-                    formCaja frm5 = new formCaja(this.IdUsuario,this.Usuario);
+                case Keys.F5:
+                    formEmpleados frm5 = new formEmpleados();
                     frm5.MdiParent = this.MdiParent;
                     frm5.Show();
                     break;
-                case Keys.F7:
-                    formNuevaCompra frm6 = new formNuevaCompra(this.IdUsuario, this.Usuario);
+                case Keys.F6:
+                    formConfiguraciones frm6 = new formConfiguraciones();
                     frm6.MdiParent = this.MdiParent;
                     frm6.Show();
-                    break;
-                case Keys.F8:
-                    formNuevaVenta frm7 = new formNuevaVenta(this.IdUsuario, this.Usuario);
-                    frm7.MdiParent = this.MdiParent;
-                    frm7.Show();
-                    break;
-                case Keys.F9:
-                    formClientes frm9 = new formClientes();
-                    frm9.MdiParent = this.MdiParent;
-                    frm9.Show();
                     break;
                 default:
                     // code block
@@ -203,6 +159,20 @@ namespace CapaPresentacion
         {
             this.KeyPreview = true;
             //this.KeyDown += new KeyEventHandler(frmPrincipal_KeyDown);
+        }
+
+        private void btnEmpleados_Click_1(object sender, EventArgs e)
+        {
+            formEmpleados frm5 = new formEmpleados();
+            frm5.MdiParent = this.MdiParent;
+            frm5.Show();
+        }
+
+        private void btnServicios_Click(object sender, EventArgs e)
+        {
+            formServicios frm5 = new formServicios();
+            frm5.MdiParent = this.MdiParent;
+            frm5.Show();
         }
     }
 }

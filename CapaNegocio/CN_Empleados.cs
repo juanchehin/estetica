@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Data;
 // Agregados
 using CapaDatos;
 
@@ -15,15 +10,15 @@ namespace CapaNegocio
 
         //Método Insertar que llama al método Insertar de la clase DArticulo
         //de la CapaDatos
-        public static string InsertarUsuario(string Nombre, string Apellidos,string DNI,
-                            string Direccion,string Telefono,string fechaNac,string Usuario,string Password,
-                            string Email,string rol)
+        public static string InsertarEmpleado(string Nombre, string Apellidos,string DNI,
+                            string Direccion,string Telefono,string fechaNac,string Password,
+                            string Email)
         {
             CD_Empleados Obj = new CD_Empleados();
 
-            return Obj.InsertarUsuario(Nombre, Apellidos, DNI,
-                            Direccion, Telefono, fechaNac, Usuario, Password,
-                            Email, rol);
+            return Obj.InsertarEmpleado(Nombre, Apellidos, DNI,
+                            Direccion, Telefono, fechaNac, Password,
+                            Email);
         }
 
         public DataTable MostrarEmp()
@@ -44,17 +39,10 @@ namespace CapaNegocio
         {
 
             DataTable tabla = new DataTable();
-            tabla = objetoCD.MostrarUsuario(IdEmpleado);
+            tabla = objetoCD.MostrarEmpleado(IdEmpleado);
             return tabla;
         }
 
-        public DataTable MostrarRoles()
-        {
-
-            DataTable tabla = new DataTable();
-            tabla = objetoCD.MostrarRoles();
-            return tabla;
-        }
 
         public static string Editar(int IdEmpleado, string Nombre, string Apellidos, string DNI, string Direccion, string Telefono,string FechaNac)
         {

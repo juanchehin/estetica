@@ -78,9 +78,9 @@ namespace CapaDatos
 
         //Métodos
         //Insertar
-        public string InsertarUsuario(string Nombre, string Apellidos, string DNI,
-                            string Direccion, string Telefono, string fechaNac, string Usuario, string Password,
-                            string Email, string rol)
+        public string InsertarEmpleado(string Nombre, string Apellidos, string DNI,
+                            string Direccion, string Telefono, string fechaNac, string Password,
+                            string Email)
         {
             string rpta = "";
             comando.Parameters.Clear();// si no ponerlo al comienzo de esta funcion
@@ -89,14 +89,8 @@ namespace CapaDatos
 
                 comando.Connection = conexion.AbrirConexion();
                 comando.CommandType = CommandType.StoredProcedure;
-                comando.CommandText = "bsp_alta_usuario";
+                comando.CommandText = "bsp_alta_empleado";
 
-                MySqlParameter pRol = new MySqlParameter();
-                pRol.ParameterName = "@pRol";
-                pRol.MySqlDbType = MySqlDbType.VarChar;
-                pRol.Size = 60;
-                pRol.Value = rol;
-                comando.Parameters.Add(pRol);
 
                 MySqlParameter pNombres = new MySqlParameter();
                 pNombres.ParameterName = "@pNombres";
@@ -146,13 +140,6 @@ namespace CapaDatos
                 pTelefono.Size = 15;
                 pTelefono.Value = Telefono;
                 comando.Parameters.Add(pTelefono);
-
-                MySqlParameter pUsuario = new MySqlParameter();
-                pUsuario.ParameterName = "@pUsuario";
-                pUsuario.MySqlDbType = MySqlDbType.VarChar;
-                pUsuario.Size = 60;
-                pUsuario.Value = Usuario;
-                comando.Parameters.Add(pUsuario);
 
                 MySqlParameter pPassword = new MySqlParameter();
                 pPassword.ParameterName = "@pPassword";
@@ -336,7 +323,7 @@ namespace CapaDatos
         }
 
         // Devuelve un solo usuario
-        public DataTable MostrarUsuario(int IdPersona)
+        public DataTable MostrarEmpleado(int IdPersona)
         {
             comando.Parameters.Clear();
 
@@ -359,20 +346,6 @@ namespace CapaDatos
 
         }
 
-        public DataTable MostrarRoles()
-        {
-            comando.Connection = conexion.AbrirConexion();
-            comando.CommandType = CommandType.StoredProcedure;
-            comando.CommandText = "bsp_dame_roles";
-
-            leer = comando.ExecuteReader();
-            tabla.Load(leer);
-            comando.Parameters.Clear();
-            conexion.CerrarConexion();
-
-            return tabla;
-
-        }
 
 
     }

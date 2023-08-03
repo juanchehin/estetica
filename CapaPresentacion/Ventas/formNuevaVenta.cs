@@ -2,7 +2,6 @@
 using System.Data;
 using System.Windows.Forms;
 using CapaNegocio;
-using CapaPresentacion.Reportes;
 
 namespace CapaPresentacion.Ventas
 {
@@ -11,7 +10,7 @@ namespace CapaPresentacion.Ventas
         CN_Ventas objetoCN = new CN_Ventas();
         CN_Empleados objetoCN_empleado = new CN_Empleados();
 
-        CN_Productos objetoCN_productos = new CN_Productos();
+        CN_Servicios objetoCN_productos = new CN_Servicios();
         CN_Clientes objetoCN_clientes = new CN_Clientes();
 
 #pragma warning disable CS0169 // El campo 'formNuevaVenta.respuesta' nunca se usa
@@ -156,14 +155,14 @@ namespace CapaPresentacion.Ventas
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             panelProductos.Visible = true;
-            this.dataListadoProductosPanel.DataSource = objetoCN_productos.ListarProductos(this.pDesde).Tables[0];
+            //this.dataListadoProductosPanel.DataSource = objetoCN_productos.ListarServicios(this.pDesde).Tables[0];
         }
 
         private void txtBuscar_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
-                this.BuscarProductoPorCodigo();
+                //this.BuscarProductoPorCodigo();
             }
         }
 
@@ -171,29 +170,6 @@ namespace CapaPresentacion.Ventas
         {
             panelClientes.Visible = !panelClientes.Visible;
             MostrarClientes();
-        }
-
-        private void btnBuscarProd_Click(object sender, EventArgs e)
-        {
-            this.BuscarProductoPorCodigo();
-        }
-        // Devuelve los datos de un solo producto. Si no devuelve un mensaje de 'no encontrado'
-        private void BuscarProductoPorCodigo()
-        {
-            this.dtRespuesta = objetoCN_productos.BuscarProductoPorCodigo(this.txtBuscar.Text);
-
-            if (this.dtRespuesta.Rows[0][0].ToString() == "Producto con codigo inexistente")
-            {
-                this.MensajeError("Producto con codigo inexistente");
-                return;
-            }
-
-            // Sacar de 'respuesta' los datos para completar en el form
-            this.IdProducto = Convert.ToInt32(this.dtRespuesta.Rows[0][0]);
-            this.lblNombreProd.Text = this.dtRespuesta.Rows[0][1].ToString();
-            this.lblPrecioUnitario.Text = this.dtRespuesta.Rows[0][3].ToString();
-            
-
         }
 
         private void btnAgregarProducto_Click(object sender, EventArgs e)
@@ -356,11 +332,13 @@ namespace CapaPresentacion.Ventas
 
         private void btnImprimirTicket_Click(object sender, EventArgs e)
         {
+            /*
             formTicket frm = new formTicket(this.IdUsuario, this.IdCliente, this.dataListadoProductos);
             frm.MdiParent = this.MdiParent;
             frm.Show();
 
             this.Close();
+            */
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
@@ -376,15 +354,9 @@ namespace CapaPresentacion.Ventas
 
         private void BuscarProducto()
         {
-            this.dataListadoProductosPanel.DataSource = objetoCN_productos.BuscarProducto(this.txtBuscarProductoPanel.Text);
+            // this.dataListadoProductosPanel.DataSource = objetoCN_productos.BuscarServicio(this.txtBuscarProductoPanel.Text);
         }
 
-        private void btnNuevoProducto_Click(object sender, EventArgs e)
-        {
-            formNuevoEditarProducto frm = new formNuevoEditarProducto(0, true);
-            frm.MdiParent = this.MdiParent;
-            frm.Show();
-        }
 
         private void btnSeleccionarProducto_Click(object sender, EventArgs e)
         {

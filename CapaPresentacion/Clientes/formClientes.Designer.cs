@@ -132,9 +132,9 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(28, 123);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(160, 13);
+            this.label2.Size = new System.Drawing.Size(55, 13);
             this.label2.TabIndex = 17;
-            this.label2.Text = "Busqueda por titular o transporte";
+            this.label2.Text = "Busqueda";
             // 
             // btnRefrescar
             // 
@@ -149,17 +149,17 @@
             // pictureBox2
             // 
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pictureBox2.Image = global::CapaPresentacion.Properties.Resources.segment;
-            this.pictureBox2.Location = new System.Drawing.Point(684, 12);
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(629, 12);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(67, 74);
+            this.pictureBox2.Size = new System.Drawing.Size(122, 74);
             this.pictureBox2.TabIndex = 9;
             this.pictureBox2.TabStop = false;
             // 
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pictureBox1.Image = global::CapaPresentacion.Properties.Resources.logo;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(31, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(55, 57);

@@ -37,11 +37,11 @@
             this.btnAyuda = new System.Windows.Forms.Button();
             this.btnCaja = new System.Windows.Forms.Button();
             this.btnVentas = new System.Windows.Forms.Button();
-            this.btnUsuarios = new System.Windows.Forms.Button();
             this.btnClientes = new System.Windows.Forms.Button();
             this.pbImagenEmpresa = new System.Windows.Forms.PictureBox();
             this.btnCalculadora = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnServicios = new System.Windows.Forms.Button();
+            this.btnEmpleados = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbImagenEmpresa)).BeginInit();
             this.SuspendLayout();
             // 
@@ -117,19 +117,6 @@
             this.btnVentas.UseVisualStyleBackColor = true;
             this.btnVentas.Click += new System.EventHandler(this.btnVentas_Click);
             // 
-            // btnUsuarios
-            // 
-            this.btnUsuarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUsuarios.Image = ((System.Drawing.Image)(resources.GetObject("btnUsuarios.Image")));
-            this.btnUsuarios.Location = new System.Drawing.Point(458, 209);
-            this.btnUsuarios.Name = "btnUsuarios";
-            this.btnUsuarios.Size = new System.Drawing.Size(180, 160);
-            this.btnUsuarios.TabIndex = 9;
-            this.btnUsuarios.Text = "Empleados - F5";
-            this.btnUsuarios.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnUsuarios.UseVisualStyleBackColor = true;
-            this.btnUsuarios.Click += new System.EventHandler(this.btnEmpleados_Click);
-            // 
             // btnClientes
             // 
             this.btnClientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -146,7 +133,7 @@
             // pbImagenEmpresa
             // 
             this.pbImagenEmpresa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pbImagenEmpresa.ErrorImage = global::CapaPresentacion.Properties.Resources.logo;
+            this.pbImagenEmpresa.ErrorImage = null;
             this.pbImagenEmpresa.Image = ((System.Drawing.Image)(resources.GetObject("pbImagenEmpresa.Image")));
             this.pbImagenEmpresa.Location = new System.Drawing.Point(12, 39);
             this.pbImagenEmpresa.Name = "pbImagenEmpresa";
@@ -165,25 +152,41 @@
             this.btnCalculadora.UseVisualStyleBackColor = true;
             this.btnCalculadora.Click += new System.EventHandler(this.btnCalculadora_Click);
             // 
-            // button1
+            // btnServicios
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button1.Location = new System.Drawing.Point(644, 39);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(196, 164);
-            this.button1.TabIndex = 27;
-            this.button1.Text = "Servicios - F3";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnServicios.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnServicios.Image = ((System.Drawing.Image)(resources.GetObject("btnServicios.Image")));
+            this.btnServicios.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnServicios.Location = new System.Drawing.Point(644, 39);
+            this.btnServicios.Name = "btnServicios";
+            this.btnServicios.Size = new System.Drawing.Size(196, 164);
+            this.btnServicios.TabIndex = 27;
+            this.btnServicios.Text = "Servicios - F3";
+            this.btnServicios.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnServicios.UseVisualStyleBackColor = true;
+            this.btnServicios.Click += new System.EventHandler(this.btnServicios_Click);
+            // 
+            // btnEmpleados
+            // 
+            this.btnEmpleados.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEmpleados.Image = ((System.Drawing.Image)(resources.GetObject("btnEmpleados.Image")));
+            this.btnEmpleados.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnEmpleados.Location = new System.Drawing.Point(458, 209);
+            this.btnEmpleados.Name = "btnEmpleados";
+            this.btnEmpleados.Size = new System.Drawing.Size(180, 160);
+            this.btnEmpleados.TabIndex = 28;
+            this.btnEmpleados.Text = "Empleados - F5";
+            this.btnEmpleados.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnEmpleados.UseVisualStyleBackColor = true;
+            this.btnEmpleados.Click += new System.EventHandler(this.btnEmpleados_Click_1);
             // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(858, 457);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnEmpleados);
+            this.Controls.Add(this.btnServicios);
             this.Controls.Add(this.btnCalculadora);
             this.Controls.Add(this.lblUsuario);
             this.Controls.Add(this.label10);
@@ -191,7 +194,6 @@
             this.Controls.Add(this.btnAyuda);
             this.Controls.Add(this.btnCaja);
             this.Controls.Add(this.btnVentas);
-            this.Controls.Add(this.btnUsuarios);
             this.Controls.Add(this.btnClientes);
             this.Controls.Add(this.pbImagenEmpresa);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -219,7 +221,7 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label lblUsuario;
         private System.Windows.Forms.Button btnCalculadora;
-        private System.Windows.Forms.Button btnUsuarios;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnServicios;
+        private System.Windows.Forms.Button btnEmpleados;
     }
 }

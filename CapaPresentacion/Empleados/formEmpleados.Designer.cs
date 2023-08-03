@@ -1,6 +1,6 @@
 ﻿namespace CapaPresentacion
 {
-    partial class formUsuarios
+    partial class formEmpleados
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formUsuarios));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formServicios));
             this.label1 = new System.Windows.Forms.Label();
             this.lblTotalEmpleados = new System.Windows.Forms.Label();
             this.dataListadoEmpleados = new System.Windows.Forms.DataGridView();
@@ -52,9 +52,9 @@
             this.label1.Font = new System.Drawing.Font("Consolas", 54.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(222, -3);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(357, 85);
+            this.label1.Size = new System.Drawing.Size(397, 85);
             this.label1.TabIndex = 4;
-            this.label1.Text = "Usuarios";
+            this.label1.Text = "Empleados";
             // 
             // lblTotalEmpleados
             // 
@@ -123,7 +123,7 @@
             this.btnNuevoEmpleado.Name = "btnNuevoEmpleado";
             this.btnNuevoEmpleado.Size = new System.Drawing.Size(139, 23);
             this.btnNuevoEmpleado.TabIndex = 24;
-            this.btnNuevoEmpleado.Text = "Nuevo usuario";
+            this.btnNuevoEmpleado.Text = "Nuevo empleado";
             this.btnNuevoEmpleado.UseVisualStyleBackColor = true;
             this.btnNuevoEmpleado.Click += new System.EventHandler(this.btnNuevoEmpleado_Click);
             // 
@@ -150,7 +150,7 @@
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pictureBox1.Image = global::CapaPresentacion.Properties.Resources.logo;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(16, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(55, 57);
@@ -168,7 +168,7 @@
             this.btnRefrescar.UseVisualStyleBackColor = true;
             this.btnRefrescar.Click += new System.EventHandler(this.btnRefrescar_Click);
             // 
-            // formUsuarios
+            // formEmpleados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -186,9 +186,9 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "formUsuarios";
+            this.Name = "formEmpleados";
             this.Text = "                                                                                 " +
-    "                    ..:: Usuarios ::..";
+    "                    ..:: Empleados ::..";
             this.Load += new System.EventHandler(this.formEmpleados_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataListadoEmpleados)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

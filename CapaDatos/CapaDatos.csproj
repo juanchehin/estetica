@@ -129,7 +129,7 @@
     <Compile Include="CD_Configuraciones.cs" />
     <Compile Include="CD_Empleados.cs" />
     <Compile Include="CD_Productos.cs" />
-    <Compile Include="CD_Trabajos.cs" />
+    <Compile Include="CD_Servicios.cs" />
     <Compile Include="CD_Usuarios.cs" />
     <Compile Include="CD_Ventas.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -2,10 +2,6 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using CapaNegocio;
@@ -30,15 +26,13 @@ namespace CapaPresentacion
         private string Direccion;
         private string Telefono;
         private string Email;
-        private string Usuario;
+        private string Empleado;
         private DateTime FechaNac;
 
-        public formNuevoEditarEmpleado(int parametro, bool IsNuevoEditar)
+        public formNuevoEditarEmpleado(bool IsNuevoEditar)
         {
             InitializeComponent();
-            this.IdEmpleado = parametro;
             this.bandera = IsNuevoEditar;
-            this.CargarRolesComboBox();
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -59,7 +53,7 @@ namespace CapaPresentacion
                 Direccion = Convert.ToString(row["Direccion"]);
                 Telefono = Convert.ToString(row["Telefono"]);
                 Email = Convert.ToString(row["Email"]);
-                Usuario = Convert.ToString(row["Usuario"]);
+                Empleado = Convert.ToString(row["Empleado"]);
 
                 if (row["Fecha de nacimiento"] == DBNull.Value)
                 {
@@ -79,7 +73,6 @@ namespace CapaPresentacion
                 txtDireccion.Text = Direccion;
                 txtTelefono.Text = Telefono;
                 txtEmail.Text = Email;
-                txtUsuario.Text = Usuario;
             }
 
             //this.CargarRolesComboBox();
@@ -103,9 +96,9 @@ namespace CapaPresentacion
                         var dia = this.dtFechaNac.Value.Day;
                         var fechaNac = año + "-" + mes + "-" + dia;
 
-                        rpta = CN_Empleados.InsertarUsuario(this.txtNombre.Text.Trim(), this.txtApellidos.Text.Trim(), this.txtDNI.Text.Trim(),
-                            this.txtDireccion.Text.Trim(),this.txtTelefono.Text.Trim(), fechaNac,this.txtUsuario.Text.Trim(),txtPassword.Text.Trim()
-                            ,txtEmail.Text.Trim(),cbRoles.Text.Trim());
+                        rpta = CN_Empleados.InsertarEmpleado(this.txtNombre.Text.Trim(), this.txtApellidos.Text.Trim(), this.txtDNI.Text.Trim(),
+                            this.txtDireccion.Text.Trim(),this.txtTelefono.Text.Trim(), fechaNac,txtPassword.Text.Trim()
+                            ,txtEmail.Text.Trim());
                     }
                     else
                     {
@@ -143,18 +136,6 @@ namespace CapaPresentacion
             }
             
         }
-
-        private void CargarRolesComboBox()
-        {
-            DataTable roles;
-            roles = objetoCN.MostrarRoles();
-
-            cbRoles.DataSource = roles;
-
-            cbRoles.DisplayMember = "Rol";
-            cbRoles.ValueMember = "IdRol";
-        }
-
 
 
         private void MensajeOk(string mensaje)

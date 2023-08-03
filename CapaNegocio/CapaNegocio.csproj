@@ -84,7 +84,7 @@
     <Compile Include="CN_Clientes.cs" />
     <Compile Include="CN_Configuraciones.cs" />
     <Compile Include="CN_Empleados.cs" />
-    <Compile Include="CN_Productos.cs" />
+    <Compile Include="CN_Servicios.cs" />
     <Compile Include="CN_Usuarios.cs" />
     <Compile Include="CN_Ventas.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

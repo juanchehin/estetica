@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formNuevoEditarEmpleado));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formNuevoEditarServicio));
             this.lblEditarNuevo = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
@@ -39,8 +39,6 @@
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
-            this.cbRoles = new System.Windows.Forms.ComboBox();
-            this.label8 = new System.Windows.Forms.Label();
             this.dtFechaNac = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
             this.txtTelefono = new System.Windows.Forms.TextBox();
@@ -77,9 +75,9 @@
             this.label6.Font = new System.Drawing.Font("Consolas", 55F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(301, 13);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(324, 87);
+            this.label6.Size = new System.Drawing.Size(365, 87);
             this.label6.TabIndex = 15;
-            this.label6.Text = "Usuario";
+            this.label6.Text = "Empleado";
             // 
             // btnCancelar
             // 
@@ -99,8 +97,6 @@
             this.groupBox1.Controls.Add(this.txtUsuario);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.txtEmail);
-            this.groupBox1.Controls.Add(this.cbRoles);
-            this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.dtFechaNac);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.txtTelefono);
@@ -120,7 +116,7 @@
             this.groupBox1.Size = new System.Drawing.Size(728, 326);
             this.groupBox1.TabIndex = 14;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Datos Usuario";
+            this.groupBox1.Text = "Datos Empleado";
             // 
             // label11
             // 
@@ -169,23 +165,6 @@
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(196, 20);
             this.txtEmail.TabIndex = 9;
-            // 
-            // cbRoles
-            // 
-            this.cbRoles.FormattingEnabled = true;
-            this.cbRoles.Location = new System.Drawing.Point(508, 254);
-            this.cbRoles.Name = "cbRoles";
-            this.cbRoles.Size = new System.Drawing.Size(196, 21);
-            this.cbRoles.TabIndex = 10;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(469, 254);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(29, 13);
-            this.label8.TabIndex = 27;
-            this.label8.Text = "Rol :";
             // 
             // dtFechaNac
             // 
@@ -311,7 +290,7 @@
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pictureBox1.Image = global::CapaPresentacion.Properties.Resources.logo;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(12, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(55, 57);
@@ -335,7 +314,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "formNuevoEditarEmpleado";
             this.Text = "                                                                                 " +
-    "        ..:: Usuario ::..";
+    "        ..:: Empleado ::..";
             this.Load += new System.EventHandler(this.formNuevoEditarEmpleado_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -366,8 +345,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtTelefono;
         private System.Windows.Forms.DateTimePicker dtFechaNac;
-        private System.Windows.Forms.ComboBox cbRoles;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Label label10;

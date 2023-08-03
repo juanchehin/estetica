@@ -4,7 +4,7 @@ using CapaNegocio;
 
 namespace CapaPresentacion
 {
-    public partial class formUsuarios : Form
+    public partial class formEmpleados : Form
     {
         CN_Empleados objetoCN = new CN_Empleados();
 
@@ -15,7 +15,7 @@ namespace CapaPresentacion
 #pragma warning disable CS0414 // El campo 'formUsuarios.IsEditar' está asignado pero su valor nunca se usa
         private bool IsEditar = false;
 #pragma warning restore CS0414 // El campo 'formUsuarios.IsEditar' está asignado pero su valor nunca se usa
-        public formUsuarios()
+        public formEmpleados()
         {
             InitializeComponent();
         }
@@ -81,7 +81,7 @@ namespace CapaPresentacion
 
         private void btnNuevoEmpleado_Click(object sender, EventArgs e)
         {
-            formNuevoEditarEmpleado frm = new formNuevoEditarEmpleado(this.IdEmpleado, true);
+            formNuevoEditarEmpleado frm = new formNuevoEditarEmpleado(true);
             frm.MdiParent = this.MdiParent;
             frm.Show();
             this.Close();
@@ -89,7 +89,7 @@ namespace CapaPresentacion
 
         private void botonEditarListado_Click(object sender, EventArgs e)
         {
-            formNuevoEditarEmpleado frm = new formNuevoEditarEmpleado(this.IdEmpleado, false);
+            formNuevoEditarEmpleado frm = new formNuevoEditarEmpleado(false);
             frm.MdiParent = this.MdiParent;
             frm.Show();
             this.Close();
