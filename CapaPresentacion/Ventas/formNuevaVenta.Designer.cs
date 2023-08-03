@@ -32,7 +32,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnQuitar = new System.Windows.Forms.Button();
-            this.dataListadoProductos = new System.Windows.Forms.DataGridView();
+            this.dataListadoServicios = new System.Windows.Forms.DataGridView();
             this.lblTotal = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -88,7 +88,7 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataListadoProductos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataListadoServicios)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -119,7 +119,7 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.btnQuitar);
-            this.groupBox1.Controls.Add(this.dataListadoProductos);
+            this.groupBox1.Controls.Add(this.dataListadoServicios);
             this.groupBox1.Controls.Add(this.lblTotal);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label9);
@@ -140,18 +140,18 @@
             this.btnQuitar.UseVisualStyleBackColor = true;
             this.btnQuitar.Click += new System.EventHandler(this.btnQuitar_Click);
             // 
-            // dataListadoProductos
+            // dataListadoServicios
             // 
-            this.dataListadoProductos.AllowUserToAddRows = false;
-            this.dataListadoProductos.AllowUserToDeleteRows = false;
-            this.dataListadoProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataListadoProductos.Location = new System.Drawing.Point(6, 61);
-            this.dataListadoProductos.MultiSelect = false;
-            this.dataListadoProductos.Name = "dataListadoProductos";
-            this.dataListadoProductos.ReadOnly = true;
-            this.dataListadoProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataListadoProductos.Size = new System.Drawing.Size(823, 275);
-            this.dataListadoProductos.TabIndex = 8;
+            this.dataListadoServicios.AllowUserToAddRows = false;
+            this.dataListadoServicios.AllowUserToDeleteRows = false;
+            this.dataListadoServicios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataListadoServicios.Location = new System.Drawing.Point(6, 61);
+            this.dataListadoServicios.MultiSelect = false;
+            this.dataListadoServicios.Name = "dataListadoServicios";
+            this.dataListadoServicios.ReadOnly = true;
+            this.dataListadoServicios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataListadoServicios.Size = new System.Drawing.Size(823, 275);
+            this.dataListadoServicios.TabIndex = 8;
             // 
             // lblTotal
             // 
@@ -286,6 +286,7 @@
             this.groupBox2.Controls.Add(this.btnBuscarProd);
             this.groupBox2.Controls.Add(this.lblPrecioUnitario);
             this.groupBox2.Controls.Add(this.lblNombreProd);
+            this.groupBox2.Controls.Add(this.panelClientes);
             this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.txtBuscar);
@@ -325,7 +326,6 @@
             this.btnBuscarProd.Size = new System.Drawing.Size(35, 34);
             this.btnBuscarProd.TabIndex = 49;
             this.btnBuscarProd.UseVisualStyleBackColor = true;
-            //this.btnBuscarProd.Click += new System.EventHandler(this.btnBuscarProd_Click);
             // 
             // lblPrecioUnitario
             // 
@@ -457,14 +457,13 @@
             // panelClientes
             // 
             this.panelClientes.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelClientes.Controls.Add(this.panelProductos);
             this.panelClientes.Controls.Add(this.pictureBox3);
             this.panelClientes.Controls.Add(this.label6);
             this.panelClientes.Controls.Add(this.pictureBox4);
             this.panelClientes.Controls.Add(this.btnAgregarCliente);
             this.panelClientes.Controls.Add(this.button1);
             this.panelClientes.Controls.Add(this.dataListadoClientes);
-            this.panelClientes.Location = new System.Drawing.Point(234, 35);
+            this.panelClientes.Location = new System.Drawing.Point(159, 289);
             this.panelClientes.Name = "panelClientes";
             this.panelClientes.Size = new System.Drawing.Size(851, 484);
             this.panelClientes.TabIndex = 50;
@@ -482,7 +481,7 @@
             this.panelProductos.Controls.Add(this.pictureBox6);
             this.panelProductos.Controls.Add(this.btnSeleccionarProducto);
             this.panelProductos.Controls.Add(this.dataListadoProductosPanel);
-            this.panelProductos.Location = new System.Drawing.Point(58, 27);
+            this.panelProductos.Location = new System.Drawing.Point(155, 437);
             this.panelProductos.Name = "panelProductos";
             this.panelProductos.Size = new System.Drawing.Size(851, 484);
             this.panelProductos.TabIndex = 63;
@@ -709,11 +708,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1202, 606);
+            this.Controls.Add(this.panelProductos);
             this.Controls.Add(this.btnSeleccionarEmpleado);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.panelVuelto);
-            this.Controls.Add(this.panelClientes);
             this.Controls.Add(this.lblUsuario);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.btnRegistrar);
@@ -732,7 +731,7 @@
     "                                                               ..:: Ventas ::..";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataListadoProductos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataListadoServicios)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -770,7 +769,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.TextBox txtBuscar;
-        private System.Windows.Forms.DataGridView dataListadoProductos;
+        private System.Windows.Forms.DataGridView dataListadoServicios;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnRegistrar;
         private System.Windows.Forms.Label label2;

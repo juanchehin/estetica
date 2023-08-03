@@ -67,13 +67,12 @@ namespace CapaPresentacion.Ventas
             this.Usuario = usuario;
             // Creo las columnas de el listado de ventas
 
-            this.dataListadoProductos.Columns.Add("IdProducto", "IdProducto");
-            this.dataListadoProductos.Columns.Add("Codigo","Codigo");
-            this.dataListadoProductos.Columns.Add("Producto", "Producto");
-            this.dataListadoProductos.Columns.Add("Cantidad", "Cantidad");
-            this.dataListadoProductos.Columns.Add("PrecioUnitario", "Precio unitario");
+            this.dataListadoServicios.Columns.Add("id_servicio", "id_servicio");
+            this.dataListadoServicios.Columns.Add("servicio", "servicio");
+            this.dataListadoServicios.Columns.Add("cantidad", "cantidad");
+            this.dataListadoServicios.Columns.Add("PrecioUnitario", "Precio unitario");
 
-            this.dataListadoProductos.Columns["IdProducto"].Visible = false;   // Oculto "IdProducto"
+            this.dataListadoServicios.Columns["id_servicio"].Visible = false;   // Oculto "IdProducto"
 
             this.lblUsuario.Text = usuario;
             this.IdUsuario = IdUsuario;
@@ -88,7 +87,7 @@ namespace CapaPresentacion.Ventas
 
             cbTiposPago.DataSource = tiposPagos;
 
-            cbTiposPago.DisplayMember = "TipoPago";
+            cbTiposPago.DisplayMember = "tipo_pago";
         }
 
         private void btnRegistrar_Click(object sender, EventArgs e)
@@ -98,7 +97,7 @@ namespace CapaPresentacion.Ventas
             productos.Columns.Add("Cantidad", typeof(System.Int32));
 
 
-            foreach (DataGridViewRow rowGrid in this.dataListadoProductos.Rows)
+            foreach (DataGridViewRow rowGrid in this.dataListadoServicios.Rows)
             {
                 DataRow row = productos.NewRow();
                 row["IdProducto"] = Convert.ToDouble(rowGrid.Cells[0].Value);
@@ -110,7 +109,7 @@ namespace CapaPresentacion.Ventas
             try
             {
                 string rpta = "";
-                if (this.dataListadoProductos.CurrentRow == null)
+                if (this.dataListadoServicios.CurrentRow == null)
                 {
                     MensajeError("Productos inexistentes");
                     return;
@@ -183,18 +182,18 @@ namespace CapaPresentacion.Ventas
             decimal dec = decimal.Parse(this.lblPrecioUnitario.Text);
             bool bandera = false;
 
-            if (dataListadoProductos.Rows.Count == 0)
+            if (dataListadoServicios.Rows.Count == 0)
             {
                 // Si no cargo la cantidad, cargo por defecto 1
                 if (String.IsNullOrEmpty(this.txtCantidad.Text))
                 {
-                    this.dataListadoProductos.Rows.Insert(this.dataListadoProductos.RowCount, this.IdProducto, this.txtBuscar.Text, this.lblNombreProd.Text, 1, this.lblPrecioUnitario.Text);
+                    this.dataListadoServicios.Rows.Insert(this.dataListadoServicios.RowCount, this.IdProducto, this.txtBuscar.Text, this.lblNombreProd.Text, 1, this.lblPrecioUnitario.Text);
                     this.precioTotal += dec;
                 }
                 else
                 {
                     decimal cant = decimal.Parse(this.txtCantidad.Text);
-                    this.dataListadoProductos.Rows.Insert(this.dataListadoProductos.RowCount, this.IdProducto, this.txtBuscar.Text, this.lblNombreProd.Text, this.txtCantidad.Text, this.lblPrecioUnitario.Text);
+                    this.dataListadoServicios.Rows.Insert(this.dataListadoServicios.RowCount, this.IdProducto, this.txtBuscar.Text, this.lblNombreProd.Text, this.txtCantidad.Text, this.lblPrecioUnitario.Text);
                     this.precioTotal += dec * cant;
                 }
             }
@@ -202,7 +201,7 @@ namespace CapaPresentacion.Ventas
             {
                 bandera = false;
                 // Chequeo si ya existe el producto en el listado para poder aumentar la cantidad
-                foreach (DataGridViewRow row in dataListadoProductos.Rows)
+                foreach (DataGridViewRow row in dataListadoServicios.Rows)
                 {
                         if (Convert.ToInt32(row.Cells[0].Value) == this.IdProducto)
                         {
@@ -227,13 +226,13 @@ namespace CapaPresentacion.Ventas
                     // Si no cargo la cantidad, cargo por defecto 1
                     if (String.IsNullOrEmpty(this.txtCantidad.Text))
                     {
-                        this.dataListadoProductos.Rows.Insert(this.dataListadoProductos.RowCount, this.IdProducto, this.txtBuscar.Text, this.lblNombreProd.Text, 1, this.lblPrecioUnitario.Text);
+                        this.dataListadoServicios.Rows.Insert(this.dataListadoServicios.RowCount, this.IdProducto, this.txtBuscar.Text, this.lblNombreProd.Text, 1, this.lblPrecioUnitario.Text);
                         this.precioTotal += dec;
                     }
                     else
                     {
                         decimal cant = decimal.Parse(this.txtCantidad.Text);
-                        this.dataListadoProductos.Rows.Insert(this.dataListadoProductos.RowCount, this.IdProducto, this.txtBuscar.Text, this.lblNombreProd.Text, this.txtCantidad.Text, this.lblPrecioUnitario.Text);
+                        this.dataListadoServicios.Rows.Insert(this.dataListadoServicios.RowCount, this.IdProducto, this.txtBuscar.Text, this.lblNombreProd.Text, this.txtCantidad.Text, this.lblPrecioUnitario.Text);
                         this.precioTotal += dec * cant;
                     }
                 }
@@ -244,7 +243,7 @@ namespace CapaPresentacion.Ventas
 
         private void btnQuitar_Click(object sender, EventArgs e)
         {
-            if (this.dataListadoProductos.CurrentRow == null)
+            if (this.dataListadoServicios.CurrentRow == null)
             {
                 MensajeError("Productos inexistentes");
                 return;
@@ -256,12 +255,12 @@ namespace CapaPresentacion.Ventas
 
                 if (Opcion == DialogResult.OK)
                 {
-                    foreach (DataGridViewRow item in this.dataListadoProductos.SelectedRows)
+                    foreach (DataGridViewRow item in this.dataListadoServicios.SelectedRows)
                     {
-                        decimal precio = decimal.Parse(this.dataListadoProductos.Rows[item.Index].Cells["PrecioUnitario"].Value.ToString());
-                        int cantidad = int.Parse(this.dataListadoProductos.Rows[item.Index].Cells["Cantidad"].Value.ToString());
+                        decimal precio = decimal.Parse(this.dataListadoServicios.Rows[item.Index].Cells["PrecioUnitario"].Value.ToString());
+                        int cantidad = int.Parse(this.dataListadoServicios.Rows[item.Index].Cells["Cantidad"].Value.ToString());
 
-                        this.dataListadoProductos.Rows.RemoveAt(item.Index);
+                        this.dataListadoServicios.Rows.RemoveAt(item.Index);
 
                         this.precioTotal = this.precioTotal - (precio * cantidad);
                         this.lblTotal.Text = precioTotal.ToString();
@@ -367,10 +366,10 @@ namespace CapaPresentacion.Ventas
                     int selectedrowindex = dataListadoProductosPanel.SelectedCells[0].RowIndex;
                     DataGridViewRow selectedRow = dataListadoProductosPanel.Rows[selectedrowindex];
 
-                    this.IdProducto = Convert.ToInt32(selectedRow.Cells["IdProducto"].Value);
-                    this.lblNombreProd.Text = selectedRow.Cells["Producto"].Value.ToString();
-                    this.lblPrecioUnitario.Text = selectedRow.Cells["PrecioVenta"].Value.ToString();
-                    this.txtBuscar.Text = selectedRow.Cells["Codigo"].Value.ToString();
+                    this.IdProducto = Convert.ToInt32(selectedRow.Cells["id_servicio"].Value);
+                    this.lblNombreProd.Text = selectedRow.Cells["servicio"].Value.ToString();
+                    this.lblPrecioUnitario.Text = selectedRow.Cells["precio"].Value.ToString();
+                    //this.txtBuscar.Text = selectedRow.Cells["Codigo"].Value.ToString();
                 }
             }
             catch (Exception ex)
