@@ -45,6 +45,8 @@ namespace CapaPresentacion.Ventas
         public string Usuario;
 #pragma warning disable CS0169 // El campo 'formNuevaVenta.tipoPago' nunca se usa
         private string tipoPago;
+
+        DataTable servicios;
 #pragma warning restore CS0169 // El campo 'formNuevaVenta.tipoPago' nunca se usa
         private int pDesde = 0;
 
@@ -100,27 +102,27 @@ namespace CapaPresentacion.Ventas
 
         private void llenarCBServicios()
         {
-            tiposPagos = objetoCN_servicios.ListarServicios(0);
+            servicios = objetoCN_servicios.ListarServicios(0);
 
-            cbServicios.DataSource = tiposPagos;
+            cbServicios.DataSource = servicios;
 
             cbServicios.DisplayMember = "servicio";
         }
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
-            DataTable productos = new DataTable();
-            productos.Columns.Add("IdProducto", typeof(System.Int32));
-            productos.Columns.Add("Cantidad", typeof(System.Int32));
+            DataTable servicios = new DataTable();
+            servicios.Columns.Add("id_servicio", typeof(System.Int32));
+            servicios.Columns.Add("cantidad", typeof(System.Int32));
 
 
             foreach (DataGridViewRow rowGrid in this.dataListadoServicios.Rows)
             {
-                DataRow row = productos.NewRow();
-                row["IdProducto"] = Convert.ToDouble(rowGrid.Cells[0].Value);
-                row["Cantidad"] = rowGrid.Cells[3].Value;
+                DataRow row = servicios.NewRow();
+                row["id_servicio"] = Convert.ToDouble(rowGrid.Cells[0].Value);
+                row["cantidad"] = rowGrid.Cells[2].Value;
 
-                productos.Rows.Add(row);
+                servicios.Rows.Add(row);
             }
 
             try
@@ -128,16 +130,18 @@ namespace CapaPresentacion.Ventas
                 string rpta = "";
                 if (this.dataListadoServicios.CurrentRow == null)
                 {
-                    MensajeError("Productos inexistentes");
+                    MensajeError("Servicios inexistentes");
                     return;
                 }
 
-                rpta = CN_Ventas.AltaVenta(this.IdUsuario,this.IdCliente, cbTiposPago.Text, productos, Convert.ToDecimal(this.precioTotal.ToString()));
+                rpta = CN_Ventas.AltaVenta(this.IdCliente,this.IdEmpleado, cbTiposPago.Text, servicios, Convert.ToDecimal(this.precioTotal.ToString()));
 
                 if (rpta.Equals("Ok"))
                 {
-                    panelVuelto.Visible = true;
-                    this.lblImporte.Text = this.precioTotal.ToString();
+                    this.MensajeOk("Venta cargada");
+                    this.btnCancelar.PerformClick();
+                    //panelVuelto.Visible = true;
+                    //this.lblImporte.Text = this.precioTotal.ToString();
 
                 }
                 else
@@ -370,13 +374,13 @@ namespace CapaPresentacion.Ventas
                 // Si no cargo la cantidad, cargo por defecto 1
                 if (String.IsNullOrEmpty(this.txtCantidad.Text))
                 {
-                    this.dataListadoServicios.Rows.Insert(this.dataListadoServicios.RowCount, this.IdServicio, cbServicios.SelectedItem.ToString(), 1, this.lblPrecioUnitario.Text);
+                    this.dataListadoServicios.Rows.Insert(this.dataListadoServicios.RowCount, this.IdServicio, cbServicios.Text, 1, this.lblPrecioUnitario_.Text);
                     this.precioTotal += dec;
                 }
                 else
                 {
                     decimal cant = decimal.Parse(this.txtCantidad.Text);
-                    this.dataListadoServicios.Rows.Insert(this.dataListadoServicios.RowCount, this.IdServicio, cbServicios.SelectedItem.ToString(), this.txtCantidad.Text, this.lblPrecioUnitario.Text);
+                    this.dataListadoServicios.Rows.Insert(this.dataListadoServicios.RowCount, this.IdServicio, cbServicios.Text, this.txtCantidad.Text, this.lblPrecioUnitario_.Text);
                     this.precioTotal += dec * cant;
                 }
             }
@@ -392,13 +396,13 @@ namespace CapaPresentacion.Ventas
                         // Si no cargo la cantidad, cargo por defecto 1
                         if (String.IsNullOrEmpty(this.txtCantidad.Text))
                         {
-                            row.Cells["Cantidad"].Value = 1 + Convert.ToInt32(row.Cells[3].Value);
+                            row.Cells["cantidad"].Value = 1 + Convert.ToInt32(row.Cells[2].Value);
                             this.precioTotal += dec;
                         }
                         else
                         {
                             decimal cant = decimal.Parse(this.txtCantidad.Text);
-                            row.Cells["Cantidad"].Value = 1 + Convert.ToInt32(row.Cells[3].Value);
+                            row.Cells["cantidad"].Value = 1 + Convert.ToInt32(row.Cells[2].Value);
                             this.precioTotal += dec * cant;
                         }
                         break;
@@ -409,13 +413,13 @@ namespace CapaPresentacion.Ventas
                     // Si no cargo la cantidad, cargo por defecto 1
                     if (String.IsNullOrEmpty(this.txtCantidad.Text))
                     {
-                        this.dataListadoServicios.Rows.Insert(this.dataListadoServicios.RowCount, this.IdServicio, this.lblNombreProd.Text, 1, this.lblPrecioUnitario.Text);
+                        this.dataListadoServicios.Rows.Insert(this.dataListadoServicios.RowCount, this.IdServicio, cbServicios.Text, 1, this.lblPrecioUnitario_.Text);
                         this.precioTotal += dec;
                     }
                     else
                     {
                         decimal cant = decimal.Parse(this.txtCantidad.Text);
-                        this.dataListadoServicios.Rows.Insert(this.dataListadoServicios.RowCount, this.IdServicio, this.lblNombreProd.Text, this.txtCantidad.Text, this.lblPrecioUnitario.Text);
+                        this.dataListadoServicios.Rows.Insert(this.dataListadoServicios.RowCount, this.IdServicio, cbServicios.Text, this.txtCantidad.Text, this.lblPrecioUnitario_.Text);
                         this.precioTotal += dec * cant;
                     }
                 }
@@ -426,10 +430,29 @@ namespace CapaPresentacion.Ventas
 
         private void cbServicios_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string valorSeleccionado = cbServicios.Text;
+            string valorBuscado = cbServicios.Text;
+
+
+            // Valor que deseas buscar
+            // string valorBuscado = valorSeleccionado;
+
+            // Filtrar las filas que coinciden con el valor buscado
+            DataRow[] filasEncontradas = servicios.Select("servicio = '" + valorBuscado + "'");
+
+            // Si encontró alguna fila que coincida, puedes acceder a los datos
+            if (filasEncontradas.Length > 0)
+            {
+                foreach (DataRow fila in filasEncontradas)
+                {
+                    // Acceder a los valores de otras columnas de la fila
+                    this.IdServicio = Convert.ToInt32(fila["id_servicio"]);
+                    this.lblPrecioUnitario_.Text = fila["precio"].ToString();
+                }
+            }
+
 
             // obtener precio del servicio
-            this.lblPrecioUnitario_.Text = objetoCN_servicios.dame_precio_servicio(valorSeleccionado);
+            // this.lblPrecioUnitario_.Text = objetoCN_servicios.dame_precio_servicio(valorSeleccionado);
 
 
         }

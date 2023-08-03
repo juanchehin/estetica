@@ -85,7 +85,7 @@ namespace CapaDatos
 
         //Métodos
         //Insertar
-        public string AltaVenta(int pIdUsuario, int pIdCliente,string pTipoPago, DataTable pListadoProductos,decimal pMontoTotal)
+        public string AltaVenta(int pIdCliente, int pIdEmpleado, string pTipoPago, DataTable pListadoServicios,decimal pMontoTotal)
         {
             int idVenta;
             string rpta = "";
@@ -95,17 +95,18 @@ namespace CapaDatos
                 comando.CommandType = CommandType.StoredProcedure;
                 comando.CommandText = "bsp_alta_venta";
 
-                MySqlParameter IdUsuario = new MySqlParameter();
-                IdUsuario.ParameterName = "@pIdUsuario";
-                IdUsuario.MySqlDbType = MySqlDbType.Int32;
-                IdUsuario.Value = pIdUsuario;   // IdEmpleado / cajero
-                comando.Parameters.Add(IdUsuario);
 
                 MySqlParameter IdCliente = new MySqlParameter();
                 IdCliente.ParameterName = "@pIdCliente";
                 IdCliente.MySqlDbType = MySqlDbType.Int32;
                 IdCliente.Value = pIdCliente;
                 comando.Parameters.Add(IdCliente);
+
+                MySqlParameter IdEmpleado = new MySqlParameter();
+                IdEmpleado.ParameterName = "@pIdEmpleado";
+                IdEmpleado.MySqlDbType = MySqlDbType.Int32;
+                IdEmpleado.Value = pIdEmpleado;
+                comando.Parameters.Add(IdEmpleado);
 
                 MySqlParameter TipoPago = new MySqlParameter();
                 TipoPago.ParameterName = "@pTipoPago";
@@ -143,7 +144,7 @@ namespace CapaDatos
                 comando.CommandType = CommandType.StoredProcedure;
                 comando.CommandText = "bsp_alta_linea_venta";
 
-                for (int curRow = 0; curRow < pListadoProductos.Rows.Count; curRow++)
+                for (int curRow = 0; curRow < pListadoServicios.Rows.Count; curRow++)
                 {
                     MySqlParameter pIdVenta = new MySqlParameter();
                     pIdVenta.ParameterName = "@pIdVenta";
@@ -151,16 +152,16 @@ namespace CapaDatos
                     pIdVenta.Value = idVenta;
                     comando.Parameters.Add(pIdVenta);
 
-                    MySqlParameter pIdEmpleado = new MySqlParameter();
-                    pIdEmpleado.ParameterName = "@pIdProducto";
-                    pIdEmpleado.MySqlDbType = MySqlDbType.Int32;
-                    pIdEmpleado.Value = pListadoProductos.Rows[curRow][0];
-                    comando.Parameters.Add(pIdEmpleado);
+                    MySqlParameter pIdServicio = new MySqlParameter();
+                    pIdServicio.ParameterName = "@pIdServicio";
+                    pIdServicio.MySqlDbType = MySqlDbType.Int32;
+                    pIdServicio.Value = pListadoServicios.Rows[curRow][0];
+                    comando.Parameters.Add(pIdServicio);
 
                     MySqlParameter pCantidad = new MySqlParameter();
                     pCantidad.ParameterName = "@pCantidad";
                     pCantidad.MySqlDbType = MySqlDbType.Int32;  // Ver por que esta definido como string
-                    pCantidad.Value = pListadoProductos.Rows[curRow][1];
+                    pCantidad.Value = pListadoServicios.Rows[curRow][1];
                     comando.Parameters.Add(pCantidad);
 
                     rpta = (string)comando.ExecuteScalar();//  == "Ok";//  : "NO se Ingreso el Registro";

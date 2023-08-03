@@ -15,11 +15,11 @@ namespace CapaNegocio
 
         //Método Insertar que llama al método Insertar de la clase
         //de la CapaDatos
-        public static string AltaVenta(int pIdUsuario, int pIdCliente,string tipoPago,DataTable pListadoProductos,decimal pMontoTotal)
+        public static string AltaVenta(int pIdCliente, int pIdEmpleado, string tipoPago,DataTable pListadoServicios,decimal pMontoTotal)
         {
             CD_Ventas Obj = new CD_Ventas();
 
-            return Obj.AltaVenta(pIdUsuario,pIdCliente,tipoPago, pListadoProductos, pMontoTotal);
+            return Obj.AltaVenta(pIdCliente, pIdEmpleado,tipoPago, pListadoServicios, pMontoTotal);
             //return null;
         }
 
