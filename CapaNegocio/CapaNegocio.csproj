@@ -82,12 +82,9 @@
   <ItemGroup>
     <Compile Include="CN_Caja.cs" />
     <Compile Include="CN_Clientes.cs" />
-    <Compile Include="CN_Compras.cs" />
     <Compile Include="CN_Configuraciones.cs" />
     <Compile Include="CN_Empleados.cs" />
-    <Compile Include="CN_Estadisticas.cs" />
     <Compile Include="CN_Productos.cs" />
-    <Compile Include="CN_Proveedores.cs" />
     <Compile Include="CN_Usuarios.cs" />
     <Compile Include="CN_Ventas.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

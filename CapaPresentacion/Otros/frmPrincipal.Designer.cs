@@ -70,11 +70,11 @@
             this.btnConfiguracion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfiguracion.Image = ((System.Drawing.Image)(resources.GetObject("btnConfiguracion.Image")));
             this.btnConfiguracion.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnConfiguracion.Location = new System.Drawing.Point(644, 237);
+            this.btnConfiguracion.Location = new System.Drawing.Point(644, 209);
             this.btnConfiguracion.Name = "btnConfiguracion";
             this.btnConfiguracion.Size = new System.Drawing.Size(196, 160);
             this.btnConfiguracion.TabIndex = 7;
-            this.btnConfiguracion.Text = "Configuraciones - F5";
+            this.btnConfiguracion.Text = "Configuraciones - F6";
             this.btnConfiguracion.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnConfiguracion.UseVisualStyleBackColor = true;
             this.btnConfiguracion.Click += new System.EventHandler(this.btnConfiguracion_Click);
@@ -82,7 +82,7 @@
             // btnAyuda
             // 
             this.btnAyuda.Image = global::CapaPresentacion.Properties.Resources.info;
-            this.btnAyuda.Location = new System.Drawing.Point(806, 403);
+            this.btnAyuda.Location = new System.Drawing.Point(795, 403);
             this.btnAyuda.Name = "btnAyuda";
             this.btnAyuda.Size = new System.Drawing.Size(45, 42);
             this.btnAyuda.TabIndex = 19;
@@ -95,11 +95,11 @@
             this.btnCaja.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCaja.Image = ((System.Drawing.Image)(resources.GetObject("btnCaja.Image")));
             this.btnCaja.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnCaja.Location = new System.Drawing.Point(254, 237);
+            this.btnCaja.Location = new System.Drawing.Point(254, 209);
             this.btnCaja.Name = "btnCaja";
             this.btnCaja.Size = new System.Drawing.Size(198, 160);
             this.btnCaja.TabIndex = 2;
-            this.btnCaja.Text = "Caja - F6";
+            this.btnCaja.Text = "Caja - F4";
             this.btnCaja.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnCaja.UseVisualStyleBackColor = true;
             this.btnCaja.Click += new System.EventHandler(this.btnCaja_Click);
@@ -108,11 +108,11 @@
             // 
             this.btnVentas.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVentas.Image = ((System.Drawing.Image)(resources.GetObject("btnVentas.Image")));
-            this.btnVentas.Location = new System.Drawing.Point(458, 67);
+            this.btnVentas.Location = new System.Drawing.Point(458, 39);
             this.btnVentas.Name = "btnVentas";
             this.btnVentas.Size = new System.Drawing.Size(180, 164);
             this.btnVentas.TabIndex = 6;
-            this.btnVentas.Text = "Ventas - F8";
+            this.btnVentas.Text = "Ventas - F2";
             this.btnVentas.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnVentas.UseVisualStyleBackColor = true;
             this.btnVentas.Click += new System.EventHandler(this.btnVentas_Click);
@@ -121,11 +121,11 @@
             // 
             this.btnUsuarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUsuarios.Image = ((System.Drawing.Image)(resources.GetObject("btnUsuarios.Image")));
-            this.btnUsuarios.Location = new System.Drawing.Point(458, 237);
+            this.btnUsuarios.Location = new System.Drawing.Point(458, 209);
             this.btnUsuarios.Name = "btnUsuarios";
             this.btnUsuarios.Size = new System.Drawing.Size(180, 160);
             this.btnUsuarios.TabIndex = 9;
-            this.btnUsuarios.Text = "Usuarios - F3";
+            this.btnUsuarios.Text = "Empleados - F5";
             this.btnUsuarios.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnUsuarios.UseVisualStyleBackColor = true;
             this.btnUsuarios.Click += new System.EventHandler(this.btnEmpleados_Click);
@@ -134,11 +134,11 @@
             // 
             this.btnClientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClientes.Image = ((System.Drawing.Image)(resources.GetObject("btnClientes.Image")));
-            this.btnClientes.Location = new System.Drawing.Point(254, 67);
+            this.btnClientes.Location = new System.Drawing.Point(254, 39);
             this.btnClientes.Name = "btnClientes";
             this.btnClientes.Size = new System.Drawing.Size(198, 164);
             this.btnClientes.TabIndex = 3;
-            this.btnClientes.Text = "Clientes - F9";
+            this.btnClientes.Text = "Clientes - F1";
             this.btnClientes.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnClientes.UseVisualStyleBackColor = true;
             this.btnClientes.Click += new System.EventHandler(this.button1_Click);
@@ -158,7 +158,7 @@
             // btnCalculadora
             // 
             this.btnCalculadora.Image = ((System.Drawing.Image)(resources.GetObject("btnCalculadora.Image")));
-            this.btnCalculadora.Location = new System.Drawing.Point(17, 395);
+            this.btnCalculadora.Location = new System.Drawing.Point(12, 391);
             this.btnCalculadora.Name = "btnCalculadora";
             this.btnCalculadora.Size = new System.Drawing.Size(63, 54);
             this.btnCalculadora.TabIndex = 26;
@@ -170,11 +170,11 @@
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button1.Location = new System.Drawing.Point(644, 67);
+            this.button1.Location = new System.Drawing.Point(644, 39);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(196, 164);
             this.button1.TabIndex = 27;
-            this.button1.Text = "Configuraciones - F5";
+            this.button1.Text = "Servicios - F3";
             this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button1.UseVisualStyleBackColor = true;
             // 
@@ -182,7 +182,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(874, 457);
+            this.ClientSize = new System.Drawing.Size(858, 457);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnCalculadora);
             this.Controls.Add(this.lblUsuario);
