@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Windows.Forms;
-
 using CapaNegocio;
 
 namespace CapaPresentacion
@@ -11,6 +10,7 @@ namespace CapaPresentacion
 
         private int IdCliente;
         private int desde = 0;
+        int totalClientes = 0;
 
         public formClientes()
         {
@@ -21,12 +21,12 @@ namespace CapaPresentacion
         private void Form1_Load(object sender, EventArgs e)
         {
             MostrarClientes();
-
         }
         public void MostrarClientes()
         {
             dataListadoClientes.DataSource = objetoCN.MostrarClientes(this.desde);
             dataListadoClientes.Columns[0].Visible = false;
+            totalClientes = dataListadoClientes.Rows.Count;
             lblTotalClientes.Text = "Total de Registros: " + Convert.ToString(dataListadoClientes.Rows.Count);
         }
 
@@ -144,6 +144,27 @@ namespace CapaPresentacion
 
         private void btnRefrescar_Click(object sender, EventArgs e)
         {
+            this.MostrarClientes();
+        }
+
+        private void btnAnterior_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSiguiente_Click(object sender, EventArgs e)
+        {
+            if ((desde + 20) >= Convert.ToInt32(totalClientes))
+            {
+                return;
+            }
+
+            if (desde < 0)
+            {
+                return;
+            }
+
+            this.desde += 20;
             this.MostrarClientes();
         }
     }

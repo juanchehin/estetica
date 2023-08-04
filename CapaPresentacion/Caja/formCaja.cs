@@ -5,14 +5,14 @@ using System.Windows.Forms;
 
 namespace CapaPresentacion.Caja
 {
-    public partial class formCaja : Form
+    public partial class formServiciosEmpleado : Form
     {
         CN_Caja objeto_Caja = new CN_Caja();
         //string estadoCaja,Usuario;
         int IdUsuario;
         int desde = 0;
         DataSet transacciones;
-        public formCaja(int IdUsuario,string usuario)
+        public formServiciosEmpleado(int IdUsuario,string usuario)
         {
             InitializeComponent();
             this.IdUsuario = IdUsuario;

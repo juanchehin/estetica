@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using CapaNegocio;
+using CapaPresentacion.Caja;
 
 namespace CapaPresentacion
 {
@@ -60,7 +61,6 @@ namespace CapaPresentacion
 
         private void dataListadoEmpleados_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            Console.WriteLine("e.ColumnIndex " + e.ColumnIndex);    // Dice que columna se hizo click
             if (e.ColumnIndex == dataListadoEmpleados.Columns["Marcar"].Index)
             {
                 DataGridViewCheckBoxCell ChkEliminar = (DataGridViewCheckBoxCell)dataListadoEmpleados.Rows[e.RowIndex].Cells["Marcar"];
@@ -141,6 +141,13 @@ namespace CapaPresentacion
         private void btnRefrescar_Click(object sender, EventArgs e)
         {
             this.MostrarEmpleados();
+        }
+
+        private void btnListarServicios_Click(object sender, EventArgs e)
+        {
+            formServiciosEmpleado frm = new formServiciosEmpleado(this.IdEmpleado);
+            frm.MdiParent = this.MdiParent;
+            frm.Show();
         }
     }
 

@@ -27,7 +27,7 @@
     <ProductName>SGF</ProductName>
     <PublisherName>SGF</PublisherName>
     <SuiteName>SGF</SuiteName>
-    <ApplicationRevision>15</ApplicationRevision>
+    <ApplicationRevision>16</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -116,6 +116,12 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="servicios_empleados\formServiciosEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="servicios_empleados\formServiciosEmpleado.Designer.cs">
+      <DependentUpon>formServiciosEmpleado.cs</DependentUpon>
+    </Compile>
     <Compile Include="Caja\formCaja.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -232,6 +238,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="servicios_empleados\formServiciosEmpleado.resx">
+      <DependentUpon>formServiciosEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Caja\formCaja.resx">
       <DependentUpon>formCaja.cs</DependentUpon>
     </EmbeddedResource>

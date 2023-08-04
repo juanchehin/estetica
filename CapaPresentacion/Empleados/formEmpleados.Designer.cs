@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formServicios));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formEmpleados));
             this.label1 = new System.Windows.Forms.Label();
             this.lblTotalEmpleados = new System.Windows.Forms.Label();
             this.dataListadoEmpleados = new System.Windows.Forms.DataGridView();
@@ -41,6 +41,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnRefrescar = new System.Windows.Forms.Button();
+            this.btnListarServicios = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataListadoEmpleados)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -168,11 +169,22 @@
             this.btnRefrescar.UseVisualStyleBackColor = true;
             this.btnRefrescar.Click += new System.EventHandler(this.btnRefrescar_Click);
             // 
+            // btnListarServicios
+            // 
+            this.btnListarServicios.Location = new System.Drawing.Point(626, 121);
+            this.btnListarServicios.Name = "btnListarServicios";
+            this.btnListarServicios.Size = new System.Drawing.Size(139, 23);
+            this.btnListarServicios.TabIndex = 30;
+            this.btnListarServicios.Text = "Listar servicios";
+            this.btnListarServicios.UseVisualStyleBackColor = true;
+            this.btnListarServicios.Click += new System.EventHandler(this.btnListarServicios_Click);
+            // 
             // formEmpleados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(840, 499);
+            this.Controls.Add(this.btnListarServicios);
             this.Controls.Add(this.btnRefrescar);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lblTotalEmpleados);
@@ -211,5 +223,6 @@
         private System.Windows.Forms.Button btnNuevoEmpleado;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnRefrescar;
+        private System.Windows.Forms.Button btnListarServicios;
     }
 }

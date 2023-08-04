@@ -104,7 +104,7 @@ namespace CapaPresentacion
 
         private void btnCaja_Click(object sender, EventArgs e)
         {
-            formCaja frm = new formCaja(this.IdUsuario,this.Usuario);
+            formServiciosEmpleado frm = new formCaja(this.IdUsuario,this.Usuario);
             frm.Show();
         }
 
@@ -134,7 +134,7 @@ namespace CapaPresentacion
                     frm3.Show();
                     break;
                 case Keys.F4:
-                    formCaja frm4 = new formCaja(this.IdUsuario, this.Usuario);
+                    formServiciosEmpleado frm4 = new formCaja(this.IdUsuario, this.Usuario);
                     frm4.MdiParent = this.MdiParent;
                     frm4.Show();
                     break;

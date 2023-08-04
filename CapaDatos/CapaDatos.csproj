@@ -123,6 +123,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CD_ServiciosEmpleado.cs" />
     <Compile Include="CD_Caja.cs" />
     <Compile Include="CD_Clientes.cs" />
     <Compile Include="CD_Conexion.cs" />

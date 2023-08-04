@@ -1,4 +1,4 @@
-﻿namespace CapaPresentacion.Caja
+﻿namespace CapaPresentacion.servicios_empleados
 {
     partial class formServiciosEmpleado
     {
@@ -31,14 +31,15 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formServiciosEmpleado));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnRefrescar = new System.Windows.Forms.Button();
-            this.dataListadoCaja = new System.Windows.Forms.DataGridView();
+            this.dataListadoServiciosEmpleado = new System.Windows.Forms.DataGridView();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.dtFechaInicio = new System.Windows.Forms.DateTimePicker();
             this.dtFechaFin = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataListadoCaja)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataListadoServiciosEmpleado)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -64,18 +65,18 @@
             this.btnRefrescar.UseVisualStyleBackColor = true;
             this.btnRefrescar.Click += new System.EventHandler(this.btnRefrescar_Click);
             // 
-            // dataListadoCaja
+            // dataListadoServiciosEmpleado
             // 
-            this.dataListadoCaja.AllowUserToAddRows = false;
-            this.dataListadoCaja.AllowUserToDeleteRows = false;
-            this.dataListadoCaja.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataListadoCaja.Location = new System.Drawing.Point(12, 152);
-            this.dataListadoCaja.MultiSelect = false;
-            this.dataListadoCaja.Name = "dataListadoCaja";
-            this.dataListadoCaja.ReadOnly = true;
-            this.dataListadoCaja.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataListadoCaja.Size = new System.Drawing.Size(704, 312);
-            this.dataListadoCaja.TabIndex = 35;
+            this.dataListadoServiciosEmpleado.AllowUserToAddRows = false;
+            this.dataListadoServiciosEmpleado.AllowUserToDeleteRows = false;
+            this.dataListadoServiciosEmpleado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataListadoServiciosEmpleado.Location = new System.Drawing.Point(12, 152);
+            this.dataListadoServiciosEmpleado.MultiSelect = false;
+            this.dataListadoServiciosEmpleado.Name = "dataListadoServiciosEmpleado";
+            this.dataListadoServiciosEmpleado.ReadOnly = true;
+            this.dataListadoServiciosEmpleado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataListadoServiciosEmpleado.Size = new System.Drawing.Size(704, 312);
+            this.dataListadoServiciosEmpleado.TabIndex = 35;
             // 
             // pictureBox2
             // 
@@ -122,24 +123,35 @@
             this.label2.TabIndex = 49;
             this.label2.Text = "Fecha fin :";
             // 
-            // formCaja
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(217, 12);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(293, 31);
+            this.label3.TabIndex = 50;
+            this.label3.Text = "Servicios del empleado";
+            // 
+            // formServiciosEmpleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(736, 491);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dtFechaFin);
             this.Controls.Add(this.dtFechaInicio);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.btnRefrescar);
-            this.Controls.Add(this.dataListadoCaja);
+            this.Controls.Add(this.dataListadoServiciosEmpleado);
             this.Controls.Add(this.pictureBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "formCaja";
-            this.Text = "Caja";
+            this.Name = "formServiciosEmpleado";
+            this.Text = "Servicios - Empleado";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataListadoCaja)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataListadoServiciosEmpleado)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -149,11 +161,12 @@
         #endregion
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnRefrescar;
-        private System.Windows.Forms.DataGridView dataListadoCaja;
+        private System.Windows.Forms.DataGridView dataListadoServiciosEmpleado;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.DateTimePicker dtFechaInicio;
         private System.Windows.Forms.DateTimePicker dtFechaFin;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
     }
 }
