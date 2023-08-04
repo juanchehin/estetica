@@ -7,7 +7,7 @@
     <ProjectGuid>{E39A7657-35A0-4698-9048-FD8C96E2C3A2}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>CapaPresentacion</RootNamespace>
-    <AssemblyName>SGF</AssemblyName>
+    <AssemblyName>estetica</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -65,7 +65,7 @@
     <SignManifests>false</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>logo.ico</ApplicationIcon>
+    <ApplicationIcon>estetica.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="ExcelDataReader, Version=3.7.0.0, Culture=neutral, PublicKeyToken=93517dbe6a4012fa, processorArchitecture=MSIL">
@@ -426,6 +426,7 @@
   <ItemGroup>
     <None Include="Resources\logo.bmp" />
     <None Include="Resources\wrench.png" />
+    <Content Include="estetica.ico" />
     <Content Include="logo.ico" />
     <None Include="Resources\store%281%291.png" />
     <None Include="Resources\store%282%291.png" />

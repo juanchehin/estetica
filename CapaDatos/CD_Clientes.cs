@@ -283,7 +283,7 @@ namespace CapaDatos
         }
 
         // Metodo ELIMINAR Cliente (da de baja)
-        public string Eliminar(CD_Clientes Cliente)
+        public string Eliminar(int IdCliente)
         {
             string rpta = "";
             try
@@ -291,17 +291,26 @@ namespace CapaDatos
 
                 comando.Connection = conexion.AbrirConexion();
                 comando.CommandType = CommandType.StoredProcedure;
-                comando.CommandText = "bsp_eliminar_cliente";
+                comando.CommandText = "bsp_baja_cliente";
 
                 MySqlParameter pIdCliente = new MySqlParameter();
-                pIdCliente.ParameterName = "@pIdCliente";
+                pIdCliente.ParameterName = "@pIdPersona";
                 pIdCliente.MySqlDbType = MySqlDbType.Int32;
-                pIdCliente.Value = Cliente.IdCliente;
+                pIdCliente.Value = IdCliente;
                 comando.Parameters.Add(pIdCliente);
 
                 //Ejecutamos nuestro comando
-                rpta = comando.ExecuteNonQuery() == 1 ? "OK" : "NO se Elimino el Registro";
+                rpta = (string)comando.ExecuteScalar();
 
+                if (rpta == "Ok")
+                {
+                    rpta = "Ok";
+                }
+                else
+                {
+                    rpta = "NO se Ingreso el Registro";
+                }
+                // == "Ok" ? "OK" : "NO se Ingreso el Registro";
 
             }
             catch (Exception ex)
@@ -312,6 +321,7 @@ namespace CapaDatos
             {
                 conexion.CerrarConexion();
             }
+
             return rpta;
         }
 

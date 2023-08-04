@@ -11,13 +11,6 @@ namespace CapaNegocio
         string estadoCaja;
         string resp = "";
 
-        public static string Eliminar(int IdCliente)
-        {
-            CD_Clientes Obj = new CD_Clientes();
-            Obj.IdCliente = IdCliente;
-            return Obj.Eliminar(Obj);
-        }
-
         public DataSet listarTransacciones(int pDesde,string pFechaInicio, string pFechaFin)
         {
             DataSet tabla = new DataSet();
