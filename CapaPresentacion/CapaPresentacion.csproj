@@ -27,7 +27,7 @@
     <ProductName>SGF</ProductName>
     <PublisherName>SGF</PublisherName>
     <SuiteName>SGF</SuiteName>
-    <ApplicationRevision>15</ApplicationRevision>
+    <ApplicationRevision>17</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>

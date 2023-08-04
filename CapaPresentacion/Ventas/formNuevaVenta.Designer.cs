@@ -124,14 +124,14 @@
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Location = new System.Drawing.Point(408, 89);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(764, 387);
+            this.groupBox1.Size = new System.Drawing.Size(600, 387);
             this.groupBox1.TabIndex = 37;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Ventas";
             // 
             // btnQuitar
             // 
-            this.btnQuitar.Location = new System.Drawing.Point(676, 29);
+            this.btnQuitar.Location = new System.Drawing.Point(485, 32);
             this.btnQuitar.Name = "btnQuitar";
             this.btnQuitar.Size = new System.Drawing.Size(75, 23);
             this.btnQuitar.TabIndex = 40;
@@ -149,37 +149,40 @@
             this.dataListadoServicios.Name = "dataListadoServicios";
             this.dataListadoServicios.ReadOnly = true;
             this.dataListadoServicios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataListadoServicios.Size = new System.Drawing.Size(745, 275);
+            this.dataListadoServicios.Size = new System.Drawing.Size(554, 275);
             this.dataListadoServicios.TabIndex = 8;
             // 
             // lblTotal
             // 
             this.lblTotal.AutoSize = true;
             this.lblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotal.Location = new System.Drawing.Point(719, 350);
+            this.lblTotal.Location = new System.Drawing.Point(502, 349);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(19, 20);
             this.lblTotal.TabIndex = 42;
             this.lblTotal.Text = "0";
+            this.lblTotal.Click += new System.EventHandler(this.lblTotal_Click);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(700, 350);
+            this.label7.Location = new System.Drawing.Point(483, 349);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(19, 20);
             this.label7.TabIndex = 43;
             this.label7.Text = "$";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(637, 355);
+            this.label9.Location = new System.Drawing.Point(420, 354);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(40, 13);
             this.label9.TabIndex = 41;
             this.label9.Text = "Total : ";
+            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // btnSeleccionarCliente
             // 
@@ -203,7 +206,7 @@
             // 
             // btnRegistrar
             // 
-            this.btnRegistrar.Location = new System.Drawing.Point(1073, 482);
+            this.btnRegistrar.Location = new System.Drawing.Point(914, 482);
             this.btnRegistrar.Name = "btnRegistrar";
             this.btnRegistrar.Size = new System.Drawing.Size(99, 31);
             this.btnRegistrar.TabIndex = 5;
@@ -395,7 +398,7 @@
             // 
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pictureBox2.Image = global::CapaPresentacion.Properties.Resources.acquisition;
-            this.pictureBox2.Location = new System.Drawing.Point(1093, 12);
+            this.pictureBox2.Location = new System.Drawing.Point(934, 12);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(79, 75);
             this.pictureBox2.TabIndex = 36;
@@ -481,7 +484,7 @@
             this.panelClientes.Controls.Add(this.btnAgregarCliente);
             this.panelClientes.Controls.Add(this.button1);
             this.panelClientes.Controls.Add(this.dataListadoClientes);
-            this.panelClientes.Location = new System.Drawing.Point(295, 12);
+            this.panelClientes.Location = new System.Drawing.Point(164, 17);
             this.panelClientes.Name = "panelClientes";
             this.panelClientes.Size = new System.Drawing.Size(851, 484);
             this.panelClientes.TabIndex = 50;
@@ -602,7 +605,7 @@
             this.panelEmpleados.Controls.Add(this.pictureBox8);
             this.panelEmpleados.Controls.Add(this.seleccionarEmpleado);
             this.panelEmpleados.Controls.Add(this.dataListadoEmpleadosPanel);
-            this.panelEmpleados.Location = new System.Drawing.Point(236, 72);
+            this.panelEmpleados.Location = new System.Drawing.Point(177, 12);
             this.panelEmpleados.Name = "panelEmpleados";
             this.panelEmpleados.Size = new System.Drawing.Size(851, 484);
             this.panelEmpleados.TabIndex = 71;
@@ -707,7 +710,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1250, 562);
+            this.ClientSize = new System.Drawing.Size(1040, 562);
             this.Controls.Add(this.btnAgregarServicio);
             this.Controls.Add(this.panelEmpleados);
             this.Controls.Add(this.panelClientes);
@@ -722,6 +725,7 @@
             this.Name = "formNuevaVenta";
             this.Text = "                                                                                 " +
     "                                                               ..:: Ventas ::..";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.formNuevaVenta_KeyDown);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataListadoServicios)).EndInit();

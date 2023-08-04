@@ -2,6 +2,7 @@
 using System.Data;
 using System.Windows.Forms;
 using CapaNegocio;
+using CapaPresentacion.Caja;
 
 namespace CapaPresentacion.Ventas
 {
@@ -456,6 +457,34 @@ namespace CapaPresentacion.Ventas
             // this.lblPrecioUnitario_.Text = objetoCN_servicios.dame_precio_servicio(valorSeleccionado);
 
 
+        }
+
+        private void lblTotal_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void formNuevaVenta_KeyDown(object sender, KeyEventArgs e)
+        {
+            switch (e.KeyCode)
+            {
+                case Keys.F8:
+                    btnRegistrar.PerformClick();
+                    break;
+                default:
+                    // code block
+                    break;
+            }
         }
     }
 }

@@ -176,20 +176,18 @@ namespace CapaDatos
             string rpta = "";
             try
             {
-
-
                 comando.Connection = conexion.AbrirConexion();
                 comando.CommandType = CommandType.StoredProcedure;
-                comando.CommandText = "bsp_eliminar_empleado";
+                comando.CommandText = "bsp_baja_empleado";
 
                 MySqlParameter pIdEmpleado = new MySqlParameter();
-                pIdEmpleado.ParameterName = "@pIdEmpleado";
+                pIdEmpleado.ParameterName = "@pIdPersona";
                 pIdEmpleado.MySqlDbType = MySqlDbType.Int32;
                 // pIdEmpleado.Size = 60;
                 pIdEmpleado.Value = Empleado.IdEmpleado;
                 comando.Parameters.Add(pIdEmpleado);
 
-                rpta = comando.ExecuteNonQuery() == 1 ? "OK" : "NO se Elimino el Registro";
+                rpta = comando.ExecuteNonQuery() == 1 ? "Ok" : "No se Elimino el Registro";
 
 
             }
