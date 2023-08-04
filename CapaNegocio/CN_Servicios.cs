@@ -57,6 +57,8 @@ namespace CapaNegocio
             Obj.IdServicio = IdServicio;
             Obj.Servicio = Servicio;
             Obj.Precio = Precio;
+            Obj.Descripcion = Descripcion;
+
 
             return Obj.Editar(Obj);
         }

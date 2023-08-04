@@ -231,6 +231,13 @@ namespace CapaDatos
                 pPrecio.Value = Servicio.Precio;
                 comando.Parameters.Add(pPrecio);
 
+                MySqlParameter pDescripcion = new MySqlParameter();
+                pDescripcion.ParameterName = "@pDescripcion";
+                pDescripcion.MySqlDbType = MySqlDbType.VarChar;
+                pDescripcion.Size = 60;
+                pDescripcion.Value = Servicio.Descripcion;
+                comando.Parameters.Add(pDescripcion);
+
                 rpta = (string)comando.ExecuteScalar();
 
 

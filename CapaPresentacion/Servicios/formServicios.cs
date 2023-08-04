@@ -80,7 +80,7 @@ namespace CapaPresentacion
 
         private void btnNuevoServicio_Click(object sender, EventArgs e)
         {
-            formNuevoEditarServicio frm = new formNuevoEditarServicio(true);
+            formNuevoEditarServicio frm = new formNuevoEditarServicio(this.IdServicio,true);
             frm.MdiParent = this.MdiParent;
             frm.Show();
             this.Close();
@@ -88,7 +88,7 @@ namespace CapaPresentacion
 
         private void botonEditarListado_Click(object sender, EventArgs e)
         {
-            formNuevoEditarServicio frm = new formNuevoEditarServicio( false);
+            formNuevoEditarServicio frm = new formNuevoEditarServicio(this.IdServicio,false);
             frm.MdiParent = this.MdiParent;
             frm.Show();
             this.Close();
@@ -143,7 +143,7 @@ namespace CapaPresentacion
 
         private void btnNuevoServicio_Click_1(object sender, EventArgs e)
         {
-            formNuevoEditarServicio frm = new formNuevoEditarServicio(true);
+            formNuevoEditarServicio frm = new formNuevoEditarServicio(this.IdServicio, true);
             frm.MdiParent = this.MdiParent;
             frm.Show();
             this.Close();

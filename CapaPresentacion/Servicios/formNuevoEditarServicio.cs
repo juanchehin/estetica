@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using CapaNegocio;
@@ -28,9 +22,10 @@ namespace CapaPresentacion
         private string precio;
         private string descripcion;
 
-        public formNuevoEditarServicio( bool IsNuevoEditar)
+        public formNuevoEditarServicio(int IdServicio,bool IsNuevoEditar)
         {
             InitializeComponent();
+            this.id_servicio = IdServicio;
             this.bandera = IsNuevoEditar;
         }
 
