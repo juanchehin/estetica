@@ -10,10 +10,12 @@ namespace CapaDatos
         private string _Nombres;
         private string _Apellidos;
         private string _DNI;
+        private string _Email;
         private string _EstadoEmp;
         private string _Direccion;
         private string _Telefono;
         private string _FechaNac;
+        private string _Observaciones;
 
         private string _TextoBuscar;
 
@@ -22,10 +24,12 @@ namespace CapaDatos
         public string Nombres { get => _Nombres; set => _Nombres = value; }
         public string Apellidos { get => _Apellidos; set => _Apellidos = value; }
         public string DNI { get => _DNI; set => _DNI = value; }
+        public string Email { get => _Email; set => _Email = value; }
         public string EstadoEmp { get => _EstadoEmp; set => _EstadoEmp = value; }
         public string Direccion { get => _Direccion; set => _Direccion = value; }
         public string Telefono { get => _Telefono; set => _Telefono = value; }
         public string TextoBuscar { get => _TextoBuscar; set => _TextoBuscar = value; }
+        public string Observaciones { get => _Observaciones; set => _Observaciones = value; }
         public string FechaNac { get => _FechaNac; set => _FechaNac = value; }
 
         //Constructores
@@ -116,14 +120,14 @@ namespace CapaDatos
                 comando.CommandText = "bsp_editar_cliente";
 
                 MySqlParameter pIdCliente = new MySqlParameter();
-                pIdCliente.ParameterName = "@pIdCliente";
+                pIdCliente.ParameterName = "@pIdPersona";
                 pIdCliente.MySqlDbType = MySqlDbType.Int32;
                 // pIdCliente.Size = 60;
                 pIdCliente.Value = Cliente.IdCliente;
                 comando.Parameters.Add(pIdCliente);
 
                 MySqlParameter pNombre = new MySqlParameter();
-                pNombre.ParameterName = "@pNombre";
+                pNombre.ParameterName = "@pNombres";
                 pNombre.MySqlDbType = MySqlDbType.VarChar;
                 pNombre.Size = 60;
                 pNombre.Value = Cliente.Nombres;
@@ -135,6 +139,13 @@ namespace CapaDatos
                 pApellidos.Size = 60;
                 pApellidos.Value = Cliente.Apellidos;
                 comando.Parameters.Add(pApellidos);
+
+                MySqlParameter pEmail = new MySqlParameter();
+                pEmail.ParameterName = "@pEmail";
+                pEmail.MySqlDbType = MySqlDbType.VarChar;
+                pEmail.Size = 60;
+                pEmail.Value = Cliente.Email;
+                comando.Parameters.Add(pEmail);
 
                 MySqlParameter pDNI = new MySqlParameter();
                 pDNI.ParameterName = "@pDNI";
@@ -157,6 +168,13 @@ namespace CapaDatos
                 pTelefono.Value = Cliente.Telefono;
                 comando.Parameters.Add(pTelefono);
 
+                MySqlParameter pObservaciones = new MySqlParameter();
+                pObservaciones.ParameterName = "@pObservaciones";
+                pObservaciones.MySqlDbType = MySqlDbType.VarChar;
+                pObservaciones.Size = 255;
+                pObservaciones.Value = Cliente.Observaciones;
+                comando.Parameters.Add(pObservaciones);
+
                 MySqlParameter pFechaNac = new MySqlParameter();
                 pFechaNac.ParameterName = "@pFechaNac";
                 pFechaNac.MySqlDbType = MySqlDbType.VarChar;
@@ -164,7 +182,7 @@ namespace CapaDatos
                 pFechaNac.Value = Cliente.FechaNac;
                 comando.Parameters.Add(pFechaNac);
 
-                rpta = comando.ExecuteScalar().ToString() == "Ok" ? "OK" : "No se edito el Registro";
+                rpta = comando.ExecuteScalar().ToString() == "Ok" ? "Ok" : "No se edito el Registro";
 
 
 

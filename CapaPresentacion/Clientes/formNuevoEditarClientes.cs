@@ -76,7 +76,7 @@ namespace CapaPresentacion
                 Email = Convert.ToString(row["Email"]);
                 Direccion = Convert.ToString(row["Direccion"]);
                 FechaNac = Convert.ToString(row["FechaNac"]);
-                Observaciones = Convert.ToString(row["Observaciones"]);
+                Observaciones = Convert.ToString(row["observaciones"]);
 
                 txtApellidos.Text = Apellidos;
                 txtNombres.Text = Nombres;
@@ -118,7 +118,7 @@ namespace CapaPresentacion
                             var fecha = año + "-" + mes + "-" + dia;
 
                             rpta = CN_Clientes.Editar(this.IdCliente, this.txtNombres.Text.Trim(), this.txtApellidos.Text.Trim(),
-                                this.txtDNI.Text.Trim(), this.txtDireccion.Text.Trim(), this.txtTelefono.Text.Trim(), fecha);
+                                this.txtDNI.Text.Trim(), this.txtDireccion.Text.Trim(), this.txtTelefono.Text.Trim(), fecha, txtObservaciones.Text.Trim());
                         }
 
                         if (rpta.Equals("Ok"))

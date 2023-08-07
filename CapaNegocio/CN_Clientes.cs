@@ -49,7 +49,7 @@ namespace CapaNegocio
             return tabla;
         }
 
-        public static string Editar(int IdCliente, string Nombre, string Apellidos, string DNI, string Direccion, string Telefono, string FechaNac)
+        public static string Editar(int IdCliente, string Nombre, string Apellidos, string DNI, string Direccion, string Telefono, string FechaNac, string Observaciones)
         {
             CD_Clientes Obj = new CD_Clientes();
             Obj.IdCliente = IdCliente;
@@ -60,7 +60,7 @@ namespace CapaNegocio
             Obj.Direccion = Direccion;
             Obj.Telefono = Telefono;
             // Obj.FechaNac = FechaNac;
-
+            Obj.Observaciones = Observaciones;
 
             return Obj.Editar(Obj);
         }
