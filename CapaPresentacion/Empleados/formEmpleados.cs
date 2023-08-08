@@ -1,12 +1,16 @@
 ﻿using System;
 using System.Windows.Forms;
 using CapaNegocio;
+using CapaPresentacion.Empleados;
 
 namespace CapaPresentacion
 {
     public partial class formEmpleados : Form
     {
         CN_Empleados objetoCN = new CN_Empleados();
+        string apellidos_empleado;
+        string nombres_empleado;
+        string dni_empleado;
 
         private int IdEmpleado;
         private int desde = 0;
@@ -124,6 +128,10 @@ namespace CapaPresentacion
                 int selectedrowindex = dataListadoEmpleados.SelectedCells[0].RowIndex;
                 DataGridViewRow selectedRow = dataListadoEmpleados.Rows[selectedrowindex];
                 this.IdEmpleado = Convert.ToInt32(selectedRow.Cells["IdPersona"].Value);
+
+                this.apellidos_empleado = selectedRow.Cells["Nombres"].Value.ToString();
+                this.nombres_empleado = selectedRow.Cells["Nombres"].Value.ToString();
+                this.dni_empleado = selectedRow.Cells["DNI"].Value.ToString();
             }
         }
 
@@ -141,6 +149,14 @@ namespace CapaPresentacion
         private void btnRefrescar_Click(object sender, EventArgs e)
         {
             this.MostrarEmpleados();
+        }
+
+        private void btnListarTrabajos_Click(object sender, EventArgs e)
+        {
+            formListarTrabajosEmpleado frm = new formListarTrabajosEmpleado(this.IdEmpleado,this.apellidos_empleado,this.nombres_empleado,this.dni_empleado);
+            frm.MdiParent = this.MdiParent;
+            frm.Show();
+            //this.Close();
         }
     }
 

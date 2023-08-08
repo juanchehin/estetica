@@ -338,6 +338,35 @@ namespace CapaDatos
 
         }
 
+        public DataTable listar_trabajos_empleado(int IdEmpleado,string p_Mes)
+        {
+            comando.Parameters.Clear();
+
+            comando.Connection = conexion.AbrirConexion();
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.CommandText = "bsp_listar_trabajos_empleado";
+
+            MySqlParameter pIdEmpleado = new MySqlParameter();
+            pIdEmpleado.ParameterName = "@pIdEmpleado";
+            pIdEmpleado.MySqlDbType = MySqlDbType.Int32;
+            pIdEmpleado.Value = IdEmpleado;
+            comando.Parameters.Add(pIdEmpleado);
+
+            MySqlParameter pMes = new MySqlParameter();
+            pMes.ParameterName = "@pMes";
+            pMes.MySqlDbType = MySqlDbType.VarChar;
+            pMes.Value = p_Mes;
+            comando.Parameters.Add(pMes);
+
+            tabla.Clear();
+            leer = comando.ExecuteReader();
+            tabla.Load(leer);
+            conexion.CerrarConexion();
+
+            return tabla;
+
+        }
+
         public DataTable ListarEmpleados(int desde)
         {
             comando.Connection = conexion.AbrirConexion();

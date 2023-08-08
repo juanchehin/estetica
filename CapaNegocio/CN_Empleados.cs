@@ -35,9 +35,15 @@ namespace CapaNegocio
 
         public DataTable MostrarEmpleado(int IdEmpleado)
         {
-
             DataTable tabla = new DataTable();
             tabla = objetoCD.MostrarEmpleado(IdEmpleado);
+            return tabla;
+        }
+
+        public DataTable listar_trabajos_empleado(int IdEmpleado,string mes)
+        {
+            DataTable tabla = new DataTable();
+            tabla = objetoCD.listar_trabajos_empleado(IdEmpleado,mes);
             return tabla;
         }
 

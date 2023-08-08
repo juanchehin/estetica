@@ -177,6 +177,7 @@
             this.btnListarTrabajos.TabIndex = 30;
             this.btnListarTrabajos.Text = "Listar trabajos";
             this.btnListarTrabajos.UseVisualStyleBackColor = true;
+            this.btnListarTrabajos.Click += new System.EventHandler(this.btnListarTrabajos_Click);
             // 
             // formEmpleados
             // 
