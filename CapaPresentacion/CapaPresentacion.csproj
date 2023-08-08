@@ -24,9 +24,9 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <SupportUrl>https://juanchehin.github.io/chehin-ingenieria/</SupportUrl>
-    <ProductName>SGF</ProductName>
-    <PublisherName>SGF</PublisherName>
-    <SuiteName>SGF</SuiteName>
+    <ProductName>estetica</ProductName>
+    <PublisherName>Chehin ingenieria</PublisherName>
+    <SuiteName>estetica</SuiteName>
     <ApplicationRevision>18</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>

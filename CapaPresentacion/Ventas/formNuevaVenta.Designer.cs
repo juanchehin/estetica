@@ -219,7 +219,7 @@
             this.txtCantidad.Location = new System.Drawing.Point(99, 70);
             this.txtCantidad.Name = "txtCantidad";
             this.txtCantidad.Size = new System.Drawing.Size(47, 20);
-            this.txtCantidad.TabIndex = 1;
+            this.txtCantidad.TabIndex = 2;
             this.txtCantidad.Text = "1";
             this.txtCantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
@@ -325,7 +325,7 @@
             this.cbServicios.Location = new System.Drawing.Point(99, 31);
             this.cbServicios.Name = "cbServicios";
             this.cbServicios.Size = new System.Drawing.Size(156, 21);
-            this.cbServicios.TabIndex = 52;
+            this.cbServicios.TabIndex = 1;
             this.cbServicios.SelectedIndexChanged += new System.EventHandler(this.cbServicios_SelectedIndexChanged);
             // 
             // btnSeleccionarEmpleado
@@ -373,7 +373,7 @@
             this.cbTiposPago.Location = new System.Drawing.Point(99, 139);
             this.cbTiposPago.Name = "cbTiposPago";
             this.cbTiposPago.Size = new System.Drawing.Size(156, 21);
-            this.cbTiposPago.TabIndex = 51;
+            this.cbTiposPago.TabIndex = 3;
             // 
             // lblTipoPago
             // 
@@ -701,7 +701,7 @@
             this.btnAgregarServicio.Location = new System.Drawing.Point(18, 403);
             this.btnAgregarServicio.Name = "btnAgregarServicio";
             this.btnAgregarServicio.Size = new System.Drawing.Size(143, 37);
-            this.btnAgregarServicio.TabIndex = 72;
+            this.btnAgregarServicio.TabIndex = 4;
             this.btnAgregarServicio.Text = "Agregar servicio";
             this.btnAgregarServicio.UseVisualStyleBackColor = true;
             this.btnAgregarServicio.Click += new System.EventHandler(this.btnAgregarServicio_Click);

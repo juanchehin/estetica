@@ -124,7 +124,7 @@
             this.txtEmail.Location = new System.Drawing.Point(157, 199);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(196, 20);
-            this.txtEmail.TabIndex = 9;
+            this.txtEmail.TabIndex = 7;
             // 
             // dtFechaNac
             // 
@@ -183,7 +183,7 @@
             this.txtNombre.Location = new System.Drawing.Point(508, 30);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(200, 20);
-            this.txtNombre.TabIndex = 1;
+            this.txtNombre.TabIndex = 2;
             // 
             // label2
             // 
@@ -199,7 +199,7 @@
             this.txtApellidos.Location = new System.Drawing.Point(157, 30);
             this.txtApellidos.Name = "txtApellidos";
             this.txtApellidos.Size = new System.Drawing.Size(196, 20);
-            this.txtApellidos.TabIndex = 2;
+            this.txtApellidos.TabIndex = 1;
             // 
             // label5
             // 

@@ -73,6 +73,8 @@ namespace CapaPresentacion.Clientes
         {
             tiposPagos = objetoCN_ventas.DameTiposPago();
 
+            tiposPagos.Rows.RemoveAt(5);    // quito "cuenta corriente"
+
             cbTiposPago.DataSource = tiposPagos;
 
             cbTiposPago.DisplayMember = "tipo_pago";

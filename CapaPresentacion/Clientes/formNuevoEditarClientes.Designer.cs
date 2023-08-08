@@ -110,7 +110,7 @@
             this.txtObservaciones.Multiline = true;
             this.txtObservaciones.Name = "txtObservaciones";
             this.txtObservaciones.Size = new System.Drawing.Size(196, 112);
-            this.txtObservaciones.TabIndex = 30;
+            this.txtObservaciones.TabIndex = 8;
             // 
             // label10
             // 
@@ -135,14 +135,14 @@
             this.txtDireccion.Location = new System.Drawing.Point(161, 185);
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(196, 20);
-            this.txtDireccion.TabIndex = 27;
+            this.txtDireccion.TabIndex = 7;
             // 
             // dtpFechaNac
             // 
             this.dtpFechaNac.Location = new System.Drawing.Point(497, 133);
             this.dtpFechaNac.Name = "dtpFechaNac";
             this.dtpFechaNac.Size = new System.Drawing.Size(200, 20);
-            this.dtpFechaNac.TabIndex = 24;
+            this.dtpFechaNac.TabIndex = 6;
             // 
             // label7
             // 
@@ -167,7 +167,7 @@
             this.txtDNI.Location = new System.Drawing.Point(497, 79);
             this.txtDNI.Name = "txtDNI";
             this.txtDNI.Size = new System.Drawing.Size(196, 20);
-            this.txtDNI.TabIndex = 20;
+            this.txtDNI.TabIndex = 4;
             // 
             // label1
             // 
@@ -183,7 +183,7 @@
             this.txtTelefono.Location = new System.Drawing.Point(161, 83);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(196, 20);
-            this.txtTelefono.TabIndex = 18;
+            this.txtTelefono.TabIndex = 3;
             // 
             // txtNombres
             // 
@@ -222,7 +222,7 @@
             this.txtEmail.Location = new System.Drawing.Point(161, 137);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(196, 20);
-            this.txtEmail.TabIndex = 4;
+            this.txtEmail.TabIndex = 5;
             // 
             // label3
             // 
@@ -238,7 +238,7 @@
             this.btnCancelar.Location = new System.Drawing.Point(568, 499);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelar.TabIndex = 11;
+            this.btnCancelar.TabIndex = 10;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
@@ -248,7 +248,7 @@
             this.btnGuardar.Location = new System.Drawing.Point(214, 499);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 23);
-            this.btnGuardar.TabIndex = 7;
+            this.btnGuardar.TabIndex = 9;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);

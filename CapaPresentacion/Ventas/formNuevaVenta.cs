@@ -14,28 +14,13 @@ namespace CapaPresentacion.Ventas
         CN_Clientes objetoCN_clientes = new CN_Clientes();
         CN_Servicios objetoCN_servicios = new CN_Servicios();
 
-
-#pragma warning disable CS0169 // El campo 'formNuevaVenta.respuesta' nunca se usa
         DataTable respuesta;
-#pragma warning restore CS0169 // El campo 'formNuevaVenta.respuesta' nunca se usa
         DataTable tiposPagos;
 
-#pragma warning disable CS0169 // El campo 'formNuevaVenta.bandera' nunca se usa
-        bool bandera;
-#pragma warning restore CS0169 // El campo 'formNuevaVenta.bandera' nunca se usa
-#pragma warning disable CS0414 // El campo 'formNuevaVenta.IsNuevo' está asignado pero su valor nunca se usa
-        bool IsNuevo = false;
-#pragma warning restore CS0414 // El campo 'formNuevaVenta.IsNuevo' está asignado pero su valor nunca se usa
-#pragma warning disable CS0414 // El campo 'formNuevaVenta.IsEditar' está asignado pero su valor nunca se usa
-        bool IsEditar = false;
-#pragma warning restore CS0414 // El campo 'formNuevaVenta.IsEditar' está asignado pero su valor nunca se usa
-
-#pragma warning disable CS0169 // El campo 'formNuevaVenta.IdVenta' nunca se usa
-        private int IdVenta;
-#pragma warning restore CS0169 // El campo 'formNuevaVenta.IdVenta' nunca se usa
-        private int IdUsuario;  // IdEmpleado
         // Cliente
         private int IdCliente = 2;  // Cliente generico si no se especifica otro
+        private int IdUsuario;  //
+
         public string Apellidos = "Publico ";
         public string Nombres = "en general";
         // Empleado
@@ -44,28 +29,12 @@ namespace CapaPresentacion.Ventas
         public string NombresEmpleado = "";
         //
         public string Usuario;
-#pragma warning disable CS0169 // El campo 'formNuevaVenta.tipoPago' nunca se usa
-        private string tipoPago;
 
         DataTable servicios;
-#pragma warning restore CS0169 // El campo 'formNuevaVenta.tipoPago' nunca se usa
-        private int pDesde = 0;
-
         private int IdServicio;
-
-#pragma warning disable CS0169 // El campo 'formNuevaVenta.Fecha' nunca se usa
-        private DateTime Fecha;
-#pragma warning restore CS0169 // El campo 'formNuevaVenta.Fecha' nunca se usa
-
-#pragma warning disable CS0169 // El campo 'formNuevaVenta.Cantidad' nunca se usa
-        private string Cantidad;
-#pragma warning restore CS0169 // El campo 'formNuevaVenta.Cantidad' nunca se usa
 
         private decimal precioTotal = 0;
         private int desde = 0;
-
-        DataTable dtRespuesta = new DataTable();
-
 
         public formNuevaVenta(int IdUsuario,string usuario)
         {
@@ -73,6 +42,8 @@ namespace CapaPresentacion.Ventas
             panelClientes.Visible = false;
             panelVuelto.Visible = false;
             panelEmpleados.Visible = false;
+            
+            cbServicios.Items.Clear();
 
             this.IdUsuario = IdUsuario;
             this.Usuario = usuario;
@@ -85,8 +56,6 @@ namespace CapaPresentacion.Ventas
 
             this.dataListadoServicios.Columns["id_servicio"].Visible = false;   // Oculto "IdProducto"
 
-            //this.lblUsuario.Text = usuario;
-            this.IdUsuario = IdUsuario;
 
             this.lblCliente.Text = this.Apellidos + this.Nombres;
             this.llenarCBTiposPago();
@@ -113,6 +82,24 @@ namespace CapaPresentacion.Ventas
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
+            if (lblTotal.Text == "0")
+            {
+                MensajeError("Debe cargar un servicio");
+                return;
+            }
+
+            if (this.IdCliente == 2)
+            {
+                MensajeError("Debe cargar un cliente");
+                return;
+            }
+
+            if (this.IdEmpleado == 2)
+            {
+                MensajeError("Debe cargar un empleado");
+                return;
+            }
+
             DataTable servicios = new DataTable();
             servicios.Columns.Add("id_servicio", typeof(System.Int32));
             servicios.Columns.Add("cantidad", typeof(System.Int32));
@@ -185,13 +172,13 @@ namespace CapaPresentacion.Ventas
         {
             if (this.dataListadoServicios.CurrentRow == null)
             {
-                MensajeError("Productos inexistentes");
+                MensajeError("Servicios inexistentes");
                 return;
             }
             try
             {
                 DialogResult Opcion;
-                Opcion = MessageBox.Show("Realmente Desea Eliminar el producto", "Estetica", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                Opcion = MessageBox.Show("Realmente Desea Eliminar el servicio", "Estetica", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 
                 if (Opcion == DialogResult.OK)
                 {
@@ -206,7 +193,7 @@ namespace CapaPresentacion.Ventas
                         this.lblTotal.Text = precioTotal.ToString();
                     }
 
-                    this.MensajeOk("Se elimino de forma correcta el producto");
+                    this.MensajeOk("Se elimino de forma correcta el servicio");
                 }
 
             }
@@ -362,11 +349,11 @@ namespace CapaPresentacion.Ventas
 
         private void btnAgregarServicio_Click(object sender, EventArgs e)
         {
-            /*if (this.lblNombreServicio.Text == "" || this.lblPrecioUnitario.Text == "")
+            if (lblPrecioUnitario_.Text == "0")
             {
-                MensajeError("Debe cargar un producto");
+                MensajeError("Debe cargar un servicio");
                 return;
-            }*/
+            }
 
             decimal dec = decimal.Parse(this.lblPrecioUnitario_.Text);
             bool bandera = false;

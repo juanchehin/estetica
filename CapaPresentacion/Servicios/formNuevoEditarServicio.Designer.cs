@@ -99,7 +99,7 @@
             this.rtbDescripcion.Location = new System.Drawing.Point(157, 85);
             this.rtbDescripcion.Name = "rtbDescripcion";
             this.rtbDescripcion.Size = new System.Drawing.Size(200, 96);
-            this.rtbDescripcion.TabIndex = 22;
+            this.rtbDescripcion.TabIndex = 3;
             this.rtbDescripcion.Text = "";
             // 
             // label4

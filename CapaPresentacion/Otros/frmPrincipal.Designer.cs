@@ -51,7 +51,7 @@
             this.btnConfiguracion.Location = new System.Drawing.Point(644, 209);
             this.btnConfiguracion.Name = "btnConfiguracion";
             this.btnConfiguracion.Size = new System.Drawing.Size(196, 160);
-            this.btnConfiguracion.TabIndex = 7;
+            this.btnConfiguracion.TabIndex = 6;
             this.btnConfiguracion.Text = "Configuraciones - F6";
             this.btnConfiguracion.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnConfiguracion.UseVisualStyleBackColor = true;
@@ -63,7 +63,7 @@
             this.btnAyuda.Location = new System.Drawing.Point(795, 403);
             this.btnAyuda.Name = "btnAyuda";
             this.btnAyuda.Size = new System.Drawing.Size(45, 42);
-            this.btnAyuda.TabIndex = 19;
+            this.btnAyuda.TabIndex = 8;
             this.btnAyuda.UseVisualStyleBackColor = true;
             this.btnAyuda.Click += new System.EventHandler(this.button1_Click_1);
             this.btnAyuda.MouseHover += new System.EventHandler(this.button1_MouseHover);
@@ -76,7 +76,7 @@
             this.btnCaja.Location = new System.Drawing.Point(254, 209);
             this.btnCaja.Name = "btnCaja";
             this.btnCaja.Size = new System.Drawing.Size(198, 160);
-            this.btnCaja.TabIndex = 2;
+            this.btnCaja.TabIndex = 4;
             this.btnCaja.Text = "Caja - F4";
             this.btnCaja.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnCaja.UseVisualStyleBackColor = true;
@@ -89,7 +89,7 @@
             this.btnVentas.Location = new System.Drawing.Point(458, 39);
             this.btnVentas.Name = "btnVentas";
             this.btnVentas.Size = new System.Drawing.Size(180, 164);
-            this.btnVentas.TabIndex = 6;
+            this.btnVentas.TabIndex = 2;
             this.btnVentas.Text = "Ventas - F2";
             this.btnVentas.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnVentas.UseVisualStyleBackColor = true;
@@ -102,7 +102,7 @@
             this.btnClientes.Location = new System.Drawing.Point(254, 39);
             this.btnClientes.Name = "btnClientes";
             this.btnClientes.Size = new System.Drawing.Size(198, 164);
-            this.btnClientes.TabIndex = 3;
+            this.btnClientes.TabIndex = 1;
             this.btnClientes.Text = "Clientes - F1";
             this.btnClientes.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnClientes.UseVisualStyleBackColor = true;
@@ -126,7 +126,7 @@
             this.btnCalculadora.Location = new System.Drawing.Point(12, 391);
             this.btnCalculadora.Name = "btnCalculadora";
             this.btnCalculadora.Size = new System.Drawing.Size(63, 54);
-            this.btnCalculadora.TabIndex = 26;
+            this.btnCalculadora.TabIndex = 7;
             this.btnCalculadora.UseVisualStyleBackColor = true;
             this.btnCalculadora.Click += new System.EventHandler(this.btnCalculadora_Click);
             // 
@@ -138,7 +138,7 @@
             this.btnServicios.Location = new System.Drawing.Point(644, 39);
             this.btnServicios.Name = "btnServicios";
             this.btnServicios.Size = new System.Drawing.Size(196, 164);
-            this.btnServicios.TabIndex = 27;
+            this.btnServicios.TabIndex = 3;
             this.btnServicios.Text = "Servicios - F3";
             this.btnServicios.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnServicios.UseVisualStyleBackColor = true;
@@ -152,7 +152,7 @@
             this.btnEmpleados.Location = new System.Drawing.Point(458, 209);
             this.btnEmpleados.Name = "btnEmpleados";
             this.btnEmpleados.Size = new System.Drawing.Size(180, 160);
-            this.btnEmpleados.TabIndex = 28;
+            this.btnEmpleados.TabIndex = 5;
             this.btnEmpleados.Text = "Empleados - F5";
             this.btnEmpleados.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnEmpleados.UseVisualStyleBackColor = true;
