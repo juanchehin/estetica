@@ -2,16 +2,20 @@
 using System.Windows.Forms;
 
 using CapaNegocio;
+using CapaPresentacion.Clientes;
 
 namespace CapaPresentacion
 {
     public partial class formClientes : Form
     {
         CN_Clientes objetoCN = new CN_Clientes();
-
         private int IdCliente;
         private int desde = 0;
-
+        private string nombre_cliente;
+        private string apellidos_cliente;
+        private string direccion_cliente;
+        private string telefono_cliente;
+        private string dni;
         public formClientes()
         {
             InitializeComponent();
@@ -96,7 +100,14 @@ namespace CapaPresentacion
             {
                 int selectedrowindex = dataListadoClientes.SelectedCells[0].RowIndex;
                 DataGridViewRow selectedRow = dataListadoClientes.Rows[selectedrowindex];
+
                 this.IdCliente = Convert.ToInt32(selectedRow.Cells["IdPersona"].Value);
+                this.apellidos_cliente = selectedRow.Cells["Apellidos"].Value.ToString();
+                this.nombre_cliente = selectedRow.Cells["Nombres"].Value.ToString();
+                this.telefono_cliente = selectedRow.Cells["Telefono"].Value.ToString();
+                this.direccion_cliente = selectedRow.Cells["Direccion"].Value.ToString();
+                this.dni = selectedRow.Cells["DNI"].Value.ToString();
+
             }
         }
 
@@ -145,6 +156,14 @@ namespace CapaPresentacion
         private void btnRefrescar_Click(object sender, EventArgs e)
         {
             this.MostrarClientes();
+        }
+
+        private void lblCC_Click(object sender, EventArgs e)
+        {
+            formCuentasCorrientesCliente frm = new formCuentasCorrientesCliente(this.IdCliente,this.apellidos_cliente,this.nombre_cliente,this.telefono_cliente,this.direccion_cliente,this.dni);
+            frm.MdiParent = this.MdiParent;
+            frm.Show();
+            this.Close();
         }
     }
 

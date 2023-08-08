@@ -109,6 +109,31 @@ namespace CapaDatos
 
         }
 
+
+        // 
+        public DataTable cuentas_corrientes_cliente(int IdCliente)
+        {
+            comando.Connection = conexion.AbrirConexion();
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.CommandText = "bsp_listar_cuentas_corriente_cliente";
+
+            MySqlParameter pIdCliente = new MySqlParameter();
+            pIdCliente.ParameterName = "@pIdCliente";
+            pIdCliente.MySqlDbType = MySqlDbType.Int32;
+            pIdCliente.Value = IdCliente;
+            comando.Parameters.Add(pIdCliente);
+
+            tabla.Clear();
+            leer = comando.ExecuteReader();
+            tabla.Load(leer);
+            comando.Parameters.Clear();
+            conexion.CerrarConexion();
+
+            return tabla;
+
+        }
+        
+
         public string Editar(CD_Clientes Cliente)
         {
             string rpta = "";

@@ -41,6 +41,7 @@
             this.btnRefrescar = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lblCC = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataListadoClientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -66,7 +67,7 @@
             this.dataListadoClientes.Name = "dataListadoClientes";
             this.dataListadoClientes.ReadOnly = true;
             this.dataListadoClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataListadoClientes.Size = new System.Drawing.Size(703, 315);
+            this.dataListadoClientes.Size = new System.Drawing.Size(794, 315);
             this.dataListadoClientes.TabIndex = 10;
             this.dataListadoClientes.SelectionChanged += new System.EventHandler(this.dataListadoClientes_SelectionChanged);
             // 
@@ -139,7 +140,7 @@
             // btnRefrescar
             // 
             this.btnRefrescar.Image = global::CapaPresentacion.Properties.Resources.refresh;
-            this.btnRefrescar.Location = new System.Drawing.Point(703, 100);
+            this.btnRefrescar.Location = new System.Drawing.Point(794, 100);
             this.btnRefrescar.Name = "btnRefrescar";
             this.btnRefrescar.Size = new System.Drawing.Size(31, 32);
             this.btnRefrescar.TabIndex = 30;
@@ -150,7 +151,7 @@
             // 
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(629, 12);
+            this.pictureBox2.Location = new System.Drawing.Point(703, 12);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(122, 74);
             this.pictureBox2.TabIndex = 9;
@@ -167,11 +168,22 @@
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
             // 
+            // lblCC
+            // 
+            this.lblCC.Location = new System.Drawing.Point(667, 100);
+            this.lblCC.Name = "lblCC";
+            this.lblCC.Size = new System.Drawing.Size(75, 23);
+            this.lblCC.TabIndex = 31;
+            this.lblCC.Text = "Cta. Cte.";
+            this.lblCC.UseVisualStyleBackColor = true;
+            this.lblCC.Click += new System.EventHandler(this.lblCC_Click);
+            // 
             // formClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(763, 485);
+            this.ClientSize = new System.Drawing.Size(838, 485);
+            this.Controls.Add(this.lblCC);
             this.Controls.Add(this.btnRefrescar);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lblTotalClientes);
@@ -211,5 +223,6 @@
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnRefrescar;
+        private System.Windows.Forms.Button lblCC;
     }
 }

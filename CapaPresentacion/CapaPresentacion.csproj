@@ -27,7 +27,7 @@
     <ProductName>SGF</ProductName>
     <PublisherName>SGF</PublisherName>
     <SuiteName>SGF</SuiteName>
-    <ApplicationRevision>17</ApplicationRevision>
+    <ApplicationRevision>18</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -121,6 +121,18 @@
     </Compile>
     <Compile Include="Caja\formCaja.Designer.cs">
       <DependentUpon>formCaja.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Clientes\formCuentasCorrientesCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Clientes\formCuentasCorrientesCliente.Designer.cs">
+      <DependentUpon>formCuentasCorrientesCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Clientes\formDepositar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Clientes\formDepositar.Designer.cs">
+      <DependentUpon>formDepositar.cs</DependentUpon>
     </Compile>
     <Compile Include="Configuraciones\BaseDatos\formHistoricoBackups.cs">
       <SubType>Form</SubType>
@@ -234,6 +246,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Caja\formCaja.resx">
       <DependentUpon>formCaja.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Clientes\formCuentasCorrientesCliente.resx">
+      <DependentUpon>formCuentasCorrientesCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Clientes\formDepositar.resx">
+      <DependentUpon>formDepositar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Configuraciones\BaseDatos\formHistoricoBackups.resx">
       <DependentUpon>formHistoricoBackups.cs</DependentUpon>

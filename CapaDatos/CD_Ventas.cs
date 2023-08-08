@@ -181,6 +181,49 @@ namespace CapaDatos
 
         }
 
+        public string depositar(int pIdCliente,string pMonto,string pTipoPago)
+        {
+            int idVenta;
+            string rpta = "";
+            try
+            {
+                comando.Connection = conexion.AbrirConexion();
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.CommandText = "bsp_depositar";
+
+                MySqlParameter IdCliente = new MySqlParameter();
+                IdCliente.ParameterName = "@pIdCliente";
+                IdCliente.MySqlDbType = MySqlDbType.Int32;
+                IdCliente.Value = pIdCliente;
+                comando.Parameters.Add(IdCliente);
+
+                MySqlParameter TipoPago = new MySqlParameter();
+                TipoPago.ParameterName = "@pTipoPago";
+                TipoPago.MySqlDbType = MySqlDbType.VarChar;
+                TipoPago.Value = pTipoPago;
+                comando.Parameters.Add(TipoPago);
+
+                MySqlParameter MontoTotal = new MySqlParameter();
+                MontoTotal.ParameterName = "@pMonto";
+                MontoTotal.MySqlDbType = MySqlDbType.Decimal;
+                MontoTotal.Value = pMonto;
+                comando.Parameters.Add(MontoTotal);
+
+                idVenta = Convert.ToInt32(comando.ExecuteScalar());
+                comando.Parameters.Clear();
+                rpta = "Ok";
+            }
+            catch (Exception ex)
+            {
+                rpta = ex.Message;
+                conexion.CerrarConexion();
+                return rpta;
+            }
+
+            return rpta;
+
+        }
+
         // Metodo ELIMINAR venta
         public string Eliminar(CD_Ventas Venta)
         {

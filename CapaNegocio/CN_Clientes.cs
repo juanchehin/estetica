@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 using CapaDatos;
 
@@ -28,9 +24,15 @@ namespace CapaNegocio
 
         public DataTable MostrarClientes(int pDesde)
         {
-
             DataTable tabla = new DataTable();
             tabla = objetoCD.Mostrar(pDesde);
+            return tabla;
+        }
+
+        public DataTable cuentas_corrientes_cliente(int idCliente)
+        {
+            DataTable tabla = new DataTable();
+            tabla = objetoCD.cuentas_corrientes_cliente(idCliente);
             return tabla;
         }
         public static string Eliminar(int IdCliente)
@@ -68,7 +70,6 @@ namespace CapaNegocio
 
         public DataTable BuscarCliente(string textobuscar)
         {
-            Console.WriteLine("textobuscar en capa negocio es : " + textobuscar);
             CD_Clientes Obj = new CD_Clientes();
             Obj.TextoBuscar = textobuscar;
             return Obj.BuscarCliente(Obj);

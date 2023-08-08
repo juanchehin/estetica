@@ -23,6 +23,14 @@ namespace CapaNegocio
             //return null;
         }
 
+        public static string depositar(int IdCliente,string monto,string tipo_pago)
+        {
+            CD_Ventas Obj = new CD_Ventas();
+
+            return Obj.depositar(IdCliente,monto, tipo_pago);
+            //return null;
+        }
+
         // Devuelve todas las compras habidas y por haber
         public DataTable MostrarVentas()
         {
