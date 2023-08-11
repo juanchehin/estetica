@@ -69,6 +69,8 @@ namespace CapaPresentacion.Ventas
             cbTiposPago.DataSource = tiposPagos;
 
             cbTiposPago.DisplayMember = "tipo_pago";
+
+            cbTiposPago.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
         private void llenarCBServicios()
@@ -78,6 +80,8 @@ namespace CapaPresentacion.Ventas
             cbServicios.DataSource = servicios;
 
             cbServicios.DisplayMember = "servicio";
+
+            cbServicios.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
         private void btnRegistrar_Click(object sender, EventArgs e)

@@ -24,6 +24,7 @@ namespace CapaPresentacion.Empleados
                 "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
                 "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"
             });
+            cbMeses.DropDownStyle = ComboBoxStyle.DropDownList;
             listar_trabajos_empleado();
         }
 
@@ -36,12 +37,14 @@ namespace CapaPresentacion.Empleados
                 dataListadoTrabajosEmpleado.Columns[3].Visible = false;
                 dataListadoTrabajosEmpleado.Columns[4].Visible = false;
 
-                // this.lblComision = dataListadoTrabajosEmpleado.Columns[3];
-
                 lblComision.Text = dataListadoTrabajosEmpleado.Rows[0].Cells[3].Value.ToString();
 
                 // this.OcultarColumnas();
                 lblRegistros.Text = "Total de Registros: " + Convert.ToString(dataListadoTrabajosEmpleado.Rows.Count);
+            }else
+            {
+                lblRegistros.Text = "Total de Registros: 0";
+                lblComision.Text = "0";
             }
         }
 
