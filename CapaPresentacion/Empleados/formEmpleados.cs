@@ -129,7 +129,7 @@ namespace CapaPresentacion
                 DataGridViewRow selectedRow = dataListadoEmpleados.Rows[selectedrowindex];
                 this.IdEmpleado = Convert.ToInt32(selectedRow.Cells["IdPersona"].Value);
 
-                this.apellidos_empleado = selectedRow.Cells["Nombres"].Value.ToString();
+                this.apellidos_empleado = selectedRow.Cells["Apellidos"].Value.ToString();
                 this.nombres_empleado = selectedRow.Cells["Nombres"].Value.ToString();
                 this.dni_empleado = selectedRow.Cells["DNI"].Value.ToString();
             }
