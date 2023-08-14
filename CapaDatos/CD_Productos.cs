@@ -64,7 +64,7 @@ namespace CapaDatos
         {
             comando.Connection = conexion.AbrirConexion();
             comando.CommandType = CommandType.StoredProcedure;
-            comando.CommandText = "bsp_dame_productos";
+            comando.CommandText = "bsp_listar_productos";
 
             MySqlParameter desde = new MySqlParameter();
             desde.ParameterName = "@pDesde";
@@ -127,13 +127,6 @@ namespace CapaDatos
                 pProducto.Value = Producto.Producto;
                 comando.Parameters.Add(pProducto);
 
-                MySqlParameter pCategoria = new MySqlParameter();
-                pCategoria.ParameterName = "@pCategoria";
-                pCategoria.MySqlDbType = MySqlDbType.VarChar;
-                pCategoria.Size = 60;
-                pCategoria.Value = Producto.Categoria;
-                comando.Parameters.Add(pCategoria);
-
                 MySqlParameter pCodigo = new MySqlParameter();
                 pCodigo.ParameterName = "@pCodigo";
                 pCodigo.MySqlDbType = MySqlDbType.VarChar;
@@ -167,7 +160,7 @@ namespace CapaDatos
                 pDescripcion.Value = Producto.Descripcion;
                 comando.Parameters.Add(pDescripcion);
 
-                rpta = comando.ExecuteScalar().ToString() == "OK" ? "OK" : "No se edito el Registro";
+                rpta = comando.ExecuteScalar().ToString() == "Ok" ? "Ok" : "No se edito el Registro";
                 comando.Parameters.Clear();
             }
             catch (Exception ex)
@@ -190,7 +183,7 @@ namespace CapaDatos
             {
                 comando.Connection = conexion.AbrirConexion();
                 comando.CommandType = CommandType.StoredProcedure;
-                comando.CommandText = "bsp_eliminar_producto";
+                comando.CommandText = "bsp_baja_producto";
 
                 MySqlParameter pIdProducto = new MySqlParameter();
                 pIdProducto.ParameterName = "@pIdProducto";
@@ -201,7 +194,7 @@ namespace CapaDatos
 
                 //Ejecutamos nuestro comando
 
-                rpta = comando.ExecuteNonQuery() == 1 ? "OK" : "NO se Elimino el Registro";
+                rpta = comando.ExecuteNonQuery() == 1 ? "Ok" : "NO se Elimino el Registro";
 
             }
             catch (Exception ex)

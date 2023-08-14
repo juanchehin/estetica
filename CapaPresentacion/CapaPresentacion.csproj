@@ -164,6 +164,18 @@
     <Compile Include="Empleados\formListarTrabajosEmpleado.Designer.cs">
       <DependentUpon>formListarTrabajosEmpleado.cs</DependentUpon>
     </Compile>
+    <Compile Include="Productos\formNuevoEditarProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Productos\formNuevoEditarProducto.Designer.cs">
+      <DependentUpon>formNuevoEditarProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Productos\formProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Productos\formProductos.Designer.cs">
+      <DependentUpon>formProductos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Servicios\formServicios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -273,6 +285,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Empleados\formListarTrabajosEmpleado.resx">
       <DependentUpon>formListarTrabajosEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Productos\formNuevoEditarProducto.resx">
+      <DependentUpon>formNuevoEditarProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Productos\formProductos.resx">
+      <DependentUpon>formProductos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Servicios\formServicios.resx">
       <DependentUpon>formServicios.cs</DependentUpon>

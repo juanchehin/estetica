@@ -1,6 +1,7 @@
 ﻿using CapaNegocio;
 using CapaPresentacion.Caja;
 using CapaPresentacion.Otros;
+using CapaPresentacion.Productos;
 using CapaPresentacion.Ventas;
 using System;
 using System.Data;
@@ -119,7 +120,7 @@ namespace CapaPresentacion
             switch (e.KeyCode)
             {
                 case Keys.F1:
-                    formClientes frm = new formClientes();
+                    formProductos frm = new formProductos();
                     frm.MdiParent = this.MdiParent;
                     frm.Show();
                     break;
@@ -148,6 +149,11 @@ namespace CapaPresentacion
                     frm6.MdiParent = this.MdiParent;
                     frm6.Show();
                     break;
+                case Keys.F7:
+                    formConfiguraciones frm7 = new formConfiguraciones();
+                    frm7.MdiParent = this.MdiParent;
+                    frm7.Show();
+                    break;
                 default:
                     // code block
                     break;
@@ -171,6 +177,13 @@ namespace CapaPresentacion
         private void btnServicios_Click(object sender, EventArgs e)
         {
             formServicios frm5 = new formServicios();
+            frm5.MdiParent = this.MdiParent;
+            frm5.Show();
+        }
+
+        private void btnProductos_Click(object sender, EventArgs e)
+        {
+            formProductos frm5 = new formProductos();
             frm5.MdiParent = this.MdiParent;
             frm5.Show();
         }
