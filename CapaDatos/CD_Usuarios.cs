@@ -69,6 +69,39 @@ namespace CapaDatos
 
         }
 
+        public string chequear_activacion()
+        {
+            string rpta;            
+
+            comando.Connection = conexion.AbrirConexion();
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.CommandText = "bsp_chequear_activacion";
+
+            rpta = comando.ExecuteScalar().ToString() == "Ok" ? "Ok" : "Requiere activacion";
+
+            return rpta;
+        }
+
+        public string activar_producto(string codigo)
+        {
+            string rpta;
+
+            MySqlParameter pCodigo = new MySqlParameter();
+            pCodigo.ParameterName = "@pCodigo";
+            pCodigo.MySqlDbType = MySqlDbType.VarChar;
+            pCodigo.Size = 30;
+            pCodigo.Value = codigo;
+            comando.Parameters.Add(pCodigo);
+
+            comando.Connection = conexion.AbrirConexion();
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.CommandText = "bsp_activar_producto";
+
+            rpta = comando.ExecuteScalar().ToString() == "Ok" ? "Ok" : "Requiere activacion";
+
+            return rpta;
+        }
+
 
     }
 }

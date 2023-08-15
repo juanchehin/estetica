@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CapaPresentacion.Otros;
+using CapaPresentacion.Productos;
+using System;
 using System.Data;
 using System.Windows.Forms;
 
@@ -9,6 +11,7 @@ namespace CapaPresentacion
         string usuario;
         public int IdUsuario;
         int IdRol;
+        string activado = "";
         DataTable datos;
 
         public formLogin()
@@ -25,22 +28,36 @@ namespace CapaPresentacion
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-            this.datos = CapaNegocio.CN_Usuarios.Login(this.txtUsuario.Text, this.txtPassword.Text);
-            //Evaluar si existe el Usuario
-            if (this.datos.Rows[0][0].ToString() != "Ok")
+            this.activado = CapaNegocio.CN_Usuarios.chequear_activacion();
+
+            if (this.activado != "Ok")
             {
-                MessageBox.Show("Error de login", "Estetica", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                formActivacion frm5 = new formActivacion();
+                frm5.MdiParent = this.MdiParent;
+                frm5.Show();
+
+                // MessageBox.Show("Programa no activado o periodo de prueba caduco, contactese con el administrador", "Estetica", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                this.IdUsuario = Convert.ToInt32(this.datos.Rows[0][1].ToString());
-                this.IdRol = Convert.ToInt32(this.datos.Rows[0][3].ToString());
-                this.usuario = this.datos.Rows[0][2].ToString();
+                this.datos = CapaNegocio.CN_Usuarios.Login(this.txtUsuario.Text, this.txtPassword.Text);
+                //Evaluar si existe el Usuario
+                if (this.datos.Rows[0][0].ToString() != "Ok")
+                {
+                    MessageBox.Show("Error de login", "Estetica", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    this.IdUsuario = Convert.ToInt32(this.datos.Rows[0][1].ToString());
+                    this.IdRol = Convert.ToInt32(this.datos.Rows[0][3].ToString());
+                    this.usuario = this.datos.Rows[0][2].ToString();
 
-                frmPrincipal frm = new frmPrincipal(this.IdUsuario,this.usuario,this.IdRol);
-                frm.Show();
-                this.Hide();
+                    frmPrincipal frm = new frmPrincipal(this.IdUsuario, this.usuario, this.IdRol);
+                    frm.Show();
+                    this.Hide();
+                }
             }
+           
         }
 
         private void formLogin_Load(object sender, EventArgs e)

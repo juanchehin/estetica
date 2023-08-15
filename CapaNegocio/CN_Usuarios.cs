@@ -23,6 +23,20 @@ namespace CapaNegocio
             tabla = Obj.Login(Obj);
             return tabla;
         }
+
+        public static string chequear_activacion()
+        {
+            CD_Usuarios Obj = new CD_Usuarios();
+
+            return Obj.chequear_activacion();
+        }
+
+        public static string activar_producto(string pCodigo)
+        {
+            CD_Usuarios Obj = new CD_Usuarios();
+
+            return Obj.activar_producto(pCodigo);
+        }
     }
     
 }

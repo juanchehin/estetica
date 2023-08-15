@@ -72,5 +72,6 @@ namespace CapaNegocio
             return Obj.BuscarProductoPorCodigo(Obj);
         }
 
+
     }
 }
