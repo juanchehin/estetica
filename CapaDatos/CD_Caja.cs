@@ -109,7 +109,7 @@ namespace CapaDatos
 
 
         // Metodo ELIMINAR Empleado (da de baja)
-        public string Eliminar(CD_Clientes Cliente)
+        public string Eliminar(int IdTransaccion)
         {
             string rpta = "";
             // SqlConnection SqlCon = new SqlConnection();
@@ -118,18 +118,21 @@ namespace CapaDatos
 
                 comando.Connection = conexion.AbrirConexion();
                 comando.CommandType = CommandType.StoredProcedure;
-                comando.CommandText = "bsp_eliminar_cliente";
+                comando.CommandText = "bsp_baja_transaccion";
 
-                MySqlParameter pIdCliente = new MySqlParameter();
-                pIdCliente.ParameterName = "@pIdCliente";
-                pIdCliente.MySqlDbType = MySqlDbType.Int32;
+                MySqlParameter pIdTransaccion = new MySqlParameter();
+                pIdTransaccion.ParameterName = "@pIdTransaccion";
+                pIdTransaccion.MySqlDbType = MySqlDbType.Int32;
                 // pIdEmpleado.Size = 60;
-                pIdCliente.Value = Cliente.IdCliente;
-                comando.Parameters.Add(pIdCliente);
+                pIdTransaccion.Value = IdTransaccion;
+                comando.Parameters.Add(pIdTransaccion);
 
                 //Ejecutamos nuestro comando
 
-                rpta = comando.ExecuteNonQuery() == 1 ? "OK" : "NO se Elimino el Registro";
+                //Ejecutamos nuestro comando
+                rpta = comando.ExecuteScalar().ToString();
+
+                // rpta = comando.ExecuteNonQuery() == 1 ? "Ok" : "NO se Elimino el Registro";
 
 
             }

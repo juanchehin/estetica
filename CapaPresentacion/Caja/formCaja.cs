@@ -12,6 +12,8 @@ namespace CapaPresentacion.Caja
         int IdUsuario;
         int desde = 0;
         DataSet transacciones;
+        private int IdTransaccion;
+
         public formCaja(int IdUsuario,string usuario)
         {
             InitializeComponent();
@@ -148,6 +150,38 @@ namespace CapaPresentacion.Caja
         private void btnRefrescar_Click(object sender, EventArgs e)
         {
             listarTransacciones();
+        }
+
+        private void btnEliminarTransaccion_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                DialogResult Opcion;
+                Opcion = MessageBox.Show("Realmente Desea Eliminar", "Estetica", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+
+                if (Opcion == DialogResult.OK)
+                {
+                    objeto_Caja.Eliminar(this.IdTransaccion);
+                    this.listarTransacciones();
+                    this.MensajeOk("Se elimino de forma correcta el producto");
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+        }
+
+        private void dataListadoCaja_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dataListadoCaja.SelectedCells.Count > 0)
+            {
+                int selectedrowindex = dataListadoCaja.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = dataListadoCaja.Rows[selectedrowindex];
+                this.IdTransaccion = Convert.ToInt32(selectedRow.Cells["id_transaccion"].Value);
+            }
         }
     }
 }

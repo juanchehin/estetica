@@ -95,7 +95,6 @@ namespace CapaDatos
                 comando.CommandType = CommandType.StoredProcedure;
                 comando.CommandText = "bsp_alta_venta";
 
-
                 MySqlParameter IdCliente = new MySqlParameter();
                 IdCliente.ParameterName = "@pIdCliente";
                 IdCliente.MySqlDbType = MySqlDbType.Int32;
@@ -129,8 +128,6 @@ namespace CapaDatos
                 idVenta = Convert.ToInt32(comando.ExecuteScalar());
                 comando.Parameters.Clear();
 
-
-               
             }
             catch(Exception ex)
             {

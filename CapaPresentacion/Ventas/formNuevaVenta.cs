@@ -353,13 +353,13 @@ namespace CapaPresentacion.Ventas
 
         private void btnAgregarServicio_Click(object sender, EventArgs e)
         {
-            if (lblPrecioUnitario_.Text == "0")
+            if (txtPrecioUnitario.Text == "0")
             {
                 MensajeError("Debe cargar un servicio");
                 return;
             }
 
-            decimal dec = decimal.Parse(this.lblPrecioUnitario_.Text);
+            decimal dec = decimal.Parse(this.txtPrecioUnitario.Text);
             bool bandera = false;
 
             if (dataListadoServicios.Rows.Count == 0)
@@ -367,13 +367,13 @@ namespace CapaPresentacion.Ventas
                 // Si no cargo la cantidad, cargo por defecto 1
                 if (String.IsNullOrEmpty(this.txtCantidad.Text))
                 {
-                    this.dataListadoServicios.Rows.Insert(this.dataListadoServicios.RowCount, this.IdServicio, cbServicios.Text, 1, this.lblPrecioUnitario_.Text);
+                    this.dataListadoServicios.Rows.Insert(this.dataListadoServicios.RowCount, this.IdServicio, cbServicios.Text, 1, this.txtPrecioUnitario.Text);
                     this.precioTotal += dec;
                 }
                 else
                 {
                     decimal cant = decimal.Parse(this.txtCantidad.Text);
-                    this.dataListadoServicios.Rows.Insert(this.dataListadoServicios.RowCount, this.IdServicio, cbServicios.Text, this.txtCantidad.Text, this.lblPrecioUnitario_.Text);
+                    this.dataListadoServicios.Rows.Insert(this.dataListadoServicios.RowCount, this.IdServicio, cbServicios.Text, this.txtCantidad.Text, this.txtPrecioUnitario.Text);
                     this.precioTotal += dec * cant;
                 }
             }
@@ -406,13 +406,13 @@ namespace CapaPresentacion.Ventas
                     // Si no cargo la cantidad, cargo por defecto 1
                     if (String.IsNullOrEmpty(this.txtCantidad.Text))
                     {
-                        this.dataListadoServicios.Rows.Insert(this.dataListadoServicios.RowCount, this.IdServicio, cbServicios.Text, 1, this.lblPrecioUnitario_.Text);
+                        this.dataListadoServicios.Rows.Insert(this.dataListadoServicios.RowCount, this.IdServicio, cbServicios.Text, 1, this.txtPrecioUnitario.Text);
                         this.precioTotal += dec;
                     }
                     else
                     {
                         decimal cant = decimal.Parse(this.txtCantidad.Text);
-                        this.dataListadoServicios.Rows.Insert(this.dataListadoServicios.RowCount, this.IdServicio, cbServicios.Text, this.txtCantidad.Text, this.lblPrecioUnitario_.Text);
+                        this.dataListadoServicios.Rows.Insert(this.dataListadoServicios.RowCount, this.IdServicio, cbServicios.Text, this.txtCantidad.Text, this.txtPrecioUnitario.Text);
                         this.precioTotal += dec * cant;
                     }
                 }
@@ -439,7 +439,8 @@ namespace CapaPresentacion.Ventas
                 {
                     // Acceder a los valores de otras columnas de la fila
                     this.IdServicio = Convert.ToInt32(fila["id_servicio"]);
-                    this.lblPrecioUnitario_.Text = fila["precio"].ToString();
+                    this.txtPrecioUnitario.Text = fila["precio"].ToString();
+                    //this.lblPrecioUnitario_.Text = fila["precio"].ToString();
                 }
             }
 

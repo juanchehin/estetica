@@ -33,5 +33,10 @@ namespace CapaNegocio
             resp = objetoCD_caja.cerrarCaja(IdUsuario);
             return resp;
         }
+        public string Eliminar(int IdTransaccion)
+        {
+            resp = objetoCD_caja.Eliminar(IdTransaccion);
+            return resp;
+        }
     }
 }

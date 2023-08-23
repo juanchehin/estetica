@@ -46,7 +46,6 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.lblPrecioUnitario_ = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.cbServicios = new System.Windows.Forms.ComboBox();
             this.btnSeleccionarEmpleado = new System.Windows.Forms.Button();
@@ -86,6 +85,7 @@
             this.seleccionarEmpleado = new System.Windows.Forms.Button();
             this.dataListadoEmpleadosPanel = new System.Windows.Forms.DataGridView();
             this.btnAgregarServicio = new System.Windows.Forms.Button();
+            this.txtPrecioUnitario = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataListadoServicios)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -216,7 +216,7 @@
             // 
             // txtCantidad
             // 
-            this.txtCantidad.Location = new System.Drawing.Point(99, 70);
+            this.txtCantidad.Location = new System.Drawing.Point(125, 68);
             this.txtCantidad.Name = "txtCantidad";
             this.txtCantidad.Size = new System.Drawing.Size(47, 20);
             this.txtCantidad.TabIndex = 2;
@@ -265,8 +265,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.txtPrecioUnitario);
             this.groupBox2.Controls.Add(this.label8);
-            this.groupBox2.Controls.Add(this.lblPrecioUnitario_);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.cbServicios);
             this.groupBox2.Controls.Add(this.btnSeleccionarEmpleado);
@@ -299,16 +299,6 @@
             this.label8.TabIndex = 57;
             this.label8.Text = "$";
             // 
-            // lblPrecioUnitario_
-            // 
-            this.lblPrecioUnitario_.AutoSize = true;
-            this.lblPrecioUnitario_.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrecioUnitario_.Location = new System.Drawing.Point(130, 99);
-            this.lblPrecioUnitario_.Name = "lblPrecioUnitario_";
-            this.lblPrecioUnitario_.Size = new System.Drawing.Size(16, 17);
-            this.lblPrecioUnitario_.TabIndex = 56;
-            this.lblPrecioUnitario_.Text = "0";
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -322,7 +312,7 @@
             // cbServicios
             // 
             this.cbServicios.FormattingEnabled = true;
-            this.cbServicios.Location = new System.Drawing.Point(99, 31);
+            this.cbServicios.Location = new System.Drawing.Point(125, 31);
             this.cbServicios.Name = "cbServicios";
             this.cbServicios.Size = new System.Drawing.Size(156, 21);
             this.cbServicios.TabIndex = 1;
@@ -370,7 +360,7 @@
             // cbTiposPago
             // 
             this.cbTiposPago.FormattingEnabled = true;
-            this.cbTiposPago.Location = new System.Drawing.Point(99, 139);
+            this.cbTiposPago.Location = new System.Drawing.Point(125, 138);
             this.cbTiposPago.Name = "cbTiposPago";
             this.cbTiposPago.Size = new System.Drawing.Size(156, 21);
             this.cbTiposPago.TabIndex = 3;
@@ -484,7 +474,7 @@
             this.panelClientes.Controls.Add(this.btnAgregarCliente);
             this.panelClientes.Controls.Add(this.button1);
             this.panelClientes.Controls.Add(this.dataListadoClientes);
-            this.panelClientes.Location = new System.Drawing.Point(164, 17);
+            this.panelClientes.Location = new System.Drawing.Point(204, 8);
             this.panelClientes.Name = "panelClientes";
             this.panelClientes.Size = new System.Drawing.Size(851, 484);
             this.panelClientes.TabIndex = 50;
@@ -605,7 +595,7 @@
             this.panelEmpleados.Controls.Add(this.pictureBox8);
             this.panelEmpleados.Controls.Add(this.seleccionarEmpleado);
             this.panelEmpleados.Controls.Add(this.dataListadoEmpleadosPanel);
-            this.panelEmpleados.Location = new System.Drawing.Point(177, 12);
+            this.panelEmpleados.Location = new System.Drawing.Point(151, 12);
             this.panelEmpleados.Name = "panelEmpleados";
             this.panelEmpleados.Size = new System.Drawing.Size(851, 484);
             this.panelEmpleados.TabIndex = 71;
@@ -705,6 +695,13 @@
             this.btnAgregarServicio.Text = "Agregar servicio";
             this.btnAgregarServicio.UseVisualStyleBackColor = true;
             this.btnAgregarServicio.Click += new System.EventHandler(this.btnAgregarServicio_Click);
+            // 
+            // txtPrecioUnitario
+            // 
+            this.txtPrecioUnitario.Location = new System.Drawing.Point(125, 98);
+            this.txtPrecioUnitario.Name = "txtPrecioUnitario";
+            this.txtPrecioUnitario.Size = new System.Drawing.Size(100, 20);
+            this.txtPrecioUnitario.TabIndex = 58;
             // 
             // formNuevaVenta
             // 
@@ -812,7 +809,7 @@
         private System.Windows.Forms.ComboBox cbServicios;
         private System.Windows.Forms.Button btnAgregarServicio;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label lblPrecioUnitario_;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox txtPrecioUnitario;
     }
 }
