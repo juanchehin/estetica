@@ -478,5 +478,17 @@ namespace CapaPresentacion.Ventas
                     break;
             }
         }
+
+        private void btnAgregarCliente_Click(object sender, EventArgs e)
+        {
+            formNuevoEditarClientes frm = new formNuevoEditarClientes(this.IdCliente, true);
+            frm.MdiParent = this.MdiParent;
+            frm.Show();
+        }
+
+        private void btnRefrescar_Click(object sender, EventArgs e)
+        {
+            this.MostrarClientes();
+        }
     }
 }
