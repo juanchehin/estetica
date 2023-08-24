@@ -37,10 +37,39 @@ namespace CapaPresentacion.Caja
             var diaFin = dtFechaFin.Value.Day;
             var fechaFin = añoFin + "-" + mesFin + "-" + diaFin;
 
-            transacciones = objeto_Caja.listarTransacciones(this.desde, fechaInicio, fechaFin);
 
+            transacciones = objeto_Caja.listarTransacciones(this.desde, fechaInicio, fechaFin);
             dataListadoCaja.DataSource = transacciones.Tables[0];
+
             dataListadoCaja.Columns["id_transaccion"].Visible = false;
+            dataListadoCaja.Columns["suma_total"].Visible = false;
+
+            DataTable tabla_transacciones = transacciones.Tables["Table"];
+
+            // Verifica si la tabla contiene filas
+            if (tabla_transacciones.Rows.Count > 0)
+            {
+                // Accede a la celda en la fila 0 y columna 1
+                object valorCelda = tabla_transacciones.Rows[0][5];
+
+                // Convierte el valor de la celda al tipo de datos adecuado
+                if (valorCelda != DBNull.Value)
+                {
+                    txtMonto.Text = valorCelda.ToString();
+                    // Console.WriteLine("Valor de la celda: " + valorTexto);
+                }
+                else
+                {
+                    txtMonto.Text = "0";
+                }
+            }
+            else
+            {
+                txtMonto.Text = "0";
+            }
+
+          
+
         }
 
         private string dameEstadoCaja()

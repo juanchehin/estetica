@@ -38,6 +38,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnEliminarTransaccion = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtMonto = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataListadoCaja)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -134,11 +136,31 @@
             this.btnEliminarTransaccion.UseVisualStyleBackColor = true;
             this.btnEliminarTransaccion.Click += new System.EventHandler(this.btnEliminarTransaccion_Click);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(553, 132);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(52, 13);
+            this.label3.TabIndex = 51;
+            this.label3.Text = "Monto : $";
+            // 
+            // txtMonto
+            // 
+            this.txtMonto.AutoSize = true;
+            this.txtMonto.Location = new System.Drawing.Point(622, 132);
+            this.txtMonto.Name = "txtMonto";
+            this.txtMonto.Size = new System.Drawing.Size(13, 13);
+            this.txtMonto.TabIndex = 52;
+            this.txtMonto.Text = "0";
+            // 
             // formCaja
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(736, 491);
+            this.Controls.Add(this.txtMonto);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.btnEliminarTransaccion);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -169,5 +191,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnEliminarTransaccion;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label txtMonto;
     }
 }
