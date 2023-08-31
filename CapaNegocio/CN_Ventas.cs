@@ -23,11 +23,19 @@ namespace CapaNegocio
             //return null;
         }
 
-        public static string depositar(int IdCliente,string monto,string tipo_pago)
+        public static string depositar(int IdCliente, string monto, string tipo_pago)
         {
             CD_Ventas Obj = new CD_Ventas();
 
-            return Obj.depositar(IdCliente,monto, tipo_pago);
+            return Obj.depositar(IdCliente, monto, tipo_pago);
+            //return null;
+        }
+
+        public static string alta_egreso(string monto,string tipo_pago, string descripcion)
+        {
+            CD_Ventas Obj = new CD_Ventas();
+
+            return Obj.alta_egreso(monto, tipo_pago, descripcion);
             //return null;
         }
 

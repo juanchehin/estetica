@@ -145,7 +145,7 @@ namespace CapaPresentacion
                     frm5.Show();
                     break;
                 case Keys.F6:
-                    formConfiguraciones frm6 = new formConfiguraciones();
+                    formClientes frm6 = new formClientes();
                     frm6.MdiParent = this.MdiParent;
                     frm6.Show();
                     break;
@@ -158,13 +158,11 @@ namespace CapaPresentacion
                     // code block
                     break;
             }
-
         }
 
         private void frmPrincipal_Load(object sender, EventArgs e)
         {
             this.KeyPreview = true;
-            //this.KeyDown += new KeyEventHandler(frmPrincipal_KeyDown);
         }
 
         private void btnEmpleados_Click_1(object sender, EventArgs e)

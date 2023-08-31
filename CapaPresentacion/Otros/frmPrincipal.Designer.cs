@@ -52,7 +52,7 @@
             this.btnConfiguracion.Location = new System.Drawing.Point(272, 375);
             this.btnConfiguracion.Name = "btnConfiguracion";
             this.btnConfiguracion.Size = new System.Drawing.Size(178, 160);
-            this.btnConfiguracion.TabIndex = 6;
+            this.btnConfiguracion.TabIndex = 7;
             this.btnConfiguracion.Text = "Configuraciones - F7";
             this.btnConfiguracion.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnConfiguracion.UseVisualStyleBackColor = true;
@@ -103,7 +103,7 @@
             this.btnClientes.Location = new System.Drawing.Point(644, 209);
             this.btnClientes.Name = "btnClientes";
             this.btnClientes.Size = new System.Drawing.Size(196, 160);
-            this.btnClientes.TabIndex = 1;
+            this.btnClientes.TabIndex = 6;
             this.btnClientes.Text = "Clientes - F6";
             this.btnClientes.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnClientes.UseVisualStyleBackColor = true;
@@ -166,7 +166,7 @@
             this.btnProductos.Location = new System.Drawing.Point(272, 39);
             this.btnProductos.Name = "btnProductos";
             this.btnProductos.Size = new System.Drawing.Size(180, 164);
-            this.btnProductos.TabIndex = 9;
+            this.btnProductos.TabIndex = 1;
             this.btnProductos.Text = "Productos - F1";
             this.btnProductos.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnProductos.UseVisualStyleBackColor = true;

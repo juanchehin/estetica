@@ -149,16 +149,39 @@ namespace CapaDatos
                     pIdVenta.Value = idVenta;
                     comando.Parameters.Add(pIdVenta);
 
-                    MySqlParameter pIdServicio = new MySqlParameter();
-                    pIdServicio.ParameterName = "@pIdServicio";
-                    pIdServicio.MySqlDbType = MySqlDbType.Int32;
-                    pIdServicio.Value = pListadoServicios.Rows[curRow][0];
-                    comando.Parameters.Add(pIdServicio);
+                    MySqlParameter pIdServicioProducto = new MySqlParameter();
+                    pIdServicioProducto.ParameterName = "@pIdServicioProducto";
+                    pIdServicioProducto.MySqlDbType = MySqlDbType.Int32;
+                    pIdServicioProducto.Value = pListadoServicios.Rows[curRow][0];
+                    comando.Parameters.Add(pIdServicioProducto);
+
+                    if (pListadoServicios.Rows[curRow][4].ToString() == "Producto")
+                    {
+                        MySqlParameter Tipo = new MySqlParameter();
+                        Tipo.ParameterName = "@pTipo";
+                        Tipo.MySqlDbType = MySqlDbType.VarChar;
+                        Tipo.Value = "P";
+                        comando.Parameters.Add(Tipo);
+                    }
+                    else
+                    {
+                        MySqlParameter Tipo = new MySqlParameter();
+                        Tipo.ParameterName = "@pTipo";
+                        Tipo.MySqlDbType = MySqlDbType.VarChar;
+                        Tipo.Value = "S";
+                        comando.Parameters.Add(Tipo);
+                    }
+
+                    MySqlParameter pPrecio = new MySqlParameter();
+                    pPrecio.ParameterName = "@pPrecio";
+                    pPrecio.MySqlDbType = MySqlDbType.Decimal;
+                    pPrecio.Value = pListadoServicios.Rows[curRow][2];
+                    comando.Parameters.Add(pPrecio);
 
                     MySqlParameter pCantidad = new MySqlParameter();
                     pCantidad.ParameterName = "@pCantidad";
                     pCantidad.MySqlDbType = MySqlDbType.Int32;  // Ver por que esta definido como string
-                    pCantidad.Value = pListadoServicios.Rows[curRow][1];
+                    pCantidad.Value = pListadoServicios.Rows[curRow][3];
                     comando.Parameters.Add(pCantidad);
 
                     rpta = (string)comando.ExecuteScalar();//  == "Ok";//  : "NO se Ingreso el Registro";
@@ -217,6 +240,49 @@ namespace CapaDatos
                 return rpta;
             }
 
+            return rpta;
+
+        }
+
+        public string alta_egreso(string pMonto, string pTipoPago, string pDescripcion)
+        {
+            string rpta = "";
+            try
+            {
+                comando.Connection = conexion.AbrirConexion();
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.CommandText = "bsp_alta_egreso";
+
+                MySqlParameter MontoTotal = new MySqlParameter();
+                MontoTotal.ParameterName = "@pMonto";
+                MontoTotal.MySqlDbType = MySqlDbType.Decimal;
+                MontoTotal.Value = pMonto;
+                comando.Parameters.Add(MontoTotal);
+
+                MySqlParameter TipoPago = new MySqlParameter();
+                TipoPago.ParameterName = "@pTipoPago";
+                TipoPago.MySqlDbType = MySqlDbType.VarChar;
+                TipoPago.Value = pTipoPago;
+                comando.Parameters.Add(TipoPago);
+
+                MySqlParameter descripcion = new MySqlParameter();
+                descripcion.ParameterName = "@pDescripcion";
+                descripcion.MySqlDbType = MySqlDbType.VarChar;
+                descripcion.Value = pDescripcion;
+                comando.Parameters.Add(descripcion);
+
+                rpta = (string)comando.ExecuteScalar();//  == "Ok";//  : "NO se Ingreso el Registro";
+                comando.Parameters.Clear();
+
+            }
+            catch (Exception ex)
+            {
+                rpta = ex.Message;
+            }
+            finally
+            {
+                conexion.CerrarConexion();
+            }
             return rpta;
 
         }

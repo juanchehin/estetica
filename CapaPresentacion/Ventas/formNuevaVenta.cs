@@ -2,7 +2,6 @@
 using System.Data;
 using System.Windows.Forms;
 using CapaNegocio;
-using CapaPresentacion.Caja;
 
 namespace CapaPresentacion.Ventas
 {
@@ -13,6 +12,7 @@ namespace CapaPresentacion.Ventas
 
         CN_Clientes objetoCN_clientes = new CN_Clientes();
         CN_Servicios objetoCN_servicios = new CN_Servicios();
+        CN_Productos objetoCN_productos = new CN_Productos();
 
         DataTable respuesta;
         DataTable tiposPagos;
@@ -31,7 +31,10 @@ namespace CapaPresentacion.Ventas
         public string Usuario;
 
         DataTable servicios;
+        DataTable productos;
+
         private int IdServicio;
+        private int IdProducto;
 
         private decimal precioTotal = 0;
         private int desde = 0;
@@ -49,17 +52,20 @@ namespace CapaPresentacion.Ventas
             this.Usuario = usuario;
             // Creo las columnas de el listado de ventas
 
-            this.dataListadoServicios.Columns.Add("id_servicio", "id_servicio");
-            this.dataListadoServicios.Columns.Add("servicio", "servicio");
-            this.dataListadoServicios.Columns.Add("cantidad", "cantidad");
-            this.dataListadoServicios.Columns.Add("PrecioUnitario", "Precio unitario");
+            this.dataListadoServiciosProductos.Columns.Add("id_servicio_producto", "id");
+            this.dataListadoServiciosProductos.Columns.Add("servicio_producto", "Servicio/Producto");
+            //this.dataListadoServiciosProductos.Columns.Add("producto", "producto");
+            this.dataListadoServiciosProductos.Columns.Add("cantidad", "Cantidad");
+            this.dataListadoServiciosProductos.Columns.Add("precio_unitario", "Precio unitario");
+            this.dataListadoServiciosProductos.Columns.Add("tipo", "Tipo");
 
-            this.dataListadoServicios.Columns["id_servicio"].Visible = false;   // Oculto "IdProducto"
-
+            this.dataListadoServiciosProductos.Columns["id_servicio_producto"].Visible = false;
 
             this.lblCliente.Text = this.Apellidos + this.Nombres;
             this.llenarCBTiposPago();
             this.llenarCBServicios();
+            this.llenarCBProductos();
+
         }
 
         private void llenarCBTiposPago()
@@ -84,11 +90,22 @@ namespace CapaPresentacion.Ventas
             cbServicios.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
+        private void llenarCBProductos()
+        {
+            productos = objetoCN_productos.ListarProductosTable(0);
+
+            cbProductos.DataSource = productos;
+
+            cbProductos.DisplayMember = "producto";
+
+            cbProductos.DropDownStyle = ComboBoxStyle.DropDownList;
+        }
+
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
             if (lblTotal.Text == "0")
             {
-                MensajeError("Debe cargar un servicio");
+                MensajeError("Debe cargar un producto/servicio");
                 return;
             }
 
@@ -104,30 +121,36 @@ namespace CapaPresentacion.Ventas
                 return;
             }
 
-            DataTable servicios = new DataTable();
-            servicios.Columns.Add("id_servicio", typeof(System.Int32));
-            servicios.Columns.Add("cantidad", typeof(System.Int32));
+            DataTable servicios_productos = new DataTable();
+            servicios_productos.Columns.Add("id_servicio_producto", typeof(System.Int32));
+            servicios_productos.Columns.Add("produto_servicio", typeof(System.String));
+            servicios_productos.Columns.Add("precio", typeof(System.Decimal));
+            servicios_productos.Columns.Add("cantidad", typeof(System.Int32));
+            servicios_productos.Columns.Add("tipo", typeof(System.String));
 
 
-            foreach (DataGridViewRow rowGrid in this.dataListadoServicios.Rows)
+            foreach (DataGridViewRow rowGrid in this.dataListadoServiciosProductos.Rows)
             {
-                DataRow row = servicios.NewRow();
-                row["id_servicio"] = Convert.ToDouble(rowGrid.Cells[0].Value);
+                DataRow row = servicios_productos.NewRow();
+                row["id_servicio_producto"] = Convert.ToDouble(rowGrid.Cells[0].Value);
+                row["produto_servicio"] = rowGrid.Cells[1].Value;
                 row["cantidad"] = rowGrid.Cells[2].Value;
+                row["precio"] = rowGrid.Cells[3].Value;
+                row["tipo"] = rowGrid.Cells[4].Value;
 
-                servicios.Rows.Add(row);
+                servicios_productos.Rows.Add(row);
             }
 
             try
             {
                 string rpta = "";
-                if (this.dataListadoServicios.CurrentRow == null)
+                if (this.dataListadoServiciosProductos.CurrentRow == null)
                 {
                     MensajeError("Servicios inexistentes");
                     return;
                 }
 
-                rpta = CN_Ventas.AltaVenta(this.IdCliente,this.IdEmpleado, cbTiposPago.Text, servicios, Convert.ToDecimal(this.precioTotal.ToString()));
+                rpta = CN_Ventas.AltaVenta(this.IdCliente,this.IdEmpleado, cbTiposPago.Text, servicios_productos, Convert.ToDecimal(this.precioTotal.ToString()));
 
                 if (rpta.Equals("Ok"))
                 {
@@ -174,7 +197,7 @@ namespace CapaPresentacion.Ventas
 
         private void btnQuitar_Click(object sender, EventArgs e)
         {
-            if (this.dataListadoServicios.CurrentRow == null)
+            if (this.dataListadoServiciosProductos.CurrentRow == null)
             {
                 MensajeError("Servicios inexistentes");
                 return;
@@ -182,22 +205,22 @@ namespace CapaPresentacion.Ventas
             try
             {
                 DialogResult Opcion;
-                Opcion = MessageBox.Show("Realmente Desea Eliminar el servicio", "Estetica", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                Opcion = MessageBox.Show("Realmente Desea Eliminar la fila", "Estetica", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 
                 if (Opcion == DialogResult.OK)
                 {
-                    foreach (DataGridViewRow item in this.dataListadoServicios.SelectedRows)
+                    foreach (DataGridViewRow item in this.dataListadoServiciosProductos.SelectedRows)
                     {
-                        decimal precio = decimal.Parse(this.dataListadoServicios.Rows[item.Index].Cells["PrecioUnitario"].Value.ToString());
-                        int cantidad = int.Parse(this.dataListadoServicios.Rows[item.Index].Cells["Cantidad"].Value.ToString());
+                        decimal precio = decimal.Parse(this.dataListadoServiciosProductos.Rows[item.Index].Cells["precio_unitario"].Value.ToString());
+                        int cantidad = int.Parse(this.dataListadoServiciosProductos.Rows[item.Index].Cells["cantidad"].Value.ToString());
 
-                        this.dataListadoServicios.Rows.RemoveAt(item.Index);
+                        this.dataListadoServiciosProductos.Rows.RemoveAt(item.Index);
 
                         this.precioTotal = this.precioTotal - (precio * cantidad);
                         this.lblTotal.Text = precioTotal.ToString();
                     }
 
-                    this.MensajeOk("Se elimino de forma correcta el servicio");
+                    this.MensajeOk("Se elimino de forma correcta la fila");
                 }
 
             }
@@ -249,8 +272,8 @@ namespace CapaPresentacion.Ventas
 
         public void MostrarServicios()
         {
-            dataListadoServicios.DataSource = objetoCN_servicios.ListarServicios(0);
-            dataListadoServicios.Columns[0].Visible = false;
+            dataListadoServiciosProductos.DataSource = objetoCN_servicios.ListarServicios(0);
+            dataListadoServiciosProductos.Columns[0].Visible = false;
         }
 
         public void MostrarEmpleados()
@@ -353,35 +376,34 @@ namespace CapaPresentacion.Ventas
 
         private void btnAgregarServicio_Click(object sender, EventArgs e)
         {
-            if (txtPrecioUnitario.Text == "0")
+            if (txtPrecioUnitario.Text == "0" || txtPrecioUnitario.Text == "")
             {
                 MensajeError("Debe cargar un servicio");
                 return;
             }
 
             decimal dec = decimal.Parse(this.txtPrecioUnitario.Text);
-            bool bandera = false;
 
-            if (dataListadoServicios.Rows.Count == 0)
+            if (dataListadoServiciosProductos.Rows.Count == 0)
             {
                 // Si no cargo la cantidad, cargo por defecto 1
                 if (String.IsNullOrEmpty(this.txtCantidad.Text))
                 {
-                    this.dataListadoServicios.Rows.Insert(this.dataListadoServicios.RowCount, this.IdServicio, cbServicios.Text, 1, this.txtPrecioUnitario.Text);
+                    this.dataListadoServiciosProductos.Rows.Insert(this.dataListadoServiciosProductos.RowCount, this.IdServicio, cbServicios.Text, 1, this.txtPrecioUnitario.Text,"Servicio");
                     this.precioTotal += dec;
                 }
                 else
                 {
                     decimal cant = decimal.Parse(this.txtCantidad.Text);
-                    this.dataListadoServicios.Rows.Insert(this.dataListadoServicios.RowCount, this.IdServicio, cbServicios.Text, this.txtCantidad.Text, this.txtPrecioUnitario.Text);
+                    this.dataListadoServiciosProductos.Rows.Insert(this.dataListadoServiciosProductos.RowCount, this.IdServicio, cbServicios.Text, this.txtCantidad.Text, this.txtPrecioUnitario.Text, "Servicio");
                     this.precioTotal += dec * cant;
                 }
             }
             else
             {
-                bandera = false;
+                bool bandera = false;
                 // Chequeo si ya existe el producto en el listado para poder aumentar la cantidad
-                foreach (DataGridViewRow row in dataListadoServicios.Rows)
+                foreach (DataGridViewRow row in dataListadoServiciosProductos.Rows)
                 {
                     if (Convert.ToInt32(row.Cells[0].Value) == this.IdServicio)
                     {
@@ -390,6 +412,8 @@ namespace CapaPresentacion.Ventas
                         if (String.IsNullOrEmpty(this.txtCantidad.Text))
                         {
                             row.Cells["cantidad"].Value = 1 + Convert.ToInt32(row.Cells[2].Value);
+                            row.Cells["tipo"].Value = "Servicio";
+
                             this.precioTotal += dec;
                         }
                         else
@@ -406,13 +430,13 @@ namespace CapaPresentacion.Ventas
                     // Si no cargo la cantidad, cargo por defecto 1
                     if (String.IsNullOrEmpty(this.txtCantidad.Text))
                     {
-                        this.dataListadoServicios.Rows.Insert(this.dataListadoServicios.RowCount, this.IdServicio, cbServicios.Text, 1, this.txtPrecioUnitario.Text);
+                        this.dataListadoServiciosProductos.Rows.Insert(this.dataListadoServiciosProductos.RowCount, this.IdServicio, cbServicios.Text, 1, this.txtPrecioUnitario.Text, "Servicio");
                         this.precioTotal += dec;
                     }
                     else
                     {
                         decimal cant = decimal.Parse(this.txtCantidad.Text);
-                        this.dataListadoServicios.Rows.Insert(this.dataListadoServicios.RowCount, this.IdServicio, cbServicios.Text, this.txtCantidad.Text, this.txtPrecioUnitario.Text);
+                        this.dataListadoServiciosProductos.Rows.Insert(this.dataListadoServiciosProductos.RowCount, this.IdServicio, cbServicios.Text, this.txtCantidad.Text, this.txtPrecioUnitario.Text, "Servicio");
                         this.precioTotal += dec * cant;
                     }
                 }
@@ -451,21 +475,6 @@ namespace CapaPresentacion.Ventas
 
         }
 
-        private void lblTotal_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label9_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void formNuevaVenta_KeyDown(object sender, KeyEventArgs e)
         {
             switch (e.KeyCode)
@@ -489,6 +498,96 @@ namespace CapaPresentacion.Ventas
         private void btnRefrescar_Click(object sender, EventArgs e)
         {
             this.MostrarClientes();
+        }
+
+        private void cbProductos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string valorBuscado = cbProductos.Text;
+
+            // Filtrar las filas que coinciden con el valor buscado
+            DataRow[] filasEncontradas = productos.Select("producto = '" + valorBuscado + "'");
+
+            // Si encontró alguna fila que coincida, puedes acceder a los datos
+            if (filasEncontradas.Length > 0)
+            {
+                foreach (DataRow fila in filasEncontradas)
+                {
+                    // Acceder a los valores de otras columnas de la fila
+                    this.IdProducto = Convert.ToInt32(fila["id_producto"]);
+                    this.txtPrecioUnitario.Text = fila["precio_venta"].ToString();
+                    //this.lblPrecioUnitario_.Text = fila["precio"].ToString();
+                }
+            }
+        }
+
+        private void btnProducto_Click(object sender, EventArgs e)
+        {
+            if (txtPrecioUnitario.Text == "0" || txtPrecioUnitario.Text == "")
+            {
+                MensajeError("Debe cargar un producto");
+                return;
+            }
+
+            decimal dec = decimal.Parse(this.txtPrecioUnitario.Text);
+            bool bandera = false;
+
+            if (dataListadoServiciosProductos.Rows.Count == 0)
+            {
+                // Si no cargo la cantidad, cargo por defecto 1
+                if (String.IsNullOrEmpty(this.txtCantidad.Text))
+                {
+                    this.dataListadoServiciosProductos.Rows.Insert(this.dataListadoServiciosProductos.RowCount, this.IdProducto, cbProductos.Text, 1, this.txtPrecioUnitario.Text,"Producto");
+                    this.precioTotal += dec;
+                }
+                else
+                {
+                    decimal cant = decimal.Parse(this.txtCantidad.Text);
+                    this.dataListadoServiciosProductos.Rows.Insert(this.dataListadoServiciosProductos.RowCount, this.IdProducto, cbProductos.Text, this.txtCantidad.Text, this.txtPrecioUnitario.Text, "Producto");
+                    this.precioTotal += dec * cant;
+                }
+            }
+            else
+            {
+                bandera = false;
+                // Chequeo si ya existe el producto en el listado para poder aumentar la cantidad
+                foreach (DataGridViewRow row in dataListadoServiciosProductos.Rows)
+                {
+                    if (Convert.ToInt32(row.Cells[0].Value) == this.IdProducto)
+                    {
+                        bandera = true;
+                        // Si no cargo la cantidad, cargo por defecto 1
+                        if (String.IsNullOrEmpty(this.txtCantidad.Text))
+                        {
+                            row.Cells["cantidad"].Value = 1 + Convert.ToInt32(row.Cells[2].Value);
+                            this.precioTotal += dec;
+                        }
+                        else
+                        {
+                            decimal cant = decimal.Parse(this.txtCantidad.Text);
+                            row.Cells["cantidad"].Value = 1 + Convert.ToInt32(row.Cells[2].Value);
+                            this.precioTotal += dec * cant;
+                        }
+                        break;
+                    }
+                }
+                if (bandera == false)
+                {
+                    // Si no cargo la cantidad, cargo por defecto 1
+                    if (String.IsNullOrEmpty(this.txtCantidad.Text))
+                    {
+                        this.dataListadoServiciosProductos.Rows.Insert(this.dataListadoServiciosProductos.RowCount, this.IdProducto, cbProductos.Text, 1, this.txtPrecioUnitario.Text, "Producto");
+                        this.precioTotal += dec;
+                    }
+                    else
+                    {
+                        decimal cant = decimal.Parse(this.txtCantidad.Text);
+                        this.dataListadoServiciosProductos.Rows.Insert(this.dataListadoServiciosProductos.RowCount, this.IdProducto, cbProductos.Text, this.txtCantidad.Text, this.txtPrecioUnitario.Text, "Producto");
+                        this.precioTotal += dec * cant;
+                    }
+                }
+            }
+
+            this.lblTotal.Text = this.precioTotal.ToString();
         }
     }
 }

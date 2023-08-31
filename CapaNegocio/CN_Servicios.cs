@@ -26,7 +26,7 @@ namespace CapaNegocio
             tabla = objetoCD.ListarServicios(pDesde);
             return tabla;
         }
-        // Devuelve 
+        // Devuelve
         public DataTable MostrarServicio(int IdServicio)
         {
 

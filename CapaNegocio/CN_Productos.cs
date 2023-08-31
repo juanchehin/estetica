@@ -30,6 +30,14 @@ namespace CapaNegocio
             tabla = objetoCD.ListarProductos(pDesde);
             return tabla;
         }
+
+        public DataTable ListarProductosTable(int pDesde)
+        {
+
+            DataTable tabla = new DataTable();
+            tabla = objetoCD.ListarProductosTable(pDesde);
+            return tabla;
+        }
         // Devuelve solo un producto
         public DataTable MostrarProducto(int IdProducto)
         {

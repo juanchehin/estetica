@@ -40,6 +40,7 @@
             this.btnEliminarTransaccion = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.txtMonto = new System.Windows.Forms.Label();
+            this.btnEgreso = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataListadoCaja)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -154,11 +155,22 @@
             this.txtMonto.TabIndex = 52;
             this.txtMonto.Text = "0";
             // 
+            // btnEgreso
+            // 
+            this.btnEgreso.Location = new System.Drawing.Point(465, 102);
+            this.btnEgreso.Name = "btnEgreso";
+            this.btnEgreso.Size = new System.Drawing.Size(98, 23);
+            this.btnEgreso.TabIndex = 53;
+            this.btnEgreso.Text = "Nuevo egreso";
+            this.btnEgreso.UseVisualStyleBackColor = true;
+            this.btnEgreso.Click += new System.EventHandler(this.btnEgreso_Click);
+            // 
             // formCaja
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(736, 491);
+            this.Controls.Add(this.btnEgreso);
             this.Controls.Add(this.txtMonto);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnEliminarTransaccion);
@@ -193,5 +205,6 @@
         private System.Windows.Forms.Button btnEliminarTransaccion;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label txtMonto;
+        private System.Windows.Forms.Button btnEgreso;
     }
 }
