@@ -233,6 +233,136 @@ namespace CapaDatos
 
         }
 
+
+        public string EditarVenta(string pIdTransaccion,int pIdCliente, int pIdEmpleado, string pTipoPago, DataTable pListadoServicios, decimal pMontoTotal)
+        {
+            int idVenta;
+            string rpta = "";
+            try
+            {
+                comando.Connection = conexion.AbrirConexion();
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.CommandText = "bsp_editar_venta";
+
+
+                MySqlParameter IdTransaccion = new MySqlParameter();
+                IdTransaccion.ParameterName = "@pIdTransaccion";
+                IdTransaccion.MySqlDbType = MySqlDbType.Int32;
+                IdTransaccion.Value = pIdTransaccion;
+                comando.Parameters.Add(IdTransaccion);
+
+                MySqlParameter IdCliente = new MySqlParameter();
+                IdCliente.ParameterName = "@pIdCliente";
+                IdCliente.MySqlDbType = MySqlDbType.Int32;
+                IdCliente.Value = pIdCliente;
+                comando.Parameters.Add(IdCliente);
+
+                MySqlParameter IdEmpleado = new MySqlParameter();
+                IdEmpleado.ParameterName = "@pIdEmpleado";
+                IdEmpleado.MySqlDbType = MySqlDbType.Int32;
+                IdEmpleado.Value = pIdEmpleado;
+                comando.Parameters.Add(IdEmpleado);
+
+                MySqlParameter TipoPago = new MySqlParameter();
+                TipoPago.ParameterName = "@pTipoPago";
+                TipoPago.MySqlDbType = MySqlDbType.VarChar;
+                TipoPago.Value = pTipoPago;
+                comando.Parameters.Add(TipoPago);
+
+                MySqlParameter MontoTotal = new MySqlParameter();
+                MontoTotal.ParameterName = "@pMontoTotal";
+                MontoTotal.MySqlDbType = MySqlDbType.Decimal;
+                MontoTotal.Value = pMontoTotal;
+                comando.Parameters.Add(MontoTotal);
+
+                MySqlParameter Descripcion = new MySqlParameter();
+                Descripcion.ParameterName = "@pDescripcion";
+                Descripcion.MySqlDbType = MySqlDbType.VarChar;
+                Descripcion.Value = "Venta";
+                comando.Parameters.Add(Descripcion);
+
+                rpta = comando.ExecuteScalar().ToString();
+                comando.Parameters.Clear();
+
+                if(rpta != "Ok")
+                {
+                    conexion.CerrarConexion();
+                    return rpta;
+                }
+            }
+            catch (Exception ex)
+            {
+                rpta = ex.Message;
+                conexion.CerrarConexion();
+                return rpta;
+            }
+
+            try
+            {
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.CommandText = "bsp_alta_linea_venta";
+
+                for (int curRow = 0; curRow < pListadoServicios.Rows.Count; curRow++)
+                {
+
+                    MySqlParameter pIdVenta = new MySqlParameter();
+                    pIdVenta.ParameterName = "@pIdVenta";
+                    pIdVenta.MySqlDbType = MySqlDbType.Int32;
+                    pIdVenta.Value = pIdTransaccion;
+                    comando.Parameters.Add(pIdVenta);
+
+                    MySqlParameter pIdServicioProducto = new MySqlParameter();
+                    pIdServicioProducto.ParameterName = "@pIdServicioProducto";
+                    pIdServicioProducto.MySqlDbType = MySqlDbType.Int32;
+                    pIdServicioProducto.Value = pListadoServicios.Rows[curRow][0];
+                    comando.Parameters.Add(pIdServicioProducto);
+
+                    if (pListadoServicios.Rows[curRow][4].ToString() == "Producto")
+                    {
+                        MySqlParameter Tipo = new MySqlParameter();
+                        Tipo.ParameterName = "@pTipo";
+                        Tipo.MySqlDbType = MySqlDbType.VarChar;
+                        Tipo.Value = "P";
+                        comando.Parameters.Add(Tipo);
+                    }
+                    else
+                    {
+                        MySqlParameter Tipo = new MySqlParameter();
+                        Tipo.ParameterName = "@pTipo";
+                        Tipo.MySqlDbType = MySqlDbType.VarChar;
+                        Tipo.Value = "S";
+                        comando.Parameters.Add(Tipo);
+                    }
+
+                    MySqlParameter pPrecio = new MySqlParameter();
+                    pPrecio.ParameterName = "@pPrecio";
+                    pPrecio.MySqlDbType = MySqlDbType.Decimal;
+                    pPrecio.Value = pListadoServicios.Rows[curRow][2];
+                    comando.Parameters.Add(pPrecio);
+
+                    MySqlParameter pCantidad = new MySqlParameter();
+                    pCantidad.ParameterName = "@pCantidad";
+                    pCantidad.MySqlDbType = MySqlDbType.Int32;  // Ver por que esta definido como string
+                    pCantidad.Value = pListadoServicios.Rows[curRow][3];
+                    comando.Parameters.Add(pCantidad);
+
+                    rpta = (string)comando.ExecuteScalar();//  == "Ok";//  : "NO se Ingreso el Registro";
+                    comando.Parameters.Clear();
+
+                }
+            }
+            catch (Exception ex)
+            {
+                rpta = ex.Message;
+            }
+            finally
+            {
+                conexion.CerrarConexion();
+            }
+            return rpta;
+
+        }
+
         public string depositar(int pIdCliente,string pMonto,string pTipoPago)
         {
             int idVenta;

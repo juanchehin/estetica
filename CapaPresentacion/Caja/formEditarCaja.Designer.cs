@@ -140,6 +140,7 @@
             this.btnRegistrar.TabIndex = 74;
             this.btnRegistrar.Text = "Registrar (F8)";
             this.btnRegistrar.UseVisualStyleBackColor = true;
+            this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
             // 
             // groupBox2
             // 
@@ -198,6 +199,7 @@
             this.cbProductos.Name = "cbProductos";
             this.cbProductos.Size = new System.Drawing.Size(156, 21);
             this.cbProductos.TabIndex = 59;
+            this.cbProductos.SelectedIndexChanged += new System.EventHandler(this.cbProductos_SelectedIndexChanged);
             // 
             // label10
             // 
@@ -243,6 +245,7 @@
             this.cbServicios.Name = "cbServicios";
             this.cbServicios.Size = new System.Drawing.Size(156, 21);
             this.cbServicios.TabIndex = 1;
+            this.cbServicios.SelectedIndexChanged += new System.EventHandler(this.cbServicios_SelectedIndexChanged);
             // 
             // btnSeleccionarEmpleado
             // 
@@ -457,6 +460,7 @@
             this.btnAgregarServicio.TabIndex = 73;
             this.btnAgregarServicio.Text = "Agregar servicio";
             this.btnAgregarServicio.UseVisualStyleBackColor = true;
+            this.btnAgregarServicio.Click += new System.EventHandler(this.btnAgregarServicio_Click);
             // 
             // btnAgregarProducto
             // 
@@ -466,6 +470,7 @@
             this.btnAgregarProducto.TabIndex = 81;
             this.btnAgregarProducto.Text = "Agregar producto";
             this.btnAgregarProducto.UseVisualStyleBackColor = true;
+            this.btnAgregarProducto.Click += new System.EventHandler(this.btnAgregarProducto_Click);
             // 
             // panelEmpleados
             // 
@@ -479,7 +484,7 @@
             this.panelEmpleados.Controls.Add(this.pictureBox8);
             this.panelEmpleados.Controls.Add(this.seleccionarEmpleado);
             this.panelEmpleados.Controls.Add(this.dataListadoEmpleadosPanel);
-            this.panelEmpleados.Location = new System.Drawing.Point(53, 9);
+            this.panelEmpleados.Location = new System.Drawing.Point(128, 8);
             this.panelEmpleados.Name = "panelEmpleados";
             this.panelEmpleados.Size = new System.Drawing.Size(851, 484);
             this.panelEmpleados.TabIndex = 83;
@@ -581,7 +586,7 @@
             this.panelClientes.Controls.Add(this.btnAgregarCliente);
             this.panelClientes.Controls.Add(this.button1);
             this.panelClientes.Controls.Add(this.dataListadoClientes);
-            this.panelClientes.Location = new System.Drawing.Point(129, 5);
+            this.panelClientes.Location = new System.Drawing.Point(86, 12);
             this.panelClientes.Name = "panelClientes";
             this.panelClientes.Size = new System.Drawing.Size(851, 484);
             this.panelClientes.TabIndex = 82;

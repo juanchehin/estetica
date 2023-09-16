@@ -738,7 +738,7 @@
             this.panelEmpleados.Controls.Add(this.pictureBox8);
             this.panelEmpleados.Controls.Add(this.seleccionarEmpleado);
             this.panelEmpleados.Controls.Add(this.dataListadoEmpleadosPanel);
-            this.panelEmpleados.Location = new System.Drawing.Point(73, 8);
+            this.panelEmpleados.Location = new System.Drawing.Point(162, 8);
             this.panelEmpleados.Name = "panelEmpleados";
             this.panelEmpleados.Size = new System.Drawing.Size(851, 484);
             this.panelEmpleados.TabIndex = 71;

@@ -17,6 +17,14 @@ namespace CapaNegocio
             //return null;
         }
 
+        public static string EditarVenta(string pIdTransaccion,int pIdCliente, int pIdEmpleado, string tipoPago, DataTable pListadoServicios, decimal pMontoTotal)
+        {
+            CD_Ventas Obj = new CD_Ventas();
+
+            return Obj.EditarVenta(pIdTransaccion,pIdCliente, pIdEmpleado, tipoPago, pListadoServicios, pMontoTotal);
+            //return null;
+        }
+
         public static string depositar(int IdCliente, string monto, string tipo_pago)
         {
             CD_Ventas Obj = new CD_Ventas();
