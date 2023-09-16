@@ -41,6 +41,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtMonto = new System.Windows.Forms.Label();
             this.btnEgreso = new System.Windows.Forms.Button();
+            this.btnEditar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataListadoCaja)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -61,7 +62,7 @@
             // btnRefrescar
             // 
             this.btnRefrescar.Image = global::CapaPresentacion.Properties.Resources.refresh;
-            this.btnRefrescar.Location = new System.Drawing.Point(683, 88);
+            this.btnRefrescar.Location = new System.Drawing.Point(677, 131);
             this.btnRefrescar.Name = "btnRefrescar";
             this.btnRefrescar.Size = new System.Drawing.Size(33, 38);
             this.btnRefrescar.TabIndex = 42;
@@ -73,12 +74,12 @@
             this.dataListadoCaja.AllowUserToAddRows = false;
             this.dataListadoCaja.AllowUserToDeleteRows = false;
             this.dataListadoCaja.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataListadoCaja.Location = new System.Drawing.Point(12, 152);
+            this.dataListadoCaja.Location = new System.Drawing.Point(12, 175);
             this.dataListadoCaja.MultiSelect = false;
             this.dataListadoCaja.Name = "dataListadoCaja";
             this.dataListadoCaja.ReadOnly = true;
             this.dataListadoCaja.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataListadoCaja.Size = new System.Drawing.Size(704, 312);
+            this.dataListadoCaja.Size = new System.Drawing.Size(704, 335);
             this.dataListadoCaja.TabIndex = 35;
             this.dataListadoCaja.SelectionChanged += new System.EventHandler(this.dataListadoCaja_SelectionChanged);
             // 
@@ -129,7 +130,7 @@
             // 
             // btnEliminarTransaccion
             // 
-            this.btnEliminarTransaccion.Location = new System.Drawing.Point(569, 102);
+            this.btnEliminarTransaccion.Location = new System.Drawing.Point(554, 97);
             this.btnEliminarTransaccion.Name = "btnEliminarTransaccion";
             this.btnEliminarTransaccion.Size = new System.Drawing.Size(75, 23);
             this.btnEliminarTransaccion.TabIndex = 50;
@@ -140,7 +141,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(553, 132);
+            this.label3.Location = new System.Drawing.Point(551, 159);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(52, 13);
             this.label3.TabIndex = 51;
@@ -149,7 +150,7 @@
             // txtMonto
             // 
             this.txtMonto.AutoSize = true;
-            this.txtMonto.Location = new System.Drawing.Point(622, 132);
+            this.txtMonto.Location = new System.Drawing.Point(620, 159);
             this.txtMonto.Name = "txtMonto";
             this.txtMonto.Size = new System.Drawing.Size(13, 13);
             this.txtMonto.TabIndex = 52;
@@ -157,7 +158,7 @@
             // 
             // btnEgreso
             // 
-            this.btnEgreso.Location = new System.Drawing.Point(465, 102);
+            this.btnEgreso.Location = new System.Drawing.Point(450, 97);
             this.btnEgreso.Name = "btnEgreso";
             this.btnEgreso.Size = new System.Drawing.Size(98, 23);
             this.btnEgreso.TabIndex = 53;
@@ -165,11 +166,22 @@
             this.btnEgreso.UseVisualStyleBackColor = true;
             this.btnEgreso.Click += new System.EventHandler(this.btnEgreso_Click);
             // 
+            // btnEditar
+            // 
+            this.btnEditar.Location = new System.Drawing.Point(635, 97);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(75, 23);
+            this.btnEditar.TabIndex = 54;
+            this.btnEditar.Text = "Editar";
+            this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
+            // 
             // formCaja
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(736, 491);
+            this.ClientSize = new System.Drawing.Size(740, 522);
+            this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnEgreso);
             this.Controls.Add(this.txtMonto);
             this.Controls.Add(this.label3);
@@ -206,5 +218,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label txtMonto;
         private System.Windows.Forms.Button btnEgreso;
+        private System.Windows.Forms.Button btnEditar;
     }
 }

@@ -27,7 +27,7 @@
     <ProductName>estetica</ProductName>
     <PublisherName>Chehin ingenieria</PublisherName>
     <SuiteName>estetica</SuiteName>
-    <ApplicationRevision>23</ApplicationRevision>
+    <ApplicationRevision>24</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -121,6 +121,12 @@
     </Compile>
     <Compile Include="Caja\formCaja.Designer.cs">
       <DependentUpon>formCaja.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Caja\formEditarCaja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Caja\formEditarCaja.Designer.cs">
+      <DependentUpon>formEditarCaja.cs</DependentUpon>
     </Compile>
     <Compile Include="Caja\formNuevoEgreso.cs">
       <SubType>Form</SubType>
@@ -276,6 +282,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Caja\formCaja.resx">
       <DependentUpon>formCaja.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Caja\formEditarCaja.resx">
+      <DependentUpon>formEditarCaja.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Caja\formNuevoEgreso.resx">
       <DependentUpon>formNuevoEgreso.cs</DependentUpon>

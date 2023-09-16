@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formNuevaVenta));
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.btnQuitar = new System.Windows.Forms.Button();
             this.dataListadoServiciosProductos = new System.Windows.Forms.DataGridView();
             this.lblTotal = new System.Windows.Forms.Label();
@@ -57,17 +58,14 @@
             this.cbTiposPago = new System.Windows.Forms.ComboBox();
             this.lblTipoPago = new System.Windows.Forms.Label();
             this.lblPrecioUnitario = new System.Windows.Forms.Label();
+            this.btnAgregarServicio = new System.Windows.Forms.Button();
+            this.btnAgregarProducto = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dataListadoClientes = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
             this.btnAgregarCliente = new System.Windows.Forms.Button();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.panelClientes = new System.Windows.Forms.Panel();
-            this.btnRefrescar = new System.Windows.Forms.Button();
-            this.btnCerrarPanelClientes = new System.Windows.Forms.Button();
             this.panelVuelto = new System.Windows.Forms.Panel();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.btnImprimirTicket = new System.Windows.Forms.Button();
@@ -77,19 +75,21 @@
             this.txtEntrega = new System.Windows.Forms.TextBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.lblImporte = new System.Windows.Forms.Label();
-            this.panelEmpleados = new System.Windows.Forms.Panel();
-            this.btnCerrarPanelEmpleados = new System.Windows.Forms.Button();
-            this.label15 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.seleccionarEmpleado = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.btnCerrarPanelClientes = new System.Windows.Forms.Button();
+            this.btnRefrescar = new System.Windows.Forms.Button();
+            this.panelClientes = new System.Windows.Forms.Panel();
             this.dataListadoEmpleadosPanel = new System.Windows.Forms.DataGridView();
-            this.btnAgregarServicio = new System.Windows.Forms.Button();
-            this.btnAgregarProducto = new System.Windows.Forms.Button();
-            this.label11 = new System.Windows.Forms.Label();
+            this.seleccionarEmpleado = new System.Windows.Forms.Button();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.button4 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.btnCerrarPanelEmpleados = new System.Windows.Forms.Button();
+            this.panelEmpleados = new System.Windows.Forms.Panel();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataListadoServiciosProductos)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -97,16 +97,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataListadoClientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            this.panelClientes.SuspendLayout();
             this.panelVuelto.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
-            this.panelEmpleados.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.panelClientes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataListadoEmpleadosPanel)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            this.panelEmpleados.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -132,6 +132,15 @@
             this.groupBox1.TabIndex = 37;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Ventas";
+            // 
+            // label11
+            // 
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(469, 349);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(19, 23);
+            this.label11.TabIndex = 73;
+            this.label11.Text = "$";
             // 
             // btnQuitar
             // 
@@ -400,6 +409,26 @@
             this.lblPrecioUnitario.Size = new System.Drawing.Size(0, 17);
             this.lblPrecioUnitario.TabIndex = 48;
             // 
+            // btnAgregarServicio
+            // 
+            this.btnAgregarServicio.Location = new System.Drawing.Point(12, 403);
+            this.btnAgregarServicio.Name = "btnAgregarServicio";
+            this.btnAgregarServicio.Size = new System.Drawing.Size(115, 37);
+            this.btnAgregarServicio.TabIndex = 4;
+            this.btnAgregarServicio.Text = "Agregar servicio";
+            this.btnAgregarServicio.UseVisualStyleBackColor = true;
+            this.btnAgregarServicio.Click += new System.EventHandler(this.btnAgregarServicio_Click);
+            // 
+            // btnAgregarProducto
+            // 
+            this.btnAgregarProducto.Location = new System.Drawing.Point(133, 403);
+            this.btnAgregarProducto.Name = "btnAgregarProducto";
+            this.btnAgregarProducto.Size = new System.Drawing.Size(115, 37);
+            this.btnAgregarProducto.TabIndex = 72;
+            this.btnAgregarProducto.Text = "Agregar producto";
+            this.btnAgregarProducto.UseVisualStyleBackColor = true;
+            this.btnAgregarProducto.Click += new System.EventHandler(this.btnProducto_Click);
+            // 
             // pictureBox2
             // 
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
@@ -459,64 +488,6 @@
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox4.TabIndex = 44;
             this.pictureBox4.TabStop = false;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Consolas", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(264, 19);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(267, 64);
-            this.label6.TabIndex = 45;
-            this.label6.Text = "Clientes";
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pictureBox3.Image = global::CapaPresentacion.Properties.Resources.segment;
-            this.pictureBox3.Location = new System.Drawing.Point(727, 19);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(79, 75);
-            this.pictureBox3.TabIndex = 46;
-            this.pictureBox3.TabStop = false;
-            // 
-            // panelClientes
-            // 
-            this.panelClientes.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelClientes.Controls.Add(this.btnRefrescar);
-            this.panelClientes.Controls.Add(this.btnCerrarPanelClientes);
-            this.panelClientes.Controls.Add(this.pictureBox3);
-            this.panelClientes.Controls.Add(this.label6);
-            this.panelClientes.Controls.Add(this.panelVuelto);
-            this.panelClientes.Controls.Add(this.pictureBox4);
-            this.panelClientes.Controls.Add(this.btnAgregarCliente);
-            this.panelClientes.Controls.Add(this.button1);
-            this.panelClientes.Controls.Add(this.dataListadoClientes);
-            this.panelClientes.Location = new System.Drawing.Point(103, 32);
-            this.panelClientes.Name = "panelClientes";
-            this.panelClientes.Size = new System.Drawing.Size(851, 484);
-            this.panelClientes.TabIndex = 50;
-            // 
-            // btnRefrescar
-            // 
-            this.btnRefrescar.Image = global::CapaPresentacion.Properties.Resources.refresh;
-            this.btnRefrescar.Location = new System.Drawing.Point(775, 112);
-            this.btnRefrescar.Name = "btnRefrescar";
-            this.btnRefrescar.Size = new System.Drawing.Size(31, 32);
-            this.btnRefrescar.TabIndex = 71;
-            this.btnRefrescar.UseVisualStyleBackColor = true;
-            this.btnRefrescar.Click += new System.EventHandler(this.btnRefrescar_Click);
-            // 
-            // btnCerrarPanelClientes
-            // 
-            this.btnCerrarPanelClientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCerrarPanelClientes.Location = new System.Drawing.Point(812, 3);
-            this.btnCerrarPanelClientes.Name = "btnCerrarPanelClientes";
-            this.btnCerrarPanelClientes.Size = new System.Drawing.Size(34, 23);
-            this.btnCerrarPanelClientes.TabIndex = 70;
-            this.btnCerrarPanelClientes.Text = "X";
-            this.btnCerrarPanelClientes.UseVisualStyleBackColor = true;
-            this.btnCerrarPanelClientes.Click += new System.EventHandler(this.btnCerrarPanelClientes_Click);
             // 
             // panelVuelto
             // 
@@ -611,79 +582,81 @@
             this.lblImporte.Size = new System.Drawing.Size(0, 20);
             this.lblImporte.TabIndex = 0;
             // 
-            // panelEmpleados
+            // label6
             // 
-            this.panelEmpleados.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelEmpleados.Controls.Add(this.btnCerrarPanelEmpleados);
-            this.panelEmpleados.Controls.Add(this.label15);
-            this.panelEmpleados.Controls.Add(this.textBox1);
-            this.panelEmpleados.Controls.Add(this.button4);
-            this.panelEmpleados.Controls.Add(this.pictureBox7);
-            this.panelEmpleados.Controls.Add(this.label16);
-            this.panelEmpleados.Controls.Add(this.pictureBox8);
-            this.panelEmpleados.Controls.Add(this.seleccionarEmpleado);
-            this.panelEmpleados.Controls.Add(this.dataListadoEmpleadosPanel);
-            this.panelEmpleados.Location = new System.Drawing.Point(77, 12);
-            this.panelEmpleados.Name = "panelEmpleados";
-            this.panelEmpleados.Size = new System.Drawing.Size(851, 484);
-            this.panelEmpleados.TabIndex = 71;
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Consolas", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(264, 19);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(267, 64);
+            this.label6.TabIndex = 45;
+            this.label6.Text = "Clientes";
             // 
-            // btnCerrarPanelEmpleados
+            // pictureBox3
             // 
-            this.btnCerrarPanelEmpleados.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCerrarPanelEmpleados.Location = new System.Drawing.Point(812, 3);
-            this.btnCerrarPanelEmpleados.Name = "btnCerrarPanelEmpleados";
-            this.btnCerrarPanelEmpleados.Size = new System.Drawing.Size(34, 23);
-            this.btnCerrarPanelEmpleados.TabIndex = 69;
-            this.btnCerrarPanelEmpleados.Text = "X";
-            this.btnCerrarPanelEmpleados.UseVisualStyleBackColor = true;
-            this.btnCerrarPanelEmpleados.Click += new System.EventHandler(this.btnCerrarPanelEmpleados_Click);
+            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pictureBox3.Image = global::CapaPresentacion.Properties.Resources.segment;
+            this.pictureBox3.Location = new System.Drawing.Point(727, 19);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(79, 75);
+            this.pictureBox3.TabIndex = 46;
+            this.pictureBox3.TabStop = false;
             // 
-            // label15
+            // btnCerrarPanelClientes
             // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(30, 134);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(55, 13);
-            this.label15.TabIndex = 68;
-            this.label15.Text = "Busqueda";
+            this.btnCerrarPanelClientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCerrarPanelClientes.Location = new System.Drawing.Point(812, 3);
+            this.btnCerrarPanelClientes.Name = "btnCerrarPanelClientes";
+            this.btnCerrarPanelClientes.Size = new System.Drawing.Size(34, 23);
+            this.btnCerrarPanelClientes.TabIndex = 70;
+            this.btnCerrarPanelClientes.Text = "X";
+            this.btnCerrarPanelClientes.UseVisualStyleBackColor = true;
+            this.btnCerrarPanelClientes.Click += new System.EventHandler(this.btnCerrarPanelClientes_Click);
             // 
-            // textBox1
+            // btnRefrescar
             // 
-            this.textBox1.Location = new System.Drawing.Point(30, 109);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(181, 20);
-            this.textBox1.TabIndex = 65;
+            this.btnRefrescar.Image = global::CapaPresentacion.Properties.Resources.refresh;
+            this.btnRefrescar.Location = new System.Drawing.Point(775, 112);
+            this.btnRefrescar.Name = "btnRefrescar";
+            this.btnRefrescar.Size = new System.Drawing.Size(31, 32);
+            this.btnRefrescar.TabIndex = 71;
+            this.btnRefrescar.UseVisualStyleBackColor = true;
+            this.btnRefrescar.Click += new System.EventHandler(this.btnRefrescar_Click);
             // 
-            // button4
+            // panelClientes
             // 
-            this.button4.Location = new System.Drawing.Point(228, 109);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 64;
-            this.button4.Text = "Buscar";
-            this.button4.UseVisualStyleBackColor = true;
+            this.panelClientes.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelClientes.Controls.Add(this.btnRefrescar);
+            this.panelClientes.Controls.Add(this.btnCerrarPanelClientes);
+            this.panelClientes.Controls.Add(this.pictureBox3);
+            this.panelClientes.Controls.Add(this.label6);
+            this.panelClientes.Controls.Add(this.panelVuelto);
+            this.panelClientes.Controls.Add(this.pictureBox4);
+            this.panelClientes.Controls.Add(this.btnAgregarCliente);
+            this.panelClientes.Controls.Add(this.button1);
+            this.panelClientes.Controls.Add(this.dataListadoClientes);
+            this.panelClientes.Location = new System.Drawing.Point(151, 12);
+            this.panelClientes.Name = "panelClientes";
+            this.panelClientes.Size = new System.Drawing.Size(851, 484);
+            this.panelClientes.TabIndex = 50;
             // 
-            // pictureBox7
+            // dataListadoEmpleadosPanel
             // 
-            this.pictureBox7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
-            this.pictureBox7.Location = new System.Drawing.Point(727, 19);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(79, 75);
-            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox7.TabIndex = 46;
-            this.pictureBox7.TabStop = false;
+            this.dataListadoEmpleadosPanel.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataListadoEmpleadosPanel.Location = new System.Drawing.Point(30, 152);
+            this.dataListadoEmpleadosPanel.Name = "dataListadoEmpleadosPanel";
+            this.dataListadoEmpleadosPanel.Size = new System.Drawing.Size(776, 272);
+            this.dataListadoEmpleadosPanel.TabIndex = 41;
             // 
-            // label16
+            // seleccionarEmpleado
             // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Consolas", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(264, 19);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(297, 64);
-            this.label16.TabIndex = 45;
-            this.label16.Text = "Empleados";
+            this.seleccionarEmpleado.Location = new System.Drawing.Point(673, 430);
+            this.seleccionarEmpleado.Name = "seleccionarEmpleado";
+            this.seleccionarEmpleado.Size = new System.Drawing.Size(133, 23);
+            this.seleccionarEmpleado.TabIndex = 42;
+            this.seleccionarEmpleado.Text = "Seleccionar";
+            this.seleccionarEmpleado.UseVisualStyleBackColor = true;
+            this.seleccionarEmpleado.Click += new System.EventHandler(this.seleccionarEmpleado_Click);
             // 
             // pictureBox8
             // 
@@ -696,52 +669,79 @@
             this.pictureBox8.TabIndex = 44;
             this.pictureBox8.TabStop = false;
             // 
-            // seleccionarEmpleado
+            // label16
             // 
-            this.seleccionarEmpleado.Location = new System.Drawing.Point(673, 430);
-            this.seleccionarEmpleado.Name = "seleccionarEmpleado";
-            this.seleccionarEmpleado.Size = new System.Drawing.Size(133, 23);
-            this.seleccionarEmpleado.TabIndex = 42;
-            this.seleccionarEmpleado.Text = "Seleccionar";
-            this.seleccionarEmpleado.UseVisualStyleBackColor = true;
-            this.seleccionarEmpleado.Click += new System.EventHandler(this.seleccionarEmpleado_Click);
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Consolas", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(264, 19);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(297, 64);
+            this.label16.TabIndex = 45;
+            this.label16.Text = "Empleados";
             // 
-            // dataListadoEmpleadosPanel
+            // pictureBox7
             // 
-            this.dataListadoEmpleadosPanel.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataListadoEmpleadosPanel.Location = new System.Drawing.Point(30, 152);
-            this.dataListadoEmpleadosPanel.Name = "dataListadoEmpleadosPanel";
-            this.dataListadoEmpleadosPanel.Size = new System.Drawing.Size(776, 272);
-            this.dataListadoEmpleadosPanel.TabIndex = 41;
+            this.pictureBox7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
+            this.pictureBox7.Location = new System.Drawing.Point(727, 19);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(79, 75);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox7.TabIndex = 46;
+            this.pictureBox7.TabStop = false;
             // 
-            // btnAgregarServicio
+            // button4
             // 
-            this.btnAgregarServicio.Location = new System.Drawing.Point(12, 403);
-            this.btnAgregarServicio.Name = "btnAgregarServicio";
-            this.btnAgregarServicio.Size = new System.Drawing.Size(115, 37);
-            this.btnAgregarServicio.TabIndex = 4;
-            this.btnAgregarServicio.Text = "Agregar servicio";
-            this.btnAgregarServicio.UseVisualStyleBackColor = true;
-            this.btnAgregarServicio.Click += new System.EventHandler(this.btnAgregarServicio_Click);
+            this.button4.Location = new System.Drawing.Point(228, 109);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.TabIndex = 64;
+            this.button4.Text = "Buscar";
+            this.button4.UseVisualStyleBackColor = true;
             // 
-            // btnAgregarProducto
+            // textBox1
             // 
-            this.btnAgregarProducto.Location = new System.Drawing.Point(133, 403);
-            this.btnAgregarProducto.Name = "btnAgregarProducto";
-            this.btnAgregarProducto.Size = new System.Drawing.Size(115, 37);
-            this.btnAgregarProducto.TabIndex = 72;
-            this.btnAgregarProducto.Text = "Agregar producto";
-            this.btnAgregarProducto.UseVisualStyleBackColor = true;
-            this.btnAgregarProducto.Click += new System.EventHandler(this.btnProducto_Click);
+            this.textBox1.Location = new System.Drawing.Point(30, 109);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(181, 20);
+            this.textBox1.TabIndex = 65;
             // 
-            // label11
+            // label15
             // 
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(469, 349);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(19, 23);
-            this.label11.TabIndex = 73;
-            this.label11.Text = "$";
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(30, 134);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(55, 13);
+            this.label15.TabIndex = 68;
+            this.label15.Text = "Busqueda";
+            // 
+            // btnCerrarPanelEmpleados
+            // 
+            this.btnCerrarPanelEmpleados.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCerrarPanelEmpleados.Location = new System.Drawing.Point(812, 3);
+            this.btnCerrarPanelEmpleados.Name = "btnCerrarPanelEmpleados";
+            this.btnCerrarPanelEmpleados.Size = new System.Drawing.Size(34, 23);
+            this.btnCerrarPanelEmpleados.TabIndex = 69;
+            this.btnCerrarPanelEmpleados.Text = "X";
+            this.btnCerrarPanelEmpleados.UseVisualStyleBackColor = true;
+            this.btnCerrarPanelEmpleados.Click += new System.EventHandler(this.btnCerrarPanelEmpleados_Click);
+            // 
+            // panelEmpleados
+            // 
+            this.panelEmpleados.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelEmpleados.Controls.Add(this.btnCerrarPanelEmpleados);
+            this.panelEmpleados.Controls.Add(this.label15);
+            this.panelEmpleados.Controls.Add(this.textBox1);
+            this.panelEmpleados.Controls.Add(this.button4);
+            this.panelEmpleados.Controls.Add(this.pictureBox7);
+            this.panelEmpleados.Controls.Add(this.label16);
+            this.panelEmpleados.Controls.Add(this.pictureBox8);
+            this.panelEmpleados.Controls.Add(this.seleccionarEmpleado);
+            this.panelEmpleados.Controls.Add(this.dataListadoEmpleadosPanel);
+            this.panelEmpleados.Location = new System.Drawing.Point(73, 8);
+            this.panelEmpleados.Name = "panelEmpleados";
+            this.panelEmpleados.Size = new System.Drawing.Size(851, 484);
+            this.panelEmpleados.TabIndex = 71;
             // 
             // formNuevaVenta
             // 
@@ -772,9 +772,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataListadoClientes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            this.panelClientes.ResumeLayout(false);
-            this.panelClientes.PerformLayout();
             this.panelVuelto.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
@@ -782,11 +779,14 @@
             this.groupBox4.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            this.panelClientes.ResumeLayout(false);
+            this.panelClientes.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataListadoEmpleadosPanel)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             this.panelEmpleados.ResumeLayout(false);
             this.panelEmpleados.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataListadoEmpleadosPanel)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -815,45 +815,45 @@
         private System.Windows.Forms.Label lblNombreProd;
         private System.Windows.Forms.ComboBox cbTiposPago;
         private System.Windows.Forms.Label lblTipoPago;
-        private System.Windows.Forms.DataGridView dataListadoClientes;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button btnAgregarCliente;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.Panel panelClientes;
-        private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.Label lblImporte;
-        private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.TextBox txtEntrega;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Label lblVuelto;
-        private System.Windows.Forms.Button btnImprimirTicket;
-        private System.Windows.Forms.Button btnCerrar;
-        private System.Windows.Forms.Panel panelVuelto;
         private System.Windows.Forms.Button btnSeleccionarEmpleado;
         private System.Windows.Forms.Label lblEmpleado;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Button btnCerrarPanelClientes;
-        private System.Windows.Forms.Panel panelEmpleados;
-        private System.Windows.Forms.Button btnCerrarPanelEmpleados;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.PictureBox pictureBox7;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.PictureBox pictureBox8;
-        private System.Windows.Forms.Button seleccionarEmpleado;
-        private System.Windows.Forms.DataGridView dataListadoEmpleadosPanel;
         private System.Windows.Forms.ComboBox cbServicios;
         private System.Windows.Forms.Button btnAgregarServicio;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtPrecioUnitario;
-        private System.Windows.Forms.Button btnRefrescar;
         private System.Windows.Forms.ComboBox cbProductos;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button btnAgregarProducto;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.DataGridView dataListadoClientes;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnAgregarCliente;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.Panel panelVuelto;
+        private System.Windows.Forms.Button btnCerrar;
+        private System.Windows.Forms.Button btnImprimirTicket;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Label lblVuelto;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.TextBox txtEntrega;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.Label lblImporte;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Button btnCerrarPanelClientes;
+        private System.Windows.Forms.Button btnRefrescar;
+        private System.Windows.Forms.Panel panelClientes;
+        private System.Windows.Forms.DataGridView dataListadoEmpleadosPanel;
+        private System.Windows.Forms.Button seleccionarEmpleado;
+        private System.Windows.Forms.PictureBox pictureBox8;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.PictureBox pictureBox7;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Button btnCerrarPanelEmpleados;
+        private System.Windows.Forms.Panel panelEmpleados;
     }
 }

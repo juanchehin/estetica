@@ -219,5 +219,13 @@ namespace CapaPresentacion.Caja
             frm.MdiParent = this.MdiParent;
             frm.Show();
         }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            formEditarCaja frm = new formEditarCaja(this.IdTransaccion);
+            frm.MdiParent = this.MdiParent;
+            frm.Show();
+            //this.Close();
+        }
     }
 }

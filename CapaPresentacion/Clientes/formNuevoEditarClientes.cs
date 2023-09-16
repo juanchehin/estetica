@@ -32,8 +32,6 @@ namespace CapaPresentacion
         private string Direccion;
         private string FechaNac;
         private string Observaciones;
-        private string FechaAlta;
-        private string FechaModificacion;
 
         public formNuevoEditarClientes(int parametro, bool IsNuevoEditar)
         {
@@ -144,7 +142,6 @@ namespace CapaPresentacion
                 {
                     MessageBox.Show(ex.Message + ex.StackTrace);
                 }
-
             
         }
         //Mostrar Mensaje de Error

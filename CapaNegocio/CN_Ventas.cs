@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿using System.Data;
 using CapaDatos;
 
 namespace CapaNegocio
@@ -69,16 +63,21 @@ namespace CapaNegocio
             Obj.IdVenta = IdVenta;
             return Obj.Eliminar(Obj);
         }
+        public DataSet cargar_datos(string IdTransaccion)
+        {
+            DataSet tabla = new DataSet();
+            tabla = objetoCD.cargar_datos(IdTransaccion);
+            return tabla;
+        }
 
-
-        public static string Editar(int IdVenta, string Producto, string Titular, int IdEmpleado, string cantidad)
+        public static string Editar(int IdVenta, string fecha, string Titular, int IdEmpleado, string cantidad)
         {
             CD_Ventas Obj = new CD_Ventas();
             Obj.IdVenta = IdVenta;
 
-            Obj.Producto = Producto;
-            Obj.IdEmpleado = IdEmpleado;
-            Obj.Cantidad = cantidad;
+            //Obj.Producto = Producto;
+            //Obj.IdEmpleado = IdEmpleado;
+            //Obj.Cantidad = cantidad;
 
             return Obj.Editar(Obj);
         }

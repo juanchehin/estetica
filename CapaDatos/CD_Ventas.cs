@@ -28,6 +28,7 @@ namespace CapaDatos
 
         MySqlDataReader leer;
         DataTable tabla = new DataTable();
+        DataSet set_tabla = new DataSet();
         MySqlCommand comando = new MySqlCommand();
 
 
@@ -57,6 +58,37 @@ namespace CapaDatos
             tabla.Load(leer);
             conexion.CerrarConexion();
             return tabla;
+
+        }
+
+        public DataSet cargar_datos(string id_transaccion)
+        {
+
+            comando.Connection = conexion.AbrirConexion();
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.CommandText = "bsp_dame_venta";
+
+            MySqlParameter pIdVenta = new MySqlParameter();
+            pIdVenta.ParameterName = "@pIdVenta";
+            pIdVenta.MySqlDbType = MySqlDbType.VarChar;
+            pIdVenta.Size = 60;
+            pIdVenta.Value = id_transaccion;
+            comando.Parameters.Add(pIdVenta);
+
+
+            MySqlDataAdapter da = new MySqlDataAdapter(comando);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+
+            comando.Parameters.Clear();
+            conexion.CerrarConexion();
+            return ds;
+
+            //set_tabla.Clear();
+            //leer = comando.ExecuteReader();
+            //set_tabla.Load(leer);
+            //conexion.CerrarConexion();
+            //return set_tabla;
 
         }
 
