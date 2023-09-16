@@ -112,7 +112,7 @@ namespace CapaPresentacion.Caja
             this.precioTotal = Convert.ToDecimal(datos_transaccion.Rows[0][0].ToString());
 
             // Datos cliente
-            this.IdCliente = Convert.ToInt32(datos_cliente.Rows[0][1].ToString());
+            this.IdCliente = Convert.ToInt32(datos_cliente.Rows[0][0].ToString());
             lblCliente.Text = datos_cliente.Rows[0][2].ToString() + " " + datos_cliente.Rows[0][3].ToString();
 
             // Datos empleado
@@ -135,43 +135,6 @@ namespace CapaPresentacion.Caja
                 this.dataListadoServiciosProductos.Rows.Insert(this.dataListadoServiciosProductos.RowCount, row["id_servicio"], row["servicio"], row["cantidad"], row["precio"], "Servicio");
             }
 
-        }
-
-        private void btnAceptar_Click(object sender, EventArgs e)
-        {
-            //try
-            //{
-                //string rpta = "";
-                //if (this.txtMonto.Text == string.Empty)
-                //{
-                //    MensajeError("Falta ingresar algunos datos");
-                //}
-                //else
-                //{
-                //    var año = this.dtpFechaTransaccion.Value.Year;
-                //    var mes = this.dtpFechaTransaccion.Value.Month;
-                //    var dia = this.dtpFechaTransaccion.Value.Day;
-                //    var fecha = año + "-" + mes + "-" + dia;
-
-                //    rpta = CN_Ventas.Editar(this.IdTransaccion, fecha, this.cbEmpleado.Text,this.cbCliente.Text,this.lbObservaciones.Text.Trim());
-
-                //    if (rpta.Equals("Ok"))
-                //    {
-                //        this.MensajeOk("Se Actualizó de forma correcta el registro");
-                        
-                //        this.Close();
-                //    }
-
-                //    else
-                //    {
-                //        this.MensajeError(rpta);
-                //    }
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show(ex.Message + ex.StackTrace);
-            //}
         }
 
         private void MensajeError(string mensaje)
