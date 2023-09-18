@@ -141,18 +141,20 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(551, 159);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(477, 140);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(52, 13);
+            this.label3.Size = new System.Drawing.Size(71, 18);
             this.label3.TabIndex = 51;
             this.label3.Text = "Monto : $";
             // 
             // txtMonto
             // 
             this.txtMonto.AutoSize = true;
-            this.txtMonto.Location = new System.Drawing.Point(620, 159);
+            this.txtMonto.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMonto.Location = new System.Drawing.Point(583, 140);
             this.txtMonto.Name = "txtMonto";
-            this.txtMonto.Size = new System.Drawing.Size(13, 13);
+            this.txtMonto.Size = new System.Drawing.Size(16, 18);
             this.txtMonto.TabIndex = 52;
             this.txtMonto.Text = "0";
             // 

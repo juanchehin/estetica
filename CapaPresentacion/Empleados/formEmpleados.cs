@@ -86,7 +86,7 @@ namespace CapaPresentacion
 
         private void btnNuevoEmpleado_Click(object sender, EventArgs e)
         {
-            formNuevoEditarEmpleado frm = new formNuevoEditarEmpleado(true);
+            formNuevoEditarEmpleado frm = new formNuevoEditarEmpleado(0,true);
             frm.MdiParent = this.MdiParent;
             frm.Show();
             this.Close();
@@ -94,7 +94,7 @@ namespace CapaPresentacion
 
         private void botonEditarListado_Click(object sender, EventArgs e)
         {
-            formNuevoEditarEmpleado frm = new formNuevoEditarEmpleado(false);
+            formNuevoEditarEmpleado frm = new formNuevoEditarEmpleado(this.IdEmpleado,false);
             frm.MdiParent = this.MdiParent;
             frm.Show();
             this.Close();

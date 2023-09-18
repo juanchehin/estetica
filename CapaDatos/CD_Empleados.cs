@@ -14,6 +14,8 @@ namespace CapaDatos
         private string _Direccion;
         private string _Telefono;
         private string _FechaNac;
+        private string _Email;
+        private string _Observaciones;
 
         private string _TextoBuscar;
 
@@ -23,9 +25,11 @@ namespace CapaDatos
         public string Nombre { get => _Nombre; set => _Nombre = value; }
         public string Apellidos { get => _Apellidos; set => _Apellidos = value; }
         public string DNI { get => _DNI; set => _DNI = value; }
+        public string Email { get => _Email; set => _Email = value; }
         public string EstadoEmp { get => _EstadoEmp; set => _EstadoEmp = value; }
         public string Direccion { get => _Direccion; set => _Direccion = value; }
         public string Telefono { get => _Telefono; set => _Telefono = value; }
+        public string Observaciones { get => _Observaciones; set => _Observaciones = value; }
         public string TextoBuscar { get => _TextoBuscar; set => _TextoBuscar = value; }
         public string FechaNac { get => _FechaNac; set => _FechaNac = value; }
 
@@ -80,7 +84,7 @@ namespace CapaDatos
         //Insertar
         public string InsertarEmpleado(string Nombre, string Apellidos, string DNI,
                             string Direccion, string Telefono, string fechaNac,
-                            string Email)
+                            string Email,string Observaciones)
         {
             string rpta = "";
             comando.Parameters.Clear();// si no ponerlo al comienzo de esta funcion
@@ -140,7 +144,13 @@ namespace CapaDatos
                 pTelefono.Size = 15;
                 pTelefono.Value = Telefono;
                 comando.Parameters.Add(pTelefono);
-                   
+
+                MySqlParameter pObservaciones = new MySqlParameter();
+                pObservaciones.ParameterName = "@pObservaciones";
+                pObservaciones.MySqlDbType = MySqlDbType.VarChar;
+                pObservaciones.Size = 255;
+                pObservaciones.Value = Observaciones;
+                comando.Parameters.Add(pObservaciones);
 
                 // Console.WriteLine("rpta es : " + rpta);
 
@@ -214,14 +224,14 @@ namespace CapaDatos
                 comando.CommandText = "bsp_editar_empleado";
 
                 MySqlParameter pIdEmpleado = new MySqlParameter();
-                pIdEmpleado.ParameterName = "@pIdEmpleado";
+                pIdEmpleado.ParameterName = "@pIdPersona";
                 pIdEmpleado.MySqlDbType = MySqlDbType.Int32;
                 // pIdEmpleado.Size = 60;
                 pIdEmpleado.Value = Empleado.IdEmpleado;
                 comando.Parameters.Add(pIdEmpleado);
 
                 MySqlParameter pNombre = new MySqlParameter();
-                pNombre.ParameterName = "@pNombre";
+                pNombre.ParameterName = "@pNombres";
                 pNombre.MySqlDbType = MySqlDbType.VarChar;
                 pNombre.Size = 60;
                 pNombre.Value = Empleado.Nombre;
@@ -240,6 +250,13 @@ namespace CapaDatos
                 pDNI.Size = 45;
                 pDNI.Value = Empleado.DNI;
                 comando.Parameters.Add(pDNI);
+
+                MySqlParameter pEmail = new MySqlParameter();
+                pEmail.ParameterName = "@pEmail";
+                pEmail.MySqlDbType = MySqlDbType.VarChar;
+                pEmail.Size = 60;
+                pEmail.Value = Empleado.Email;
+                comando.Parameters.Add(pEmail);
 
                 MySqlParameter pDireccion = new MySqlParameter();
                 pDireccion.ParameterName = "@pDireccion";
@@ -262,6 +279,13 @@ namespace CapaDatos
                 pFechaNac.Value = Empleado.FechaNac;
                 comando.Parameters.Add(pFechaNac);
 
+                MySqlParameter pObservaciones = new MySqlParameter();
+                pObservaciones.ParameterName = "@pObservaciones";
+                pObservaciones.MySqlDbType = MySqlDbType.VarChar;
+                pObservaciones.Size = 255;
+                pObservaciones.Value = Observaciones;
+                comando.Parameters.Add(pObservaciones);
+
                 rpta = comando.ExecuteScalar().ToString() == "Ok" ? "OK" : "No se edito el Registro";
 
 
@@ -269,9 +293,7 @@ namespace CapaDatos
             }
             catch (Exception ex)
             {
-
                 rpta = ex.Message;
-                Console.WriteLine("rpta es : " + rpta);
             }
             finally
             {
@@ -321,7 +343,7 @@ namespace CapaDatos
 
             comando.Connection = conexion.AbrirConexion();
             comando.CommandType = CommandType.StoredProcedure;
-            comando.CommandText = "bsp_dame_usuario";
+            comando.CommandText = "bsp_dame_empleado";
 
             MySqlParameter pIdPersona = new MySqlParameter();
             pIdPersona.ParameterName = "@pIdPersona";

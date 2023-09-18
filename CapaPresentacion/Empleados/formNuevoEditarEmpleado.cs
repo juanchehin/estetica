@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Windows.Forms;
 
@@ -28,10 +26,13 @@ namespace CapaPresentacion
         private string Email;
         private string Empleado;
         private DateTime FechaNac;
+        private string Observaciones;
 
-        public formNuevoEditarEmpleado(bool IsNuevoEditar)
+
+        public formNuevoEditarEmpleado(int pIdEmpleado,bool IsNuevoEditar)
         {
             InitializeComponent();
+            this.IdEmpleado = pIdEmpleado;
             this.bandera = IsNuevoEditar;
         }
 
@@ -53,7 +54,8 @@ namespace CapaPresentacion
                 Direccion = Convert.ToString(row["Direccion"]);
                 Telefono = Convert.ToString(row["Telefono"]);
                 Email = Convert.ToString(row["Email"]);
-                Empleado = Convert.ToString(row["Empleado"]);
+                Observaciones = Convert.ToString(row["Observaciones"]);
+                // Empleado = Convert.ToString(row["Empleado"]);
 
                 if (row["Fecha de nacimiento"] == DBNull.Value)
                 {
@@ -73,6 +75,7 @@ namespace CapaPresentacion
                 txtDireccion.Text = Direccion;
                 txtTelefono.Text = Telefono;
                 txtEmail.Text = Email;
+                rtbObservaciones.Text = Observaciones;
             }
 
             //this.CargarRolesComboBox();
@@ -97,7 +100,7 @@ namespace CapaPresentacion
                         var fechaNac = año + "-" + mes + "-" + dia;
 
                         rpta = CN_Empleados.InsertarEmpleado(this.txtNombre.Text.Trim(), this.txtApellidos.Text.Trim(), this.txtDNI.Text.Trim(),
-                            this.txtDireccion.Text.Trim(),this.txtTelefono.Text.Trim(), fechaNac,txtEmail.Text.Trim());
+                            this.txtDireccion.Text.Trim(),this.txtTelefono.Text.Trim(), fechaNac,txtEmail.Text.Trim(), this.rtbObservaciones.Text.Trim());
                     }
                     else
                     {
@@ -107,10 +110,10 @@ namespace CapaPresentacion
                         var fecha = año + "-" + mes + "-" + dia;
 
                         rpta = CN_Empleados.Editar(this.IdEmpleado, this.txtNombre.Text.Trim(), this.txtApellidos.Text.Trim(),
-                            this.txtDNI.Text.Trim(),this.txtDireccion.Text.Trim(), this.txtTelefono.Text.Trim(), fecha);
+                            this.txtDNI.Text.Trim(),this.txtDireccion.Text.Trim(), this.txtTelefono.Text.Trim(), fecha, this.rtbObservaciones.Text.Trim());
                     }
 
-                    if (rpta.Equals("Ok"))
+                    if (rpta.Equals("OK"))
                     {
                         if (this.IsNuevo)
                         {
@@ -136,20 +139,6 @@ namespace CapaPresentacion
             
         }
 
-
-        private void MensajeOk(string mensaje)
-        {
-            MessageBox.Show(mensaje, "Estetica", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-        }
-
-
-        //Mostrar Mensaje de Error
-        private void MensajeError(string mensaje)
-        {
-            MessageBox.Show(mensaje, "Estetica", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        }
-
         private void formNuevoEditarEmpleado_Load(object sender, EventArgs e)
         {
             this.ActiveControl = txtNombre;
@@ -167,6 +156,19 @@ namespace CapaPresentacion
                 this.IsEditar = true;
                 this.MostrarEmpleado(this.IdEmpleado);
             }
+        }
+
+        private void MensajeOk(string mensaje)
+        {
+            MessageBox.Show(mensaje, "Estetica", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+        }
+
+
+        //Mostrar Mensaje de Error
+        private void MensajeError(string mensaje)
+        {
+            MessageBox.Show(mensaje, "Estetica", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
     }
 }

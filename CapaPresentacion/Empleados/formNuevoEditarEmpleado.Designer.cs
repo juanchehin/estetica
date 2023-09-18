@@ -50,6 +50,8 @@
             this.btnGuardar = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.rtbObservaciones = new System.Windows.Forms.RichTextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -58,26 +60,26 @@
             // lblEditarNuevo
             // 
             this.lblEditarNuevo.AutoSize = true;
-            this.lblEditarNuevo.Font = new System.Drawing.Font("Consolas", 55F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEditarNuevo.Location = new System.Drawing.Point(73, 13);
+            this.lblEditarNuevo.Font = new System.Drawing.Font("Consolas", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEditarNuevo.Location = new System.Drawing.Point(129, 9);
             this.lblEditarNuevo.Name = "lblEditarNuevo";
-            this.lblEditarNuevo.Size = new System.Drawing.Size(365, 87);
+            this.lblEditarNuevo.Size = new System.Drawing.Size(267, 64);
             this.lblEditarNuevo.TabIndex = 16;
             this.lblEditarNuevo.Text = "variable";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Consolas", 55F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(301, 13);
+            this.label6.Font = new System.Drawing.Font("Consolas", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(405, 9);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(365, 87);
+            this.label6.Size = new System.Drawing.Size(267, 64);
             this.label6.TabIndex = 15;
             this.label6.Text = "Empleado";
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(541, 397);
+            this.btnCancelar.Location = new System.Drawing.Point(541, 437);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 18;
@@ -87,6 +89,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.rtbObservaciones);
+            this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.txtEmail);
             this.groupBox1.Controls.Add(this.dtFechaNac);
@@ -105,7 +109,7 @@
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.groupBox1.Location = new System.Drawing.Point(33, 103);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(728, 266);
+            this.groupBox1.Size = new System.Drawing.Size(728, 328);
             this.groupBox1.TabIndex = 14;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Empleado";
@@ -228,7 +232,7 @@
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(190, 397);
+            this.btnGuardar.Location = new System.Drawing.Point(190, 437);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 23);
             this.btnGuardar.TabIndex = 12;
@@ -258,12 +262,29 @@
             this.pictureBox1.TabIndex = 13;
             this.pictureBox1.TabStop = false;
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(414, 199);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(84, 13);
+            this.label8.TabIndex = 31;
+            this.label8.Text = "Observaciones :";
+            // 
+            // rtbObservaciones
+            // 
+            this.rtbObservaciones.Location = new System.Drawing.Point(508, 199);
+            this.rtbObservaciones.Name = "rtbObservaciones";
+            this.rtbObservaciones.Size = new System.Drawing.Size(196, 96);
+            this.rtbObservaciones.TabIndex = 32;
+            this.rtbObservaciones.Text = "";
+            // 
             // formNuevoEditarEmpleado
             // 
             this.AcceptButton = this.btnGuardar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 444);
+            this.ClientSize = new System.Drawing.Size(800, 477);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.lblEditarNuevo);
             this.Controls.Add(this.label6);
@@ -307,5 +328,7 @@
         private System.Windows.Forms.DateTimePicker dtFechaNac;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.RichTextBox rtbObservaciones;
+        private System.Windows.Forms.Label label8;
     }
 }

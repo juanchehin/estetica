@@ -241,12 +241,15 @@ namespace CapaDatos
                 rpta = (string)comando.ExecuteScalar();
 
 
-                if (rpta == "El servicio esta dado de baja")
+                if (rpta == "Ok")
                 {
-                    rpta = "El servicio esta dado de baja";
-                    return rpta;
+                    rpta = "OK";
                 }
-                rpta = "OK";
+                else
+                {
+                    rpta = "Error";
+                }
+
                 return rpta;
 
 

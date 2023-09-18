@@ -50,20 +50,20 @@
             // lblEditarNuevo
             // 
             this.lblEditarNuevo.AutoSize = true;
-            this.lblEditarNuevo.Font = new System.Drawing.Font("Consolas", 55F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEditarNuevo.Location = new System.Drawing.Point(73, 13);
+            this.lblEditarNuevo.Font = new System.Drawing.Font("Consolas", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEditarNuevo.Location = new System.Drawing.Point(123, 13);
             this.lblEditarNuevo.Name = "lblEditarNuevo";
-            this.lblEditarNuevo.Size = new System.Drawing.Size(365, 87);
+            this.lblEditarNuevo.Size = new System.Drawing.Size(267, 64);
             this.lblEditarNuevo.TabIndex = 16;
             this.lblEditarNuevo.Text = "variable";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Consolas", 55F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(301, 13);
+            this.label6.Font = new System.Drawing.Font("Consolas", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(411, 13);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(365, 87);
+            this.label6.Size = new System.Drawing.Size(267, 64);
             this.label6.TabIndex = 15;
             this.label6.Text = "Servicio";
             // 

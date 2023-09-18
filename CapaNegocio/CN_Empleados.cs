@@ -11,12 +11,12 @@ namespace CapaNegocio
         //Método Insertar que llama al método Insertar de la clase DArticulo
         //de la CapaDatos
         public static string InsertarEmpleado(string Nombre, string Apellidos,string DNI,
-                            string Direccion,string Telefono,string fechaNac,string Email)
+                            string Direccion,string Telefono,string fechaNac,string Email,string Observaciones)
         {
             CD_Empleados Obj = new CD_Empleados();
 
             return Obj.InsertarEmpleado(Nombre, Apellidos, DNI,
-                            Direccion, Telefono, fechaNac,Email);
+                            Direccion, Telefono, fechaNac,Email, Observaciones);
         }
 
         public DataTable MostrarEmp()
@@ -48,7 +48,7 @@ namespace CapaNegocio
         }
 
 
-        public static string Editar(int IdEmpleado, string Nombre, string Apellidos, string DNI, string Direccion, string Telefono,string FechaNac)
+        public static string Editar(int IdEmpleado, string Nombre, string Apellidos, string DNI, string Direccion, string Telefono,string FechaNac, string Observaciones)
         {
             CD_Empleados Obj = new CD_Empleados();
             Obj.IdEmpleado = IdEmpleado;
@@ -59,7 +59,7 @@ namespace CapaNegocio
             Obj.Direccion = Direccion;
             Obj.Telefono = Telefono;
             Obj.FechaNac = FechaNac;
-
+            Obj.Observaciones = Observaciones;
 
             return Obj.Editar(Obj);
         }
