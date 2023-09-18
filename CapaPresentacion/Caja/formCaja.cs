@@ -1,6 +1,7 @@
 ﻿using CapaNegocio;
 using System;
 using System.Data;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace CapaPresentacion.Caja
@@ -42,33 +43,24 @@ namespace CapaPresentacion.Caja
             dataListadoCaja.DataSource = transacciones.Tables[0];
 
             dataListadoCaja.Columns["id_transaccion"].Visible = false;
-            dataListadoCaja.Columns["suma_total"].Visible = false;
+            dataListadoCaja.Columns["p_suma_egresos"].Visible = false;
+            dataListadoCaja.Columns["p_suma_ventas"].Visible = false;
+            dataListadoCaja.Columns["p_suma_deposito"].Visible = false;
+            dataListadoCaja.Columns["p_suma_retiro"].Visible = false;
+
 
             DataTable tabla_transacciones = transacciones.Tables["Table"];
 
             // Verifica si la tabla contiene filas
             if (tabla_transacciones.Rows.Count > 0)
             {
-                // Accede a la celda en la fila 0 y columna 1
-                object valorCelda = tabla_transacciones.Rows[0][6];
 
-                // Convierte el valor de la celda al tipo de datos adecuado
-                if (valorCelda != DBNull.Value)
-                {
-                    txtMonto.Text = valorCelda.ToString();
-                    // Console.WriteLine("Valor de la celda: " + valorTexto);
-                }
-                else
-                {
-                    txtMonto.Text = "0";
-                }
-            }
-            else
-            {
-                txtMonto.Text = "0";
-            }
+                lbl_venta.Text = tabla_transacciones.Rows[0][7].ToString();
+                lbl_egresos.Text = tabla_transacciones.Rows[0][6].ToString();
+                lbl_deposito.Text = tabla_transacciones.Rows[0][8].ToString();
+                lbl_retiro.Text = tabla_transacciones.Rows[0][9].ToString();
 
-          
+            }          
 
         }
 

@@ -27,7 +27,7 @@
     <ProductName>estetica</ProductName>
     <PublisherName>Chehin ingenieria</PublisherName>
     <SuiteName>estetica</SuiteName>
-    <ApplicationRevision>24</ApplicationRevision>
+    <ApplicationRevision>25</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
