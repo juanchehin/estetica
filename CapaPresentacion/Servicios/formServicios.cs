@@ -139,6 +139,7 @@ namespace CapaPresentacion
         private void btnRefrescar_Click(object sender, EventArgs e)
         {
             this.MostrarServicios();
+            txtBuscar.Clear();
         }
 
         private void btnNuevoServicio_Click_1(object sender, EventArgs e)

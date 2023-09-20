@@ -149,6 +149,7 @@ namespace CapaPresentacion
         private void btnRefrescar_Click(object sender, EventArgs e)
         {
             this.MostrarEmpleados();
+            this.txtBuscar.Clear();
         }
 
         private void btnListarTrabajos_Click(object sender, EventArgs e)

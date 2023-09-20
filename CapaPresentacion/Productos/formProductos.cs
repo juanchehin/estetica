@@ -170,7 +170,7 @@ namespace CapaPresentacion.Productos
         private void btnRefrescar_Click_1(object sender, EventArgs e)
         {
             ListarProductos(0);
-            txtBuscar.Text = "";
+            txtBuscar.Clear();
         }
 
         private void dataListadoProductos_SelectionChanged_1(object sender, EventArgs e)

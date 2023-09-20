@@ -156,6 +156,7 @@ namespace CapaPresentacion
         private void btnRefrescar_Click(object sender, EventArgs e)
         {
             this.MostrarClientes();
+            this.txtBuscar.Clear();
         }
 
         private void lblCC_Click(object sender, EventArgs e)
