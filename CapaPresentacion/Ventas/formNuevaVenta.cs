@@ -54,7 +54,6 @@ namespace CapaPresentacion.Ventas
 
             this.dataListadoServiciosProductos.Columns.Add("id_servicio_producto", "id");
             this.dataListadoServiciosProductos.Columns.Add("servicio_producto", "Servicio/Producto");
-            //this.dataListadoServiciosProductos.Columns.Add("producto", "producto");
             this.dataListadoServiciosProductos.Columns.Add("cantidad", "Cantidad");
             this.dataListadoServiciosProductos.Columns.Add("precio_unitario", "Precio unitario");
             this.dataListadoServiciosProductos.Columns.Add("tipo", "Tipo");
@@ -464,14 +463,8 @@ namespace CapaPresentacion.Ventas
                     // Acceder a los valores de otras columnas de la fila
                     this.IdServicio = Convert.ToInt32(fila["id_servicio"]);
                     this.txtPrecioUnitario.Text = fila["precio"].ToString();
-                    //this.lblPrecioUnitario_.Text = fila["precio"].ToString();
                 }
             }
-
-
-            // obtener precio del servicio
-            // this.lblPrecioUnitario_.Text = objetoCN_servicios.dame_precio_servicio(valorSeleccionado);
-
 
         }
 
@@ -515,7 +508,6 @@ namespace CapaPresentacion.Ventas
                     // Acceder a los valores de otras columnas de la fila
                     this.IdProducto = Convert.ToInt32(fila["id_producto"]);
                     this.txtPrecioUnitario.Text = fila["precio_venta"].ToString();
-                    //this.lblPrecioUnitario_.Text = fila["precio"].ToString();
                 }
             }
         }
@@ -588,6 +580,25 @@ namespace CapaPresentacion.Ventas
             }
 
             this.lblTotal.Text = this.precioTotal.ToString();
+        }
+
+        private void btnBuscarClientes_Click(object sender, EventArgs e)
+        {
+            this.BuscarCliente();
+        }
+
+        private void BuscarCliente()
+        {
+            this.dataListadoClientes.DataSource = objetoCN_clientes.BuscarCliente(this.txtBuscarCliente.Text);
+        }
+
+        private void btnBuscarEmpleado_Click(object sender, EventArgs e)
+        {
+            this.BuscarEmpleado();
+        }
+        private void BuscarEmpleado()
+        {
+            this.dataListadoEmpleadosPanel.DataSource = objetoCN_empleados.BuscarEmpleado(this.txtBuscarEmpleado.Text);
         }
     }
 }

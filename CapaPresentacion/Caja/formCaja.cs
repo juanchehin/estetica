@@ -1,7 +1,6 @@
 ﻿using CapaNegocio;
 using System;
 using System.Data;
-using System.Threading;
 using System.Windows.Forms;
 
 namespace CapaPresentacion.Caja
@@ -9,7 +8,6 @@ namespace CapaPresentacion.Caja
     public partial class formCaja : Form
     {
         CN_Caja objeto_Caja = new CN_Caja();
-        //string estadoCaja,Usuario;
         int IdUsuario;
         int desde = 0;
         DataSet transacciones;
@@ -19,8 +17,6 @@ namespace CapaPresentacion.Caja
         {
             InitializeComponent();
             this.IdUsuario = IdUsuario;
-            //lblUser.Text = usuario;
-            //this.panelMontoInicial.Visible = false;
             dameEstadoCaja();
             listarTransacciones();
         }
@@ -43,24 +39,22 @@ namespace CapaPresentacion.Caja
             dataListadoCaja.DataSource = transacciones.Tables[0];
 
             dataListadoCaja.Columns["id_transaccion"].Visible = false;
-            dataListadoCaja.Columns["p_suma_egresos"].Visible = false;
-            dataListadoCaja.Columns["p_suma_ventas"].Visible = false;
-            dataListadoCaja.Columns["p_suma_deposito"].Visible = false;
-            dataListadoCaja.Columns["p_suma_retiro"].Visible = false;
 
-
-            DataTable tabla_transacciones = transacciones.Tables["Table"];
+            DataTable tabla_transacciones = transacciones.Tables["Table2"];
 
             // Verifica si la tabla contiene filas
             if (tabla_transacciones.Rows.Count > 0)
             {
-
-                lbl_venta.Text = tabla_transacciones.Rows[0][7].ToString();
-                lbl_egresos.Text = tabla_transacciones.Rows[0][6].ToString();
-                lbl_deposito.Text = tabla_transacciones.Rows[0][8].ToString();
-                lbl_retiro.Text = tabla_transacciones.Rows[0][9].ToString();
-
-            }          
+                lblAdelantos.Text = tabla_transacciones.Rows[0][0].ToString();
+                lblGastos.Text = tabla_transacciones.Rows[0][1].ToString();
+                lblPagos.Text = tabla_transacciones.Rows[0][2].ToString();
+                lbl_ventas_total.Text = tabla_transacciones.Rows[0][3].ToString();
+                lbl_credito.Text = tabla_transacciones.Rows[0][4].ToString();
+                lbl_debito.Text = tabla_transacciones.Rows[0][5].ToString();
+                lbl_voucher.Text = tabla_transacciones.Rows[0][6].ToString();
+                lbl_transferencias.Text = tabla_transacciones.Rows[0][7].ToString();
+                lbl_efectivo.Text = tabla_transacciones.Rows[0][8].ToString();
+            }
 
         }
 
@@ -70,16 +64,11 @@ namespace CapaPresentacion.Caja
             if(objeto_Caja.dameEstadoCaja() == "C")
             {
                 rpta = "Cerrada";
-                //btnAbrirCaja.Enabled = true;
-                //btnCierreCaja.Enabled = false;
             }
             if (objeto_Caja.dameEstadoCaja() == "A")
             {
                 rpta = "Abierta";
-                //btnAbrirCaja.Enabled = false;
-                //btnCierreCaja.Enabled = true;
             }
-            //lblEstado.Text = rpta;
             return rpta;
         }
 
@@ -95,9 +84,6 @@ namespace CapaPresentacion.Caja
             if (objeto_Caja.cerrarCaja(this.IdUsuario) == "Ok")
             {
                 MensajeOk("Caja cerrada");
-                //btnAbrirCaja.Enabled = true;
-                //btnCierreCaja.Enabled = false;
-                //this.lblEstado.Text = "Cerrada";
             }
             else
             {

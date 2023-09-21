@@ -33,11 +33,11 @@ namespace CapaNegocio
             //return null;
         }
 
-        public static string alta_egreso(string monto,string tipo_pago, string descripcion)
+        public static string alta_egreso(string monto,int id_tipo_pago, string tipo, int id_empleado, string descripcion)
         {
             CD_Ventas Obj = new CD_Ventas();
 
-            return Obj.alta_egreso(monto, tipo_pago, descripcion);
+            return Obj.alta_egreso(monto, id_tipo_pago, tipo, id_empleado, descripcion);
             //return null;
         }
 

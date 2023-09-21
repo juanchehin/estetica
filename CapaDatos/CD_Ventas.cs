@@ -406,7 +406,7 @@ namespace CapaDatos
 
         }
 
-        public string alta_egreso(string pMonto, string pTipoPago, string pDescripcion)
+        public string alta_egreso(string pMonto, int pIdTipoPago, string tipo, int id_empleado, string pDescripcion)
         {
             string rpta = "";
             try
@@ -421,11 +421,23 @@ namespace CapaDatos
                 MontoTotal.Value = pMonto;
                 comando.Parameters.Add(MontoTotal);
 
-                MySqlParameter TipoPago = new MySqlParameter();
-                TipoPago.ParameterName = "@pTipoPago";
-                TipoPago.MySqlDbType = MySqlDbType.VarChar;
-                TipoPago.Value = pTipoPago;
-                comando.Parameters.Add(TipoPago);
+                MySqlParameter IdTipoPago = new MySqlParameter();
+                IdTipoPago.ParameterName = "@pIdTipoPago";
+                IdTipoPago.MySqlDbType = MySqlDbType.Int32;
+                IdTipoPago.Value = pIdTipoPago;
+                comando.Parameters.Add(IdTipoPago);
+
+                MySqlParameter Tipo = new MySqlParameter();
+                Tipo.ParameterName = "@pTipo";
+                Tipo.MySqlDbType = MySqlDbType.VarChar;
+                Tipo.Value = tipo;
+                comando.Parameters.Add(Tipo);
+
+                MySqlParameter IdEmpleado = new MySqlParameter();
+                IdEmpleado.ParameterName = "@pIdEmpleado";
+                IdEmpleado.MySqlDbType = MySqlDbType.Int32;
+                IdEmpleado.Value = id_empleado;
+                comando.Parameters.Add(IdEmpleado);
 
                 MySqlParameter descripcion = new MySqlParameter();
                 descripcion.ParameterName = "@pDescripcion";

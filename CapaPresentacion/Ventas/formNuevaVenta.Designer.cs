@@ -80,13 +80,16 @@
             this.btnCerrarPanelClientes = new System.Windows.Forms.Button();
             this.btnRefrescar = new System.Windows.Forms.Button();
             this.panelClientes = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtBuscarCliente = new System.Windows.Forms.TextBox();
+            this.btnBuscarClientes = new System.Windows.Forms.Button();
             this.dataListadoEmpleadosPanel = new System.Windows.Forms.DataGridView();
             this.seleccionarEmpleado = new System.Windows.Forms.Button();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.label16 = new System.Windows.Forms.Label();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btnBuscarEmpleado = new System.Windows.Forms.Button();
+            this.txtBuscarEmpleado = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.btnCerrarPanelEmpleados = new System.Windows.Forms.Button();
             this.panelEmpleados = new System.Windows.Forms.Panel();
@@ -497,7 +500,7 @@
             this.panelVuelto.Controls.Add(this.groupBox3);
             this.panelVuelto.Controls.Add(this.groupBox4);
             this.panelVuelto.Controls.Add(this.groupBox5);
-            this.panelVuelto.Location = new System.Drawing.Point(132, 34);
+            this.panelVuelto.Location = new System.Drawing.Point(566, 14);
             this.panelVuelto.Name = "panelVuelto";
             this.panelVuelto.Size = new System.Drawing.Size(284, 408);
             this.panelVuelto.TabIndex = 51;
@@ -626,6 +629,9 @@
             // panelClientes
             // 
             this.panelClientes.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelClientes.Controls.Add(this.label7);
+            this.panelClientes.Controls.Add(this.txtBuscarCliente);
+            this.panelClientes.Controls.Add(this.btnBuscarClientes);
             this.panelClientes.Controls.Add(this.btnRefrescar);
             this.panelClientes.Controls.Add(this.btnCerrarPanelClientes);
             this.panelClientes.Controls.Add(this.pictureBox3);
@@ -635,10 +641,36 @@
             this.panelClientes.Controls.Add(this.btnAgregarCliente);
             this.panelClientes.Controls.Add(this.button1);
             this.panelClientes.Controls.Add(this.dataListadoClientes);
-            this.panelClientes.Location = new System.Drawing.Point(77, 12);
+            this.panelClientes.Location = new System.Drawing.Point(97, 12);
             this.panelClientes.Name = "panelClientes";
             this.panelClientes.Size = new System.Drawing.Size(851, 484);
             this.panelClientes.TabIndex = 50;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(27, 131);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(55, 13);
+            this.label7.TabIndex = 74;
+            this.label7.Text = "Busqueda";
+            // 
+            // txtBuscarCliente
+            // 
+            this.txtBuscarCliente.Location = new System.Drawing.Point(30, 104);
+            this.txtBuscarCliente.Name = "txtBuscarCliente";
+            this.txtBuscarCliente.Size = new System.Drawing.Size(181, 20);
+            this.txtBuscarCliente.TabIndex = 73;
+            // 
+            // btnBuscarClientes
+            // 
+            this.btnBuscarClientes.Location = new System.Drawing.Point(227, 101);
+            this.btnBuscarClientes.Name = "btnBuscarClientes";
+            this.btnBuscarClientes.Size = new System.Drawing.Size(75, 23);
+            this.btnBuscarClientes.TabIndex = 72;
+            this.btnBuscarClientes.Text = "Buscar";
+            this.btnBuscarClientes.UseVisualStyleBackColor = true;
+            this.btnBuscarClientes.Click += new System.EventHandler(this.btnBuscarClientes_Click);
             // 
             // dataListadoEmpleadosPanel
             // 
@@ -690,21 +722,22 @@
             this.pictureBox7.TabIndex = 46;
             this.pictureBox7.TabStop = false;
             // 
-            // button4
+            // btnBuscarEmpleado
             // 
-            this.button4.Location = new System.Drawing.Point(228, 109);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 64;
-            this.button4.Text = "Buscar";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnBuscarEmpleado.Location = new System.Drawing.Point(228, 109);
+            this.btnBuscarEmpleado.Name = "btnBuscarEmpleado";
+            this.btnBuscarEmpleado.Size = new System.Drawing.Size(75, 23);
+            this.btnBuscarEmpleado.TabIndex = 64;
+            this.btnBuscarEmpleado.Text = "Buscar";
+            this.btnBuscarEmpleado.UseVisualStyleBackColor = true;
+            this.btnBuscarEmpleado.Click += new System.EventHandler(this.btnBuscarEmpleado_Click);
             // 
-            // textBox1
+            // txtBuscarEmpleado
             // 
-            this.textBox1.Location = new System.Drawing.Point(30, 109);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(181, 20);
-            this.textBox1.TabIndex = 65;
+            this.txtBuscarEmpleado.Location = new System.Drawing.Point(30, 109);
+            this.txtBuscarEmpleado.Name = "txtBuscarEmpleado";
+            this.txtBuscarEmpleado.Size = new System.Drawing.Size(181, 20);
+            this.txtBuscarEmpleado.TabIndex = 65;
             // 
             // label15
             // 
@@ -731,14 +764,14 @@
             this.panelEmpleados.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelEmpleados.Controls.Add(this.btnCerrarPanelEmpleados);
             this.panelEmpleados.Controls.Add(this.label15);
-            this.panelEmpleados.Controls.Add(this.textBox1);
-            this.panelEmpleados.Controls.Add(this.button4);
+            this.panelEmpleados.Controls.Add(this.txtBuscarEmpleado);
+            this.panelEmpleados.Controls.Add(this.btnBuscarEmpleado);
             this.panelEmpleados.Controls.Add(this.pictureBox7);
             this.panelEmpleados.Controls.Add(this.label16);
             this.panelEmpleados.Controls.Add(this.pictureBox8);
             this.panelEmpleados.Controls.Add(this.seleccionarEmpleado);
             this.panelEmpleados.Controls.Add(this.dataListadoEmpleadosPanel);
-            this.panelEmpleados.Location = new System.Drawing.Point(90, 28);
+            this.panelEmpleados.Location = new System.Drawing.Point(132, 8);
             this.panelEmpleados.Name = "panelEmpleados";
             this.panelEmpleados.Size = new System.Drawing.Size(851, 484);
             this.panelEmpleados.TabIndex = 71;
@@ -850,10 +883,13 @@
         private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.PictureBox pictureBox7;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button btnBuscarEmpleado;
+        private System.Windows.Forms.TextBox txtBuscarEmpleado;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Button btnCerrarPanelEmpleados;
         private System.Windows.Forms.Panel panelEmpleados;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtBuscarCliente;
+        private System.Windows.Forms.Button btnBuscarClientes;
     }
 }
